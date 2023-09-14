@@ -1,0 +1,186 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html {
+  font-size: 62.5%;
+  color: rgb(236, 230, 230);
+  font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
+  background-color: #171717;
+}
+body {
+  font-family: "Roboto", sans-serif;
+}
+input {
+  display: block;
+  background-color: rgb(236, 230, 230);
+  border: none;
+}
+input:focus {
+  outline: none;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+.hide {
+  display: none !important;
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+}
+
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 40rem;
+  padding: 2rem;
+  padding-bottom: 8rem;
+  padding-top: 4rem;
+}
+
+.menu-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logout-button {
+  border: none;
+  background-color: inherit;
+  color: white;
+  font-size: 2.4rem;
+  padding: 1rem;
+  padding-top: 0.5rem;
+  margin-right: 0.5rem;
+  align-self: flex-start;
+}
+
+.logout-button:hover {
+  cursor: pointer;
+}
+
+.menu-title {
+  font-size: 3.6rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+
+.menu-excel-option {
+  justify-self: center;
+}
+
+input#select-excel {
+  display: none;
+}
+
+input#select-excel + label {
+  display: block;
+  width: 100%;
+  font-weight: 500;
+  font-size: 2rem;
+  background-color: green;
+  padding: 2rem 4rem;
+  border-radius: 17px;
+}
+
+input#select-excel + label:hover {
+  cursor: pointer;
+}
+
+.label-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.excel-icon {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.menu-subtitle {
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 500;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.confirmed-num {
+  color: #4af71188;
+}
+.non-confirmed-num {
+  color: #f82727aa;
+}
+.rejected-num {
+  color: #f0841fb1;
+}
+
+.search-input-container {
+  padding-bottom: 1rem;
+}
+
+.search-input {
+  width: 100%;
+  padding: 2rem 3rem;
+  border-radius: 17px;
+  font-size: 1.8rem;
+}
+
+.invitation-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.invitation-li {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border-radius: 17px;
+  padding: 2rem;
+  background-color: #ffffff22;
+}
+
+.invitation-li-name {
+  font-size: 1.8rem;
+  width: 50%;
+}
+
+.modify-invitation-container {
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  gap: 1.6rem;
+  width: 20%;
+}
+.invitation-data {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 1.6rem;
+  width: 30%;
+  gap: 2rem;
+}
+.invitation-icon {
+  font-size: 2rem;
+  text-align: center;
+  margin-right: 0.5rem;
+}
+
+.invitation-confirmed {
+  background-color: #4af71188;
+}
+.invitation-rejected {
+  background-color: #f8272788;
+}
