@@ -17,7 +17,6 @@
     <!-- Local css -->
     <link rel="stylesheet" href="../static/styles/index.css" />
     <script src="{{ url_for('static', filename='logic/index.js') }}"></script>
-
     <script
       src="https://kit.fontawesome.com/bbd366d908.js"
       crossorigin="anonymous"
@@ -149,6 +148,15 @@
           </div>
         </div>
       </section> -->
+      {% if data_exists > 0 %}
+      <h2>ocy</h2>
+      <h2>{{data[1]}}</h2>
+      <h2>{{data[2]}}</h2>
+      <h2>{{data[3]}}</h2>
+      {% else %}
+      <!-- <h2>ono</h2> -->
+      {% endif %}
+
       <!-- Contador -->
       <section class="section countdown">
         <div class="container">

@@ -74,8 +74,18 @@ html {
   text-transform: uppercase;
 }
 
-.menu-excel-option {
-  justify-self: center;
+.menu-excel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 8rem;
+}
+
+.subir-excel-text-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
 }
 
 input#select-excel {
@@ -83,8 +93,11 @@ input#select-excel {
 }
 
 input#select-excel + label {
-  display: block;
-  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 75%;
+  height: 100%;
   font-weight: 500;
   font-size: 2rem;
   background-color: green;
@@ -96,15 +109,36 @@ input#select-excel + label:hover {
   cursor: pointer;
 }
 
-.label-container {
+input#submit {
+  display: none;
+}
+
+input#submit + label {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  width: 20%;
+  height: 100%;
+  font-weight: 500;
+  font-size: 2rem;
+  background-color: green;
+  opacity: 0.7;
+  padding: 3rem 4rem;
+  border-radius: 17px;
+}
+
+input#submit + label:hover {
+  cursor: pointer;
+}
+
+.btn-available {
+  opacity: 1 !important;
+  background-color: rgb(0, 177, 0) !important;
+  /* background-color: white !important; */
 }
 
 .excel-icon {
   font-size: 2rem;
-  text-align: center;
 }
 
 .menu-subtitle {
@@ -119,10 +153,10 @@ input#select-excel + label:hover {
   color: #4af71188;
 }
 .non-confirmed-num {
-  color: #f82727aa;
+  color: #f0841fb1;
 }
 .rejected-num {
-  color: #f0841fb1;
+  color: #f82727aa;
 }
 
 .search-input-container {
@@ -153,9 +187,15 @@ input#select-excel + label:hover {
   background-color: #ffffff22;
 }
 
-.invitation-li-name {
+.invitation-li-name,
+.invitation-li-name--input {
   font-size: 1.8rem;
-  width: 50%;
+  width: 40%;
+}
+
+.invitation-li-name--input {
+  display: none;
+  padding: 1rem 2rem;
 }
 
 .modify-invitation-container {
@@ -165,17 +205,41 @@ input#select-excel + label:hover {
   gap: 1.6rem;
   width: 20%;
 }
+
+.confirm-update-button {
+  display: none;
+  background-color: purple;
+}
+.cancel-update-button {
+  display: none;
+  background-color: purple;
+}
+
 .invitation-data {
+  justify-self: center;
   display: flex;
-  justify-content: flex-end;
-  font-size: 1.6rem;
-  width: 30%;
+  justify-content: center;
+  font-size: 2rem;
+  width: 40%;
   gap: 2rem;
 }
+
 .invitation-icon {
   font-size: 2rem;
   text-align: center;
   margin-right: 0.5rem;
+}
+
+.invitation-data--input {
+  display: none;
+  width: 50%;
+  /* padding: 1rem 3rem; */
+  padding: 1rem 0.2rem;
+  font-size: 2rem;
+}
+
+.gap-zero {
+  gap: 0 !important;
 }
 
 .invitation-confirmed {
