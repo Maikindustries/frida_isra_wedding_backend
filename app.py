@@ -41,14 +41,63 @@ def index():
 #     # MySql Database
 #     conn_factory = ConnectionFactory()
 #     conn, cursor = conn_factory.get_connection()
-#     cursor.execute("select * from invitados where id_invitado = %s", [guest_id])
+#     cursor.execute("select * from invitados where id_invitado=%s", [guest_id])
 #     data = cursor.fetchone()
 #     conn.close()
 #     print(data)
+#     # {% if data_exists > 0 %}
+#     # <h2>ocy</h2>
+#     # <h2>{{data[1]}}</h2>
+#     # <h2>{{data[2]}}</h2>
+#     # <h2>{{data[3]}}</h2>
+#     # {% else %}
+#     # <!-- <h2>ono</h2> -->
+#     # {% endif %}
 #     if data is not None:
 #         return render_template("index_id.html", data=data, data_exists=True)
+#     #usuario no encontrado, checa bien el link que te mandaron
 #     return render_template("index_id.html", data_exists=False)
 
+# GET_INFO_BY_ID - BACKEND
+@app.route("/guest/updateConfirmation", methods=["POST"])
+def post_update_confirmation():
+    response = request.json
+    print(response)
+    conn_factory = ConnectionFactory()
+    conn, cursor = conn_factory.get_connection()
+    guest_id = response.get("id")
+    confirmacion = response.get("confirmacion")
+    cursor.execute(
+        "update invitados set asistencia=%s where id_invitado=%s",
+        [confirmacion, guest_id]
+    )
+    conn.commit()
+    conn.close()
+    return {"Success": 201}
+
+# GET_INFO_BY_ID - BACKEND
+@app.route("/guest/<guest_id>", methods=["GET"])
+def get_info_by_id(guest_id):
+    conn_factory = ConnectionFactory()
+    conn, cursor = conn_factory.get_connection()
+    cursor.execute(
+        "select * from invitados where id_invitado=%s", [guest_id]
+    )
+    invitado = cursor.fetchone()
+    invitado_dict = dict()
+    keys = [
+        "id_invitado",
+        "nombre",
+        "boletos",
+        "mesa",
+        "confirmacion",
+        "revisado",
+    ]
+    for i, key in enumerate(keys):
+        invitado_dict[key] = invitado[i]
+    print(invitado_dict)
+    conn.close()
+    return invitado_dict
 
 # GET_INFO - BACKEND
 @app.route("/get_info", methods=["GET","POST"])
@@ -60,7 +109,7 @@ def get_info():
         conn_factory = ConnectionFactory()
         conn, cursor = conn_factory.get_connection()
         cursor.execute(
-            "select * from invitados where id_invitado = %s", [id_invitado]
+            "select * from invitados where id_invitado=%s", [id_invitado]
         )
         invitado = cursor.fetchone()
         invitado_dict = dict()
