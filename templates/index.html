@@ -80,7 +80,7 @@
         </div>
       </section>
       <!-- Sobre nosotros 2 -->
-      <section class="section about-us-section2">
+      <!-- <section class="section about-us-section2">
         <div class="container">
           <div class="about-us-section-container2">
             <div class="about-us-section-col">
@@ -110,7 +110,7 @@
                 class="about-us-img2"
               />
               <div class="about-us-text-container2">
-                <!-- <h2>¡Nos casamos!</h2> -->
+              
                 <p>
                   Una propuesta, un Sí y una decisión que tomamos juntos.
                   Nuestro amor ha crecido en nosotros, ha madurado y florecido,
@@ -127,28 +127,70 @@
             </div>
           </div>
         </div>
-      </section>
+      </section> -->
       <!-- Sobre nosotros -->
-      <!-- <section class="section about-us-section">
+      <section class="section about-us-section">
         <div class="container about-us-section-container">
-          <img src="../static/images/vertical/photo_19.jpg" class="about-us-img" />
+          <img
+            src="../static/images/vertical/photo_19.jpg"
+            class="about-us-img"
+          />
           <div class="about-us-text-container">
-            <h2>¡Nos casamos!</h2>
-            <p>
-              Una propuesta, un Sí y una decisión que tomamos juntos. Nuestro
-              amor ha crecido en nosotros, ha madurado y florecido, a veces
-              sencillo, otras caótico pero siempre maravilloso. Así comienza una
-              nueva etapa en nuestras vidas. Somos aventureros, dedicados,
-              fuertes de carácter; los desafíos que hemos enfrentado nos han
-              ayudado a crecer y madurar; debemos agradecer a esos retos porque
-              con ellos nos hemos dado cuenta que juntos podemos lograr lo que
-              nos proponemos. Tan sólo podemos decir que nuestra vida en estos
-              momentos se encuentra completa y estamos listos para compartir el
-              resto de nuestros días juntos.
-            </p>
+            <div>
+              <h2>¡Nos casamos!</h2>
+              <p>
+                Una propuesta, un Sí y una decisión que tomamos juntos. Nuestro
+                amor ha crecido en nosotros, ha madurado y florecido, a veces
+                sencillo, otras caótico pero siempre maravilloso. Así comienza
+                una nueva etapa en nuestras vidas. Somos aventureros, dedicados,
+                fuertes de carácter; los desafíos que hemos enfrentado nos han
+                ayudado a crecer y madurar; debemos agradecer a esos retos
+                porque con ellos nos hemos dado cuenta que juntos podemos lograr
+                lo que nos proponemos. Tan sólo podemos decir que nuestra vida
+                en estos momentos se encuentra completa y estamos listos para
+                compartir el resto de nuestros días juntos.
+              </p>
+            </div>
+            <img src="../static/images/horizontal/photo_8.jpg" />
           </div>
         </div>
-      </section> -->
+      </section>
+      <!-- Confirmar asistencia -->
+      <section class="section section-confirm-assistance">
+        <div class="container">
+          <div class="title-container">
+            <h2 class="title--text">Confirmación</h2>
+            <h2 class="subtitle--text">
+              Nos ayudarías mucho que confirmes tu asistencia
+            </h2>
+            <div class="c-a-select-confirmation-container">
+              <p>NO ASISTIRE</p>
+              <input
+                type="checkbox"
+                checked
+                class="c-a-checkbox"
+                style="--s: 30px"
+              />
+              <p>ASISTIRÉ</p>
+            </div>
+            <div class="c-a-tickets-container">
+              <p>Hemos considerado darte <span>4 boletos</span></p>
+              <div>
+                <label for="nTickets"> Voy a ocupar </label>
+                <input
+                  id="nTickets"
+                  type="number"
+                  value="4"
+                  min="1"
+                  max="4"
+                  step="1"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- Contador -->
       <section class="section countdown">
         <div class="container">
@@ -185,25 +227,7 @@
         <img src="../static/images/vertical/photo_15.jpg" class="gallery-img" />
         <img src="../static/images/vertical/photo_16.jpg" class="gallery-img" />
       </section>
-      <!-- Galeria lineal horizontal -->
-      <section class="gallery-section">
-        <img
-          src="../static/images/horizontal/photo_6.jpg"
-          class="gallery-img--horizontal"
-        />
-        <img
-          src="../static/images/horizontal/photo_4.jpg"
-          class="gallery-img--horizontal"
-        />
-        <img
-          src="../static/images/horizontal/photo_7.jpg"
-          class="gallery-img--horizontal"
-        />
-        <img
-          src="../static/images/horizontal/photo_8.jpg"
-          class="gallery-img--horizontal"
-        />
-      </section>
+
       <!-- Ubicacion -->
       <section class="section location-section">
         <div class="container">
@@ -216,29 +240,34 @@
           </div>
           <div class="location-info-container">
             <img
-              src="../static/images/location.jpg"
+              src="../static/images/lugar.jpg"
               class="location-img"
               alt="ubicacion"
             />
             <div class="location-info">
               <div class="location-info--name-time">
-                <p class="location-info--title">Jardin Quinta Corregidor</p>
-                <p>15:00 HRS</p>
+                <p class="location-info--title">JARDIN QUINTA CORREGIDOR</p>
+                <p>DOMINGO 21 de JUNIO</p>
+                <p>03:00 PM - 11:00 PM</p>
               </div>
               <div class="location-info--address">
-                <p class="location-info--title">Dirección</p>
+                <p class="location-info--title">DIRECCIÓN</p>
                 <p>
                   Diag. Reforma 3 B, Izcalli del Bosque, 53278 Naucalpan de
                   Juárez, Méx.
                 </p>
               </div>
-              <a href="https://goo.gl/maps/WbekMxVqSfBBnx2j9" target="_blank"
-                ><p class="location-map-button">Abrir en mapa</p></a
+              <button
+                class="location-map-button"
+                onclick=" window.open('http://goo.gl/maps/WbekMxVqSfBBnx2j9','_blank')"
               >
+                <p>Abrir en mapa</p>
+              </button>
             </div>
           </div>
         </div>
       </section>
+
       <!-- Galeria completa -->
       <!--   
       <section class="section complete-gallery-section">
@@ -312,41 +341,64 @@
               href="http://www.amazon.com"
               target="_blank"
             >
-              <!-- <div class="mesa-de-regalos-item--img-container">
+              <div class="mesa-de-regalos-item--img-container">
                 <img
-                  src="../static/images/amazon.png"
+                  src="../static/images/amazon_logo.png"
                   class="mesa-de-regalos-item--img"
                   alt="amazon"
                 />
-                <p style="font-size: 4rem">Amazon</p>
-              </div> -->
-              <div class="mesa-de-regalos-item--img-container2">
-                <p class="mesa-de-regalos-item--name">Amazon</p>
+                <p style="font-size: 4rem">243211</p>
               </div>
-              <p>49184984818</p>
             </a>
             <a
               class="mesa-de-regalos-item liverpool"
-              href="https://www.liverpool.com.mx"
+              href="http://www.liverpool.com.mx/"
               target="_blank"
             >
-              <div class="mesa-de-regalos-item--img-container2">
-                <p class="mesa-de-regalos-item--name">Liverpool</p>
+              <div class="mesa-de-regalos-item--img-container">
+                <img
+                  src="../static/images/liverpool_logo.png"
+                  class="mesa-de-regalos-item--img"
+                  alt="liverpool"
+                />
+                <p style="font-size: 4rem">243211</p>
               </div>
-              <p>656516516</p>
             </a>
             <a
               class="mesa-de-regalos-item banorte"
-              href="https://www.banorte.com/"
+              href="http://www.banorte.com/"
               target="_blank"
             >
-              <div class="mesa-de-regalos-item--img-container2">
-                <p class="mesa-de-regalos-item--name">Banorte</p>
+              <div class="mesa-de-regalos-item--img-container">
+                <img
+                  src="../static/images/banorte_logo.png"
+                  class="mesa-de-regalos-item--img"
+                  alt="banorte"
+                />
+                <p style="font-size: 4rem">243211</p>
               </div>
-              <p>49383719354</p>
             </a>
           </div>
         </div>
+      </section>
+      <!-- Galeria lineal horizontal -->
+      <section class="gallery-section">
+        <img
+          src="../static/images/horizontal/photo_6.jpg"
+          class="gallery-img--horizontal"
+        />
+        <img
+          src="../static/images/horizontal/photo_4.jpg"
+          class="gallery-img--horizontal"
+        />
+        <img
+          src="../static/images/horizontal/photo_7.jpg"
+          class="gallery-img--horizontal"
+        />
+        <img
+          src="../static/images/horizontal/photo_8.jpg"
+          class="gallery-img--horizontal"
+        />
       </section>
       <!-- Codigo de vestimenta -->
       <section class="section codigo-de-vestimenta">
@@ -377,17 +429,8 @@
           </div>
         </div>
       </section>
-      <!-- Hashtag -->
-      <section class="section hashtag-section">
-        <div class="container">
-          <h2 class="hashtag-title">
-            En nuestra boda comparte tus fotos con nosotros, utiliza el hashtag
-          </h2>
-          <p class="hashtag-hashtag">#FRIDA_ISRA</p>
-        </div>
-      </section>
       <!-- Frase -->
-      <section class="section phrase">
+      <section class="section-phrase">
         <div class="container">
           <i class="fa-solid fa-quote-left phrase-quote-icon"></i>
           <h2 class="phrase-text">
@@ -396,6 +439,15 @@
           </h2>
         </div>
       </section>
+      <!-- Hashtag -->
+      <!-- <section class="section hashtag-section">
+        <div class="container">
+          <h2 class="hashtag-title">
+            En nuestra boda comparte tus fotos con nosotros, utiliza el hashtag
+          </h2>
+          <p class="hashtag-hashtag">#FRIDA_ISRA</p>
+        </div>
+      </section> -->
       <!-- Sobre nosotros -->
       <section>
         <div>
