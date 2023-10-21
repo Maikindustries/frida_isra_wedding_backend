@@ -293,6 +293,8 @@ Instead, 1 rem = 1em = 16px*/
   .location-map-button button {
     /* width: 100%; */
   }
+  .location-info--address {
+  }
   .phrase-text {
     font-size: 2.1rem;
   }

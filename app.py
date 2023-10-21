@@ -2,7 +2,6 @@ from decouple import config  # read env vars
 from MySqlConnection import ConnectionFactory
 import requests
 from uuid import uuid4
-import pandas as pd
 # from html.parser import HTMLParser
 from flask import (
     Flask,

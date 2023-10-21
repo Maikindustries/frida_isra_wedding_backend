@@ -308,6 +308,10 @@ p {
   justify-content: center;
   gap: 1rem;
 }
+.location-info-adress-container {
+  display: flex;
+  justify-content: center;
+}
 .location-info--address {
   /* text-align: center; */
 }

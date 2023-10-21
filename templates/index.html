@@ -107,7 +107,10 @@
         </div>
       </section>
       <!-- Confirmar asistencia -->
-      <section class="section section-confirm-assistance">
+      <section
+        id="section-confirm-assistance"
+        class="section section-confirm-assistance"
+      >
         <div class="container">
           <div class="title-container">
             <h2 class="title--text">Confirmación</h2>
@@ -139,7 +142,9 @@
             class="c-a-confirmation-container"
             style="display: none"
           >
-            <p>Has confirmado tu asistencia</p>
+            <p>
+              <span id="confirmationName"></span>, has confirmado tu asistencia
+            </p>
             <div class="c-a-button">
               <button onclick="changeAssistance()">Cambiar asistencia</button>
             </div>
@@ -149,7 +154,9 @@
             class="c-a-rejection-container"
             style="display: none"
           >
-            <p>Has rechazado tu asistencia</p>
+            <p>
+              <span id="rejectcionName"></span>, has rechazado tu asistencia
+            </p>
             <div class="c-a-button">
               <button onclick="changeAssistance()">Cambiar decisión</button>
             </div>
@@ -185,6 +192,7 @@
           const queryString = window.location.search;
           const urlParams = new URLSearchParams(queryString);
           const id = urlParams.get("id");
+          console.log(id);
           let _datos = {
             id: id,
             confirmacion: confirmacion,
@@ -196,6 +204,7 @@
             headers: { "Content-type": "application/json; charset=UTF-8" },
           })
             .then((response) => response.json())
+
             .then((json) => console.log(json));
         }
         function changeAssistance() {
@@ -208,7 +217,15 @@
           const queryString = window.location.search;
           const urlParams = new URLSearchParams(queryString);
           const id = urlParams.get("id");
-          console.log(id);
+          console.log("id", id);
+          if (id === null || id === undefined || id.length != 32) {
+            const confirmationSection = document.getElementById(
+              "section-confirm-assistance"
+            );
+            confirmationSection.style.display = "none";
+            return;
+            // dont do fetch
+          }
           fetch(`http://192.168.1.85:5000/guest/${id}`, {
             method: "GET",
             headers: {
@@ -218,12 +235,21 @@
             .then((response) => response.json())
             .then((guest) => {
               const guestName = document.querySelector("[c-a-guest-name]");
+              const confirmationName =
+                document.getElementById("confirmationName");
+              const rejectcionName = document.getElementById("rejectcionName");
+
               guestName.innerHTML = guest.nombre;
+              confirmationName.innerHTML = guest.nombre;
+              rejectcionName.innerHTML = guest.nombre;
+
               if (guest.confirmacion == "confirmada") {
+                subtitle.style.display = "none";
                 confirmationContainer.style.display = "";
                 rejectionContainer.style.display = "none";
                 selectConfirmationContainer.style.display = "none";
               } else if (guest.confirmacion == "no vendra") {
+                subtitle.style.display = "none";
                 confirmationContainer.style.display = "none";
                 rejectionContainer.style.display = "";
                 selectConfirmationContainer.style.display = "none";
@@ -307,15 +333,17 @@
                   <i class="fa-solid fa-location-dot"></i>
                   <p class="location-info--name">Jardin Quinta Corregidor</p>
                 </div>
+                <!-- <div class="location-info-adress-container"> -->
                 <p class="location-info--address">
                   Diag. Reforma 3 B, Izcalli del Bosque,53278 Naucalpan de
                   Juárez, Méx.
                 </p>
+                <!-- </div> -->
               </div>
 
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3761.496125115911!2d-99.25922472402088!3d19.477279639250945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d203752a161929%3A0x409f84a48380d802!2sJardin%20Quinta%20Corregidor!5e0!3m2!1ses!2smx!4v1696386896843!5m2!1ses!2smx"
-                height="300"
+                height="350"
                 class="location-map-iframe"
                 allowfullscreen=""
                 loading="lazy"
@@ -346,7 +374,7 @@
           <div class="mesa-de-regalos--opciones">
             <a
               class="mesa-de-regalos-item amazon"
-              href="http://www.amazon.com"
+              href="https://www.amazon.com.mx/wedding/share/FriIsra21042024"
               target="_blank"
             >
               <div class="mesa-de-regalos-item--img-container">
