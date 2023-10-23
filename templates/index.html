@@ -164,111 +164,111 @@
         </div>
       </section>
       <script>
-        // const checkbox = document.getElementById("c-a-select-checkbox");
-        // const selectConfirmationContainer = document.getElementById(
-        //   "c-a-select-confirmation-container"
-        // );
-        // const confirmationContainer = document.getElementById(
-        //   "confirmationContainer"
-        // );
-        // const rejectionContainer =
-        //   document.getElementById("rejectionContainer");
-        // const subtitle = document.getElementById("c-a-subtitle");
+        const checkbox = document.getElementById("c-a-select-checkbox");
+        const selectConfirmationContainer = document.getElementById(
+          "c-a-select-confirmation-container"
+        );
+        const confirmationContainer = document.getElementById(
+          "confirmationContainer"
+        );
+        const rejectionContainer =
+          document.getElementById("rejectionContainer");
+        const subtitle = document.getElementById("c-a-subtitle");
 
-        // function sendAssistance() {
-        //   console.log(checkbox.checked);
-        //   selectConfirmationContainer.style.display = "none";
-        //   subtitle.style.display = "none";
-        //   let confirmacion = "";
-        //   if (checkbox.checked) {
-        //     confirmationContainer.style.display = "";
-        //     rejectionContainer.style.display = "none";
-        //     confirmacion = "confirmada";
-        //   } else {
-        //     confirmationContainer.style.display = "none";
-        //     rejectionContainer.style.display = "";
-        //     confirmacion = "no vendra";
-        //   }
-        //   const queryString = window.location.search;
-        //   const urlParams = new URLSearchParams(queryString);
-        //   const id = urlParams.get("id");
-        //   console.log(id);
-        //   let _datos = {
-        //     id: id,
-        //     confirmacion: confirmacion,
-        //   };
+        function sendAssistance() {
+          console.log(checkbox.checked);
+          selectConfirmationContainer.style.display = "none";
+          subtitle.style.display = "none";
+          let confirmacion = "";
+          if (checkbox.checked) {
+            confirmationContainer.style.display = "";
+            rejectionContainer.style.display = "none";
+            confirmacion = "confirmada";
+          } else {
+            confirmationContainer.style.display = "none";
+            rejectionContainer.style.display = "";
+            confirmacion = "no vendra";
+          }
+          const queryString = window.location.search;
+          const urlParams = new URLSearchParams(queryString);
+          const id = urlParams.get("id");
+          console.log(id);
+          let _datos = {
+            id: id,
+            confirmacion: confirmacion,
+          };
 
-        //   fetch(
-        //     "http://frida-isra-boda.us-east-1.elasticbeanstalk.com/guest/updateConfirmation",
-        //     {
-        //       method: "POST",
-        //       body: JSON.stringify(_datos),
-        //       headers: { "Content-type": "application/json; charset=UTF-8" },
-        //     }
-        //   )
-        //     .then((response) => response.json())
+          fetch(
+            "http://frida-isra-boda.us-east-1.elasticbeanstalk.com/guest/updateConfirmation",
+            {
+              method: "POST",
+              body: JSON.stringify(_datos),
+              headers: { "Content-type": "application/json; charset=UTF-8" },
+            }
+          )
+            .then((response) => response.json())
 
-        //     .then((json) => console.log(json));
-        // }
-        // function changeAssistance() {
-        //   selectConfirmationContainer.style.display = "";
-        //   subtitle.style.display = "";
-        //   confirmationContainer.style.display = "none";
-        //   rejectionContainer.style.display = "none";
-        // }
-        // function getGuestInfo() {
-        //   const queryString = window.location.search;
-        //   const urlParams = new URLSearchParams(queryString);
-        //   const id = urlParams.get("id");
-        //   console.log("id", id);
-        //   if (id === null || id === undefined || id.length != 32) {
-        //     const confirmationSection = document.getElementById(
-        //       "section-confirm-assistance"
-        //     );
-        //     confirmationSection.style.display = "none";
-        //     return;
-        //     // dont do fetch
-        //   }
-        //   fetch(
-        //     `http://frida-isra-boda.us-east-1.elasticbeanstalk.com/guest/${id}`,
-        //     {
-        //       method: "GET",
-        //       headers: {
-        //         Accept: "application/json",
-        //       },
-        //     }
-        //   )
-        //     .then((response) => response.json())
-        //     .then((guest) => {
-        //       const guestName = document.querySelector("[c-a-guest-name]");
-        //       const confirmationName =
-        //         document.getElementById("confirmationName");
-        //       const rejectcionName = document.getElementById("rejectcionName");
+            .then((json) => console.log(json));
+        }
+        function changeAssistance() {
+          selectConfirmationContainer.style.display = "";
+          subtitle.style.display = "";
+          confirmationContainer.style.display = "none";
+          rejectionContainer.style.display = "none";
+        }
+        function getGuestInfo() {
+          const queryString = window.location.search;
+          const urlParams = new URLSearchParams(queryString);
+          const id = urlParams.get("id");
+          console.log("id", id);
+          if (id === null || id === undefined || id.length != 32) {
+            const confirmationSection = document.getElementById(
+              "section-confirm-assistance"
+            );
+            confirmationSection.style.display = "none";
+            return;
+            // dont do fetch
+          }
+          fetch(
+            `http://frida-isra-boda.us-east-1.elasticbeanstalk.com/guest/${id}`,
+            {
+              method: "GET",
+              headers: {
+                Accept: "application/json",
+              },
+            }
+          )
+            .then((response) => response.json())
+            .then((guest) => {
+              const guestName = document.querySelector("[c-a-guest-name]");
+              const confirmationName =
+                document.getElementById("confirmationName");
+              const rejectcionName = document.getElementById("rejectcionName");
 
-        //       guestName.innerHTML = guest.nombre;
-        //       confirmationName.innerHTML = guest.nombre;
-        //       rejectcionName.innerHTML = guest.nombre;
+              guestName.innerHTML = guest.nombre;
+              confirmationName.innerHTML = guest.nombre;
+              rejectcionName.innerHTML = guest.nombre;
 
-        //       if (guest.confirmacion == "confirmada") {
-        //         subtitle.style.display = "none";
-        //         confirmationContainer.style.display = "";
-        //         rejectionContainer.style.display = "none";
-        //         selectConfirmationContainer.style.display = "none";
-        //       } else if (guest.confirmacion == "no vendra") {
-        //         subtitle.style.display = "none";
-        //         confirmationContainer.style.display = "none";
-        //         rejectionContainer.style.display = "";
-        //         selectConfirmationContainer.style.display = "none";
-        //       } else {
-        //         // "no revisada"
-        //         console.log("no revisada");
-        //         confirmationContainer.style.display = "none";
-        //         rejectionContainer.style.display = "none";
-        //         selectConfirmationContainer.style.display = "";
-        //       }
-        //     });
-        // }
-        // getGuestInfo();
+              if (guest.confirmacion == "confirmada") {
+                subtitle.style.display = "none";
+                confirmationContainer.style.display = "";
+                rejectionContainer.style.display = "none";
+                selectConfirmationContainer.style.display = "none";
+              } else if (guest.confirmacion == "no vendra") {
+                subtitle.style.display = "none";
+                confirmationContainer.style.display = "none";
+                rejectionContainer.style.display = "";
+                selectConfirmationContainer.style.display = "none";
+              } else {
+                // "no revisada"
+                console.log("no revisada");
+                confirmationContainer.style.display = "none";
+                rejectionContainer.style.display = "none";
+                selectConfirmationContainer.style.display = "";
+              }
+            });
+        }
+        getGuestInfo();
       </script>
 
       <!-- Contador -->
