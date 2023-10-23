@@ -198,14 +198,11 @@
             confirmacion: confirmacion,
           };
 
-          fetch(
-            "https://frida-isra-boda.us-east-1.elasticbeanstalk.com/guest/updateConfirmation",
-            {
-              method: "POST",
-              body: JSON.stringify(_datos),
-              headers: { "Content-type": "application/json; charset=UTF-8" },
-            }
-          )
+          fetch("https://www.frida-isra-boda.com/guest/updateConfirmation", {
+            method: "POST",
+            body: JSON.stringify(_datos),
+            headers: { "Content-type": "application/json; charset=UTF-8" },
+          })
             .then((response) => response.json())
 
             .then((json) => console.log(json));
@@ -229,15 +226,12 @@
             return;
             // dont do fetch
           }
-          fetch(
-            `https://frida-isra-boda.us-east-1.elasticbeanstalk.com/guest/${id}`,
-            {
-              method: "GET",
-              headers: {
-                Accept: "application/json",
-              },
-            }
-          )
+          fetch(`https://www.frida-isra-boda.com/guest/${id}`, {
+            method: "GET",
+            headers: {
+              Accept: "application/json",
+            },
+          })
             .then((response) => response.json())
             .then((guest) => {
               const guestName = document.querySelector("[c-a-guest-name]");
