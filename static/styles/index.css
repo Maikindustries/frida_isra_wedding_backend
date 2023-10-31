@@ -17,10 +17,10 @@ body {
   overflow-x: hidden;
 }
 body {
-  font-family: "Cormorant Garamond", serif;
   font-family: "Playfair Display", serif;
   font-family: "Poppins", sans-serif;
   font-family: "Rufina", serif;
+  font-family: "Cormorant Garamond", serif;
 }
 :root {
   --main-bg-color: #eee4db;
@@ -74,7 +74,8 @@ p {
   justify-content: center;
 }
 .hero-text-container h2 {
-  letter-spacing: 8px;
+  letter-spacing: 7px;
+  font-size: 2rem;
   margin-bottom: 2rem;
 }
 .hero-text-container h1 {
@@ -126,6 +127,7 @@ p {
   font-weight: 700;
 }
 .about-us-text-container p {
+  font-size: 2rem;
   line-height: 1.6;
 }
 /* .about-us-text-container img {
@@ -146,6 +148,9 @@ p {
   align-items: center;
   justify-content: center;
 }
+.c-a-select-checkbox-container p {
+  font-size: 2rem;
+}
 .c-a-select-checkbox-container input:before {
   content: "";
   padding: calc(var(--s) / 10);
@@ -164,7 +169,7 @@ p {
       0.25s 0.1s;
 }
 .c-a-select-checkbox-container input:checked {
-  background-color: #85ff7a;
+  background-color: #9cd349;
 }
 .c-a-select-checkbox-container input:checked:before {
   padding: calc(var(--s) / 10 + 0.05px) calc(var(--s) / 10);
@@ -197,24 +202,35 @@ p {
 }
 
 /* Countdown */
-.countdown {
+.countdown-section {
   background-color: var(--main-bg-color);
 }
+.countdown-line {
+  width: 20rem;
+  transform: rotate(180deg);
+  filter: sepia(80%);
+  margin-top: 0.5rem;
+}
 .countdown--date {
-  /* margin-top: 2rem; */
+  margin-top: 2rem;
   font-size: 3.6rem;
+  font-weight: 400;
   text-transform: uppercase;
+  /* font-family: "Cormorant Garamond", serif;
+  font-family: "Rufina", serif;
+  font-family: "Playfair Display", serif; */
+  font-family: "Poppins", sans-serif;
 }
 .countdown-clock--container {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 6rem;
-  margin-top: 2rem;
+  gap: 1rem;
+  /* margin-top: 1rem; */
 }
 .countdown-clock--item--border {
-  border: 1px solid #dcccb9;
   border: 1px solid #daa520;
+  border: 1px solid #dcccb9;
   padding: 0.4rem;
   /* border-radius: 13px; */
 }
@@ -224,10 +240,10 @@ p {
   justify-content: center;
   align-items: center;
 
-  width: 16rem;
-  height: 12rem;
-  border: 1px solid #dcccb9;
+  width: 9rem;
+  height: 9rem;
   border: 1px solid #daa520;
+  border: 1px solid #dcccb9;
   /* border-radius: 13px; */
 }
 .countdown-clock--item--date {
@@ -236,6 +252,63 @@ p {
 
 .countdown-clock--item p {
   font-size: 1.8rem;
+}
+
+/* Countdown image */
+.countdown-image-section {
+  background-color: var(--main-bg-color);
+}
+.countdown-image-section .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.c-i-container {
+  position: relative;
+}
+.c-i-image {
+  height: 70rem;
+  /* Pner media query de height en este */
+  /* width: 100%; */
+  object-fit: cover;
+  /* border-radius: 17px; */
+}
+.c-i--title {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 18%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background-color: #00000025;
+}
+.ci--date {
+  background-color: #00000025;
+  position: absolute;
+  width: 100%;
+  bottom: 20%;
+  color: white;
+  text-align: center;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  font-size: 3.6rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+}
+
+.c-i-container .countdown-clock--container {
+  position: absolute;
+  width: 100%;
+  bottom: 0%;
+  color: white;
+  transform: translate(-50%, -50%);
+  /* text-align: center; */
+  left: 50%;
+  background-color: #00000025;
 }
 
 /* Linear gallery vertical*/
@@ -260,15 +333,16 @@ p {
 .location-section {
   background-color: var(--secondary-bg-color);
   background-color: var(--main-bg-color);
-  font-family: "Playfair Display", serif;
+  /* font-family: "Playfair Display", serif;
   font-family: "Cormorant Garamond", serif;
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", sans-serif; */
 }
 .location-info {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  font-family: "Poppins", sans-serif;
 }
 .location-info-container {
   width: 90%;
@@ -346,6 +420,7 @@ p {
   border: none;
   color: white;
   opacity: 0.9;
+  font-family: "Poppins", sans-serif;
 }
 .c-a-button button {
   width: 30rem;
@@ -362,6 +437,11 @@ p {
   align-items: center;
   justify-content: center;
 }
+.c-a-confirmation-container p,
+.c-a-rejection-container p {
+  font-size: 2rem;
+}
+
 /* Complete gallery */
 .complete-gallery-section {
   background-color: var(--main-bg-color);
@@ -449,11 +529,6 @@ p {
   background-color: var(--secondary-bg-color);
   background-color: var(--main-bg-color);
 }
-.codigo-de-vestimenta--container {
-  max-width: 130rem;
-  width: 130rem;
-  padding: 0 3.2rem 0 3.2rem;
-}
 .vestimenta-container {
   width: 100%;
   display: flex;
@@ -480,7 +555,7 @@ p {
 }
 .vestimenta-img--subtitle {
   margin-top: 1rem;
-  font-size: 1.8rem;
+  font-size: 2rem;
 }
 
 /* Hashtag */
@@ -501,6 +576,7 @@ p {
   padding: 16rem 0 16rem 0;
   background-color: var(--medium-color);
   background-color: var(--secondary-bg-color);
+  font-family: "Playfair Display", serif;
 }
 .phrase-quote-icon {
   text-align: center;
@@ -515,7 +591,7 @@ p {
 }
 .phrase-verse {
   margin-top: 2rem;
-  font-size: 2rem;
+  font-size: 2.4rem;
   text-align: center;
 }
 
@@ -528,6 +604,7 @@ p {
 }
 .title-container {
   display: flex;
+  align-items: center;
   flex-direction: column;
   gap: 2rem;
   padding: 3rem 2rem 3rem 2rem;
@@ -536,10 +613,14 @@ p {
 .title--text {
   font-size: 4rem;
   text-transform: uppercase;
+  font-family: "Rufina", serif;
 }
 .subtitle--text {
   font-size: 2.4rem;
-  font-family: "Cormorant Garamond", serif;
+  /* font-family: "Cormorant Garamond", serif; */
+  font-family: "Playfair Display", serif;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
 }
 .container {
   max-width: 120rem;

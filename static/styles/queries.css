@@ -27,7 +27,7 @@ Instead, 1 rem = 1em = 16px*/
     font-size: 56.25%;
   }
   .countdown-clock--container {
-    gap: 4rem;
+    /* gap: 4rem; */
   }
   .location-img {
     width: 50%;
@@ -120,6 +120,9 @@ Instead, 1 rem = 1em = 16px*/
   .section-phrase {
     padding: 8rem 0 8rem 0;
   }
+  .section {
+    padding: 2.4rem 0 4.8rem 0;
+  }
 }
 
 /*****************************/
@@ -151,10 +154,10 @@ Instead, 1 rem = 1em = 16px*/
     gap: 2rem;
   }
   .countdown-clock--container {
-    gap: 3rem;
+    /* gap: 3rem; */
   }
   .countdown-clock--item {
-    width: 14rem;
+    /* width: 14rem; */
   }
   .location-info-container {
     flex-direction: column;
@@ -167,7 +170,7 @@ Instead, 1 rem = 1em = 16px*/
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 3rem;
+    gap: 1.5rem;
     width: 80%;
   }
   .location-info--address {
@@ -205,6 +208,9 @@ Instead, 1 rem = 1em = 16px*/
     width: 30rem;
     height: 30rem;
   }
+  .phrase-text {
+    line-height: 1;
+  }
 }
 
 /*****************************/
@@ -220,16 +226,23 @@ Instead, 1 rem = 1em = 16px*/
     width: 100%;
   }
   .countdown-clock--container {
-    gap: 2rem;
+    /* gap: 2rem; */
   }
   .countdown-clock--item {
-    width: 12rem;
+    width: 10rem;
+    height: 10rem;
   }
   .countdown-clock--item--date {
-    font-size: 3rem;
+    /* font-size: 4rem; */
   }
   .countdown-clock--item p {
-    font-size: 1.6rem;
+    /* font-size: 2rem; */
+  }
+  .c-i-image {
+    height: unset;
+    /* Pner media query de height en este */
+    width: 100%;
+    object-fit: cover;
   }
   .location-map-iframe {
     width: 100%;
@@ -250,11 +263,11 @@ Instead, 1 rem = 1em = 16px*/
 
 @media (max-width: 31.875em) {
   .complete-gallery-image-container {
-    width: 6rem;
+    /* width: 6rem; */
   }
   .complete-gallery-image-container--item {
-    width: 20rem;
-    height: 20rem;
+    width: 23rem;
+    height: 23rem;
   }
 }
 
@@ -264,17 +277,17 @@ Instead, 1 rem = 1em = 16px*/
 
 @media (max-width: 30em) {
   .countdown-clock--container {
-    gap: 1rem;
+    /* gap: 1rem; */
   }
   .countdown-clock--item {
-    width: 10rem;
-    height: 10rem;
+    width: 9rem;
+    height: 9rem;
   }
   .countdown-clock--item--date {
-    font-size: 2.4rem;
+    /* font-size: 3rem; */
   }
   .countdown-clock--item p {
-    font-size: 1.4rem;
+    /* font-size: 1.8rem; */
   }
   .location-map-button button {
     /* width: 80%; */
@@ -287,8 +300,8 @@ Instead, 1 rem = 1em = 16px*/
 
 @media (max-width: 25.875em) {
   .countdown-clock--item {
-    width: 8rem;
-    height: 8rem;
+    width: 7rem;
+    height: 7rem;
   }
   .location-map-button button {
     /* width: 100%; */
@@ -298,6 +311,10 @@ Instead, 1 rem = 1em = 16px*/
   .phrase-text {
     font-size: 2.1rem;
   }
+  .complete-gallery-image-container--item {
+    width: 20rem;
+    height: 20rem;
+  }
 }
 
 /*****************************/
@@ -305,6 +322,10 @@ Instead, 1 rem = 1em = 16px*/
 /*****************************/
 
 @media (max-width: 23.125em) {
+  .countdown-clock--item {
+    width: 6.5rem;
+    height: 6.5rem;
+  }
   .complete-gallery-image-container--item {
     width: 16rem;
     height: 16rem;

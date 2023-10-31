@@ -10,7 +10,8 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
-    <!-- <link rel="stylesheet" href="styles.css" /> -->
+    <link rel="stylesheet" href="../static/styles/index.css" />
+    <!-- comentar el codigo de arriba -->
     <link
       rel="stylesheet"
       href="{{ url_for('static', filename='styles/index.css') }}"
@@ -19,8 +20,10 @@
       rel="stylesheet"
       href="{{ url_for('static', filename='styles/queries.css') }}"
     />
-    <!-- <link rel="stylesheet" href="queries.css" /> -->
-    <!-- <script src="index.js"></script> -->
+    <link rel="stylesheet" href="../static/styles/queries.css" />
+    <!-- comentar el codigo de arriba -->
+    <script src="../static/logic/index.js"></script>
+    <!-- comentar el codigo de arriba -->
     <script src="{{ url_for('static', filename='logic/index.js') }}"></script>
     <script
       src="https://kit.fontawesome.com/bbd366d908.js"
@@ -266,10 +269,14 @@
       </script>
 
       <!-- Contador -->
-      <section class="section countdown">
+      <!-- <section class="section countdown-section">
         <div class="container">
           <div class="title-container">
             <h2 class="title--text">Te esperamos en nuestra boda</h2>
+            <img
+              src="../static/images/details/linea_separadora_1.png"
+              class="countdown-line"
+            />
             <h2 class="countdown--date">21 de abril 2023</h2>
           </div>
           <div class="countdown-clock--container">
@@ -299,7 +306,57 @@
             </div>
           </div>
         </div>
+      </section> -->
+
+      <!-- Contador con imagen -->
+      <section class="section countdown-image-section">
+        <div class="container">
+          <div class="title-container">
+            <h2 class="title--text">Te esperamos en nuestra boda</h2>
+            <!-- <img
+              src="../static/images/details/linea_separadora_1.png"
+              class="countdown-line"
+            />
+            <h2 class="countdown--date">21 de abril 2023</h2> -->
+          </div>
+          <div class="c-i-container">
+            <img
+              class="c-i-image"
+              src="../static/images/vertical/photo_19.jpg"
+            />
+            <!-- <h2 class="title--text c-i--title">Te esperamos en nuestra boda</h2> -->
+            <h2 class="ci--date">21 de abril 2023</h2>
+
+            <div class="countdown-clock--container">
+              <div class="countdown-clock--item--border">
+                <div class="countdown-clock--item">
+                  <h2 id="days" class="countdown-clock--item--date">00</h2>
+                  <p>Días</p>
+                </div>
+              </div>
+              <div class="countdown-clock--item--border">
+                <div class="countdown-clock--item">
+                  <h2 id="hours" class="countdown-clock--item--date">00</h2>
+                  <p>Horas</p>
+                </div>
+              </div>
+              <div class="countdown-clock--item--border">
+                <div class="countdown-clock--item">
+                  <h2 id="minutes" class="countdown-clock--item--date">00</h2>
+                  <p>Minutos</p>
+                </div>
+              </div>
+              <div class="countdown-clock--item--border">
+                <div class="countdown-clock--item">
+                  <h2 id="seconds" class="countdown-clock--item--date">00</h2>
+                  <p>Segundos</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
+
       <!-- Galeria lineal vertical -->
       <section
         id="gallery-section-vertical"
@@ -388,7 +445,7 @@
             </a>
             <a
               class="mesa-de-regalos-item liverpool"
-              href="http://www.liverpool.com.mx/"
+              href="https://mesaderegalos.liverpool.mx/LP/51294149/Israel_-Frida_Daniela"
               target="_blank"
             >
               <div class="mesa-de-regalos-item--img-container">
@@ -404,7 +461,7 @@
             </a>
             <a
               class="mesa-de-regalos-item banorte"
-              href="http://www.banorte.com/"
+              href="https://www.banorte.com/"
               target="_blank"
             >
               <div class="mesa-de-regalos-item--img-container">
@@ -477,6 +534,20 @@
                   alt="photo"
                 />
               </div>
+              <div class="complete-gallery-image-container--item">
+                <img
+                  src="../static/images/horizontal/photo_9.jpg"
+                  class="complete-gallery-image-container--img"
+                  alt="photo"
+                />
+              </div>
+              <div class="complete-gallery-image-container--item">
+                <img
+                  src="../static/images/horizontal/photo_8.jpg"
+                  class="complete-gallery-image-container--img"
+                  alt="photo"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -533,7 +604,7 @@
       <!-- Frase -->
       <section class="section-phrase">
         <div class="container">
-          <i class="fa-solid fa-quote-left phrase-quote-icon"></i>
+          <!-- <i class="fa-solid fa-quote-left phrase-quote-icon"></i> -->
           <p class="phrase-text">
             Mejores son dos que uno; porque tienen mejor paga de su trabajo.
             Porque si cayeren, el uno levantará a su compañero; pero ¡ay del
