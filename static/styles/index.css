@@ -265,7 +265,9 @@ p {
   appearance: none;
 }
 .c-a-confirmation-container {
-  /* display: none; */
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 2rem;
 }
 .c-a-rejection-container {
   /* display: none; */
