@@ -362,7 +362,7 @@ Instead, 1 rem = 1em = 16px*/
 
 @media (max-width: 25.875em) {
   .about-us-small-section {
-    padding: 9.6rem 0 16rem 0 !important;
+    padding: 9.6rem 0 19rem 0 !important;
   }
   .about-us-small-container {
     gap: 21rem;
