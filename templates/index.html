@@ -88,15 +88,145 @@
           </div>
         </div>
       </section>
+
+      <!-- About us 2 -->
+      <section class="section about-us-section2" id="about-us-section2">
+        <div class="container">
+          <div class="about-us-grid">
+            <div
+              class="about-us-text-container2 about-us-text-container2--isra"
+            >
+              <h2>Israel</h2>
+              <p>
+                Agradezco a Dios por la increíble bendición de conocerte y que
+                nos permita unir nuestras vidas en matrimonio. Mujer Virtuosa,
+                yo ya te hallé, eres el amor de mi vida. Gracias por ser mi
+                compañera perfecta. Me has hecho el hombre más feliz del mundo.
+              </p>
+            </div>
+            <img
+              src="../static/images/vertical/photo_13.jpg"
+              class="about-us-img2 about-us-img2--isra"
+            />
+            <img
+              src="../static/images/vertical/photo_17.jpg"
+              class="about-us-img2 about-us-img2--frida"
+            />
+            <div
+              class="about-us-text-container2 about-us-text-container2--frida"
+            >
+              <h2>Frida</h2>
+              <p>
+                No hay manera de describir la magia que hay entre nosotros.
+                Agradezco en gran manera tu vida y que Dios te haya puesto en mi
+                camino. Gracias por amarme tanto y por ser el hombre esforzado y
+                valiente que eres. Eres mi complemento. Te amo.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About us 2 mobile 800px -->
+      <section
+        class="section about-us-small-section"
+        id="about-us-small-section"
+      >
+        <div class="container">
+          <div class="about-us-small-container">
+            <div class="about-us-small--item">
+              <img
+                src="../static/images/vertical/photo_13.jpg"
+                class="about-us-img2 about-us-img2--isra"
+              />
+              <div
+                class="about-us-small-text-container about-us-small-text-container--isra"
+              >
+                <h2>Israel</h2>
+                <p>
+                  Agradezco a Dios por la increíble bendición de conocerte y que
+                  nos permita unir nuestras vidas en matrimonio. Mujer Virtuosa,
+                  yo ya te hallé, eres el amor de mi vida. Gracias por ser mi
+                  compañera perfecta. Me has hecho el hombre más feliz del
+                  mundo.
+                </p>
+              </div>
+            </div>
+            <div class="about-us-small--item">
+              <img
+                src="../static/images/vertical/photo_17.jpg"
+                class="about-us-img2 about-us-img2--frida"
+              />
+              <div
+                class="about-us-small-text-container about-us-small-text-container--frida"
+              >
+                <h2>Frida</h2>
+                <p>
+                  No hay manera de describir la magia que hay entre nosotros.
+                  Agradezco en gran manera tu vida y que Dios te haya puesto en
+                  mi camino. Gracias por amarme tanto y por ser el hombre
+                  esforzado y valiente que eres. Eres mi complemento. Te amo.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <script>
+        // function myFunction(x) {
+        //   let gallerySectionVertical = document.getElementById(
+        //     "gallery-section-vertical"
+        //   );
+        //   let gallerySectionHorizontal = document.getElementById(
+        //     "gallery-section-horizontal"
+        //   );
+        //   let completeGallerySection = document.getElementById(
+        //     "complete-gallery-section"
+        //   );
+        //   if (x.matches) {
+        //     // If media query matches
+        //     gallerySectionVertical.style.display = "none";
+        //     gallerySectionHorizontal.style.display = "none";
+        //     completeGallerySection.style.display = "";
+        //   } else {
+        //     gallerySectionVertical.style.display = "";
+        //     gallerySectionHorizontal.style.display = "";
+        //     completeGallerySection.style.display = "none";
+        //   }
+        // }
+        // var x = window.matchMedia("(max-width: 700px)");
+        // x.addListener(myFunction);
+        // myFunction(x);
+
+        function myFunction2(x) {
+          const aboutUsSmallSection = document.getElementById(
+            "about-us-small-section"
+          );
+          const aboutUsSection2 = document.getElementById("about-us-section2");
+          console.log(aboutUsSmallSection);
+          console.log(aboutUsSection2);
+
+          if (x.matches) {
+            // If media query matches
+            aboutUsSection2.style.display = "none";
+            aboutUsSmallSection.style.display = "";
+          } else {
+            aboutUsSection2.style.display = "";
+            aboutUsSmallSection.style.display = "none";
+          }
+        }
+        var x = window.matchMedia("(max-width: 800px)");
+        x.addListener(myFunction2);
+        myFunction2(x);
+      </script>
       <!-- Sobre nosotros -->
-      <section class="section about-us-section">
+      <!-- <section class="section about-us-section">
         <div class="container about-us-section-container">
           <img
             src="../static/images/vertical/photo_19.jpg"
             class="about-us-img"
           />
           <div class="about-us-text-container">
-            <!-- <div> -->
             <h2>¡Nos casamos!</h2>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio,
@@ -104,11 +234,10 @@
               molestias excepturi, dolorem nam odit quia, quod corporis corrupti
               omnis tempora consequuntur.
             </p>
-            <!-- </div> -->
-            <!-- <img src="../static/images/horizontal/photo_8.jpg" /> -->
           </div>
         </div>
-      </section>
+      </section> -->
+
       <!-- Confirmar asistencia -->
       <section
         id="section-confirm-assistance"
@@ -363,12 +492,42 @@
         gallery-section-vertical
         class="gallery-section"
       >
-        <img src="../static/images/vertical/photo_12.jpg" class="gallery-img" />
-        <img src="../static/images/vertical/photo_13.jpg" class="gallery-img" />
-        <img src="../static/images/vertical/photo_19.jpg" class="gallery-img" />
-        <img src="../static/images/vertical/photo_14.jpg" class="gallery-img" />
-        <img src="../static/images/vertical/photo_15.jpg" class="gallery-img" />
-        <img src="../static/images/vertical/photo_16.jpg" class="gallery-img" />
+        <div class="gallery-image-container--item">
+          <img
+            src="../static/images/vertical/photo_12.jpg"
+            class="gallery-img"
+          />
+        </div>
+        <div class="gallery-image-container--item">
+          <img
+            src="../static/images/vertical/photo_13.jpg"
+            class="gallery-img"
+          />
+        </div>
+        <div class="gallery-image-container--item">
+          <img
+            src="../static/images/vertical/photo_19.jpg"
+            class="gallery-img"
+          />
+        </div>
+        <div class="gallery-image-container--item">
+          <img
+            src="../static/images/vertical/photo_14.jpg"
+            class="gallery-img"
+          />
+        </div>
+        <div class="gallery-image-container--item">
+          <img
+            src="../static/images/vertical/photo_15.jpg"
+            class="gallery-img"
+          />
+        </div>
+        <div class="gallery-image-container--item">
+          <img
+            src="../static/images/vertical/photo_16.jpg"
+            class="gallery-img"
+          />
+        </div>
       </section>
 
       <!-- Ubicacion -->
@@ -430,20 +589,6 @@
           </div>
           <div class="mesa-de-regalos--opciones">
             <a
-              class="mesa-de-regalos-item amazon"
-              href="https://www.amazon.com.mx/wedding/share/FriIsra21042024"
-              target="_blank"
-            >
-              <div class="mesa-de-regalos-item--img-container">
-                <img
-                  src="../static/images/amazon_logo.png"
-                  class="mesa-de-regalos-item--img"
-                  alt="amazon"
-                />
-                <p style="font-size: 3rem; color: blue">Ver el carrito</p>
-              </div>
-            </a>
-            <a
               class="mesa-de-regalos-item liverpool"
               href="https://mesaderegalos.liverpool.mx/LP/51294149/Israel_-Frida_Daniela"
               target="_blank"
@@ -454,30 +599,89 @@
                   class="mesa-de-regalos-item--img"
                   alt="liverpool"
                 />
-                <p style="font-size: 3rem; color: blue">
-                  Ver la mesa de regalos
-                </p>
+                <button class="mesa-de-regalos-item--text">
+                  Ir a la tienda
+                </button>
               </div>
             </a>
             <a
-              class="mesa-de-regalos-item banorte"
-              href="https://www.banorte.com/"
+              class="mesa-de-regalos-item amazon"
+              href="https://www.amazon.com.mx/wedding/share/FriIsra21042024"
               target="_blank"
             >
               <div class="mesa-de-regalos-item--img-container">
                 <img
-                  src="../static/images/banorte_logo.png"
+                  src="../static/images/sears_logo.png"
                   class="mesa-de-regalos-item--img"
+                  alt="amazon"
+                />
+                <button class="mesa-de-regalos-item--text">
+                  Ir a la tienda
+                </button>
+              </div>
+            </a>
+            <a
+              class="mesa-de-regalos-item liverpool"
+              href="https://mesaderegalos.liverpool.mx/LP/51294149/Israel_-Frida_Daniela"
+              target="_blank"
+            >
+              <div class="mesa-de-regalos-item--img-container">
+                <img
+                  src="../static/images/palacio_logo.png"
+                  class="mesa-de-regalos-item--img palacio--img"
+                  alt="liverpool"
+                />
+                <button class="mesa-de-regalos-item--text">
+                  Ir a la tienda
+                </button>
+              </div>
+            </a>
+            <a
+              class="mesa-de-regalos-item amazon"
+              href="https://www.amazon.com.mx/wedding/share/FriIsra21042024"
+              target="_blank"
+            >
+              <div class="mesa-de-regalos-item--img-container">
+                <img
+                  src="../static/images/amazon_logo.png"
+                  class="mesa-de-regalos-item--img"
+                  alt="amazon"
+                />
+                <button class="mesa-de-regalos-item--text">
+                  Ir a la tienda
+                </button>
+              </div>
+            </a>
+            <a class="mesa-de-regalos-item banorte">
+              <div class="mesa-de-regalos-item--img-container">
+                <img
+                  src="../static/images/banorte_logo.png"
+                  class="mesa-de-regalos-item--img banorte--img"
                   alt="banorte"
                 />
-                <div>
-                  <p style="font-size: 3rem">CLABE</p>
-                  <p style="font-size: 3rem">24323234468411</p>
-                </div>
+                <!-- <p>24323234468411</p> -->
+                <button
+                  onclick="copyCLABE()"
+                  class="mesa-de-regalos-item--text"
+                >
+                  Copiar cuenta CLABE
+                </button>
               </div>
             </a>
           </div>
         </div>
+        <script>
+          async function copyCLABE() {
+            try {
+              await navigator.clipboard.writeText("24323234468411");
+              console.log("Content copied to clipboard");
+              /* Resolved - text copied to clipboard successfully */
+            } catch (err) {
+              console.error("Failed to copy: ", err);
+              /* Rejected - text failed to copy to the clipboard */
+            }
+          }
+        </script>
       </section>
 
       <!-- Galeria completa -->
@@ -555,22 +759,30 @@
 
       <!-- Galeria lineal horizontal -->
       <section class="gallery-section" id="gallery-section-horizontal">
-        <img
-          src="../static/images/horizontal/photo_6.jpg"
-          class="gallery-img--horizontal"
-        />
-        <img
-          src="../static/images/horizontal/photo_4.jpg"
-          class="gallery-img--horizontal"
-        />
-        <img
-          src="../static/images/horizontal/photo_7.jpg"
-          class="gallery-img--horizontal"
-        />
-        <img
-          src="../static/images/horizontal/photo_8.jpg"
-          class="gallery-img--horizontal"
-        />
+        <div class="gallery-img--horizontal-conatiner--item">
+          <img
+            src="../static/images/horizontal/photo_6.jpg"
+            class="gallery-img--horizontal"
+          />
+        </div>
+        <div class="gallery-img--horizontal-conatiner--item">
+          <img
+            src="../static/images/horizontal/photo_4.jpg"
+            class="gallery-img--horizontal"
+          />
+        </div>
+        <div class="gallery-img--horizontal-conatiner--item">
+          <img
+            src="../static/images/horizontal/photo_7.jpg"
+            class="gallery-img--horizontal"
+          />
+        </div>
+        <div class="gallery-img--horizontal-conatiner--item">
+          <img
+            src="../static/images/horizontal/photo_8.jpg"
+            class="gallery-img--horizontal"
+          />
+        </div>
       </section>
       <!-- Codigo de vestimenta -->
       <section class="section codigo-de-vestimenta">
@@ -620,6 +832,18 @@
           </h2> -->
         </div>
       </section>
+      <section class="thanks-section">
+        <div class="container">
+          <div class="thanks-text-container">
+            <h2>Frida & Israel</h2>
+            <!-- <img
+              src="../static/images/details/linea_separadora_1.png"
+              class="countdown-line"
+            /> -->
+            <p>Gracias por ser parte del mejor día de nuestras vidas</p>
+          </div>
+        </div>
+      </section>
       <!-- Hashtag -->
       <!-- <section class="section hashtag-section">
         <div class="container">
@@ -629,12 +853,16 @@
           <p class="hashtag-hashtag">#FRIDA_ISRA</p>
         </div>
       </section> -->
-      <!-- Sobre nosotros -->
-      <section>
-        <div>
-          <div></div>
+
+      <!-- Thanks -->
+      <!-- <section class="section thanks-phrase">
+        <div class="container">
+          <div>
+            <h2>Frida & Israel</h2>
+            <p></p>
+          </div>
         </div>
-      </section>
+      </section> -->
     </main>
     <script>
       function myFunction(x) {

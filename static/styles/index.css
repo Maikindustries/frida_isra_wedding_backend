@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;700&family=Playfair+Display:wght@400;500;800&family=Poppins:wght@400;500&family=Rufina:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500&family=Cormorant+Garamond:wght@400;500;700&family=Playfair+Display:wght@400;500;800&family=Poppins:wght@400;500&family=Rufina:wght@400;700&display=swap");
 * {
   box-sizing: border-box;
   padding: 0;
@@ -135,6 +135,76 @@ p {
   height: 25rem;
   object-fit: cover;
 } */
+
+/* About us 2 */
+.about-us-section2 {
+  background-color: var(--main-bg-color);
+  padding-top: 9.6rem !important;
+}
+.about-us-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* column-gap: 1rem; */
+  justify-content: center;
+  align-items: center;
+}
+.about-us-text-container2 {
+  background-color: var(--main-bg-color);
+  padding: 1rem 2rem;
+}
+.about-us-text-container2 h2 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+.about-us-text-container2 p {
+  font-size: 1.5rem;
+  font-family: "Bodoni Moda", serif;
+  line-height: 2em;
+}
+.about-us-text-container2--isra h2,
+.about-us-text-container2--isra p {
+  text-align: end;
+}
+.about-us-text-container2--frida {
+}
+.about-us-img2 {
+  width: 100%;
+  /* height: 50%;
+  object-fit: cover; */
+}
+
+/* About us 2 small */
+.about-us-small-section {
+  background-color: var(--main-bg-color);
+  /* padding-top: 9.6rem ; */
+  padding: 9.6rem 0 12rem 0 !important;
+}
+.about-us-small-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12rem;
+}
+.about-us-small--item {
+  position: relative;
+  text-align: center;
+}
+.about-us-small--item h2 {
+  font-size: 3.6rem;
+  font-weight: 700;
+}
+.about-us-small--item p {
+  font-size: 2rem;
+}
+.about-us-small--item .about-us-small-text-container {
+  position: absolute;
+  bottom: -9rem;
+  right: 1rem;
+  left: 1rem;
+  background-color: #fff;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 1rem 2rem;
+}
 
 /* Confirm assistance */
 .section-confirm-assistance {
@@ -315,18 +385,43 @@ p {
 .gallery-section {
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 4rem 1rem;
   background-color: var(--main-bg-color);
+  overflow: hidden;
+  gap: 0.5rem;
+}
+.gallery-image-container--item {
+  align-self: center;
+  justify-self: center;
+  padding: 1rem;
+  overflow: hidden;
+  width: 15%;
+  width: 16.666%;
 }
 .gallery-img {
-  padding: 1rem;
-  width: 16.666%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.5s ease-in-out;
+}
+.gallery-img:hover {
+  transform: scale(1.2);
 }
 
 /* Linear gallery horizontal */
-.gallery-img--horizontal {
+.gallery-img--horizontal-conatiner--item {
   padding: 1rem;
   width: 25%;
+  overflow: hidden;
+  height: auto;
+}
+.gallery-img--horizontal {
+  transition: all 0.5s ease-in-out;
+  width: 100%;
+}
+.gallery-img--horizontal:hover {
+  transform: scale(1.2);
 }
 
 /* Location */
@@ -425,7 +520,6 @@ p {
 .c-a-button button {
   width: 30rem;
 }
-
 .c-a-button button:hover,
 .location-map-button button:hover {
   opacity: 1;
@@ -476,11 +570,12 @@ p {
   background-color: var(--main-bg-color);
 }
 .mesa-de-regalos--opciones {
-  display: flex;
-  justify-content: space-evenly;
+  display: grid;
+  justify-content: space-around;
   align-items: center;
   gap: 2rem;
   margin-top: 8rem;
+  grid-template-columns: repeat(3, 1fr);
 }
 .mesa-de-regalos-item {
   align-self: center;
@@ -488,6 +583,7 @@ p {
   text-align: center;
   padding: 4rem 2rem;
   border-radius: 33px;
+  height: 30rem;
 }
 .mesa-de-regalos-item--img-container {
   display: flex;
@@ -495,9 +591,9 @@ p {
   justify-content: space-between;
   align-items: center;
   height: 20rem;
+  max-height: 20rem;
   color: #4a4645 !important;
 }
-
 .mesa-de-regalos-item--name {
   font-size: 5rem;
   letter-spacing: 1px;
@@ -506,6 +602,18 @@ p {
 
 .mesa-de-regalos-item--img {
   width: 30rem;
+}
+.mesa-de-regalos-item--text {
+  background-color: var(--main-bg-color);
+  border-radius: 17px;
+  border: 1px solid var(--dark-color);
+  padding: 1rem 2rem;
+  font-size: 3rem;
+  transition: all 0.2s ease-in;
+}
+.mesa-de-regalos-item--text:hover {
+  background-color: var(--dark-color);
+  color: #fff;
 }
 .amazon {
 }
@@ -518,10 +626,16 @@ p {
 .liverpool:active {
 }
 .banorte {
-  margin-top: 1.6rem;
 }
 .banorte:hover,
 .banorte:active {
+}
+
+.banorte--img {
+  margin-top: 1.2rem;
+}
+.palacio--img {
+  margin-top: -1rem;
 }
 
 /* Codigo de vestimenta */
@@ -593,6 +707,29 @@ p {
   margin-top: 2rem;
   font-size: 2.4rem;
   text-align: center;
+}
+
+/* Thanks */
+.thanks-section {
+  padding: 9.6rem 0 9.6rem 0;
+  background-color: var(--main-bg-color);
+}
+.thanks-text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.thanks-text-container h2 {
+  font-size: 4.8rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+.thanks-text-container p {
+  text-align: center;
+  font-size: 2.4rem;
+  padding: 0 5rem;
 }
 
 /* Component Style */
