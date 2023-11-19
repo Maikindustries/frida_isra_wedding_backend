@@ -27,37 +27,13 @@ app.static_folder = "static"
 
 
 # Pagina web invitado sin id
-# DELETE - Webpage
+# DELETE - Webpage # no borrar
 @app.route("/")
 def index():
     return render_template("index.html")
 
 
-# Pagina web invitado con id
-# @app.route("/<guest_id>", methods=["GET"])
-# def index_with_id(guest_id):
-#     print(guest_id)
-#     # MySql Database
-#     conn_factory = ConnectionFactory()
-#     conn, cursor = conn_factory.get_connection()
-#     cursor.execute("select * from invitados where id_invitado=%s", [guest_id])
-#     data = cursor.fetchone()
-#     conn.close()
-#     print(data)
-#     # {% if data_exists > 0 %}
-#     # <h2>ocy</h2>
-#     # <h2>{{data[1]}}</h2>
-#     # <h2>{{data[2]}}</h2>
-#     # <h2>{{data[3]}}</h2>
-#     # {% else %}
-#     # <!-- <h2>ono</h2> -->
-#     # {% endif %}
-#     if data is not None:
-#         return render_template("index_id.html", data=data, data_exists=True)
-#     #usuario no encontrado, checa bien el link que te mandaron
-#     return render_template("index_id.html", data_exists=False)
-
-# GET_INFO_BY_ID - BACKEND
+# GET_INFO_BY_ID - BACKEND # no borrar
 @app.route("/guest/updateConfirmation", methods=["POST"])
 def post_update_confirmation():
     response = request.json
@@ -74,7 +50,7 @@ def post_update_confirmation():
     conn.close()
     return {"Success": 201}
 
-# GET_INFO_BY_ID - BACKEND
+# GET_INFO_BY_ID - BACKEND # no borrar
 @app.route("/guest/<guest_id>", methods=["GET"])
 def get_info_by_id(guest_id):
     conn_factory = ConnectionFactory()
@@ -126,7 +102,7 @@ def get_info():
         conn.close()
     return invitado_dict
 
-# /ADMIN - App
+# /ADMIN - App # no borrar
 @app.route(ADMIN)
 def admin_index():
     if g.email:
@@ -134,7 +110,7 @@ def admin_index():
     return redirect(url_for("admin_login"))
 
 
-# LOGIN - App
+# LOGIN - App # no borrar
 @app.route(f"{ADMIN}/login", methods=["GET", "POST"])
 def admin_login():
     if g.email:
@@ -154,14 +130,14 @@ def admin_login():
     return render_template("admin_login.html")
 
 
-# INICIO - App
+# INICIO - App # no borrar
 @app.route(f"{ADMIN}/inicio", methods=["GET", "POST"])
 def admin_main():
     if g.email:
         return render_template("admin_inicio.html")
     return render_template("admin_login.html")
 
-# EXCEL - Webpage
+# EXCEL - Webpage # no borrar
 @app.route(f"{ADMIN}/excel", methods=["GET", "POST"])
 def read_process_excel():
     # Read the File using Flask request
@@ -186,7 +162,7 @@ def read_process_excel():
         conn.close()
     return redirect(url_for("admin_main"))
 
-# GET_USERS - BACKEND
+# GET_USERS - BACKEND # no borrar
 @app.route(f"{ADMIN}/get_users", methods=["GET", "POST"])
 def get_users():
     # MySql Database
@@ -212,7 +188,7 @@ def get_users():
     return data
 
 
-# DELETE - BACKEND
+# DELETE - BACKEND # no borrar
 @app.route(f"{ADMIN}/delete", methods=["GET", "POST"])
 def delete_user():
     conn_factory = ConnectionFactory()
@@ -229,7 +205,7 @@ def delete_user():
         return {"status": "ok"}
     return {"status": "fail"}
 
-# UPDATE - BACKEND
+# UPDATE - BACKEND # no borrar
 @app.route(f"{ADMIN}/update", methods=["GET", "POST"])
 def update_users():
     conn_factory = ConnectionFactory()
@@ -243,7 +219,7 @@ def update_users():
         return {"status": "ok"}
     return {"status": "fail"}
 
-# GET_NUMBERS - BACKEND
+# GET_NUMBERS - BACKEND # no borrar
 @app.route(f"{ADMIN}/get_numbers", methods=["GET", "POST"])
 def get_numbers():
     conn_factory = ConnectionFactory()
@@ -267,7 +243,7 @@ def get_numbers():
     print(data)
     return data
 
-# LOGOUT - App
+# LOGOUT - App # no borrar
 @app.route(f"{ADMIN}/logout")
 def admin_logout():
     session.pop("email", None)

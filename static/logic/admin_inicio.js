@@ -14,7 +14,7 @@ selectedExcel.addEventListener("change", function (event) {
 
 // Assitency numbers logic
 const getNumbers = () => {
-  fetch("http://192.168.1.85:5000/admin/get_numbers")
+  fetch("https://www.frida-isra-boda.com/admin/get_numbers")
     .then((res) => res.json())
     .then((data) => {
       const confirmedNum = document.querySelector("[confirmedNum]");
@@ -47,7 +47,7 @@ searchInput.addEventListener("input", (event) => {
   });
 });
 
-fetch("http://192.168.1.85:5000/admin/get_users")
+fetch("https://www.frida-isra-boda.com/admin/get_users")
   .then((res) => res.json())
   .then((data) => {
     persons = data.map((person, index) => {
@@ -124,7 +124,7 @@ fetch("http://192.168.1.85:5000/admin/get_users")
             data = {
               id_invitado: person.id_invitado,
             };
-            fetch("http://192.168.1.85:5000/admin/delete", {
+            fetch("https://www.frida-isra-boda.com/admin/delete", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
@@ -199,7 +199,7 @@ fetch("http://192.168.1.85:5000/admin/get_users")
           data = {
             updateSql: updateSql,
           };
-          fetch("http://192.168.1.85:5000/admin/update", {
+          fetch("https://www.frida-isra-boda.com/admin/update", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
