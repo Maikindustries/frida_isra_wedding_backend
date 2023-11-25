@@ -82,6 +82,9 @@ p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  font-family: "Bodoni Moda", serif;
+  font-weight: 700;
 }
 .hero-text-container h2 {
   letter-spacing: 7px;
@@ -154,21 +157,56 @@ p {
   background-color: var(--main-bg-color);
   padding-top: 9.6rem !important;
 }
-.about-us-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.5fr 1.5fr 1fr;
-  /* column-gap: 1rem; */
+.about-us3-flex {
+  display: flex;
   justify-content: center;
-  align-items: center;
+  gap: 0.5rem;
+  position: relative;
 }
+.about-us3-flex--ampersand {
+  width: 5%;
+  display: block;
+  position: absolute;
+  z-index: 100;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.about-us3-flex--ampersand::after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10rem;
+  height: 10rem;
+}
+
+.about-us3-flex--item {
+  position: relative;
+}
+.about-us3-flex--item .about-us-text-container2--isra {
+  position: absolute;
+  top: 80px;
+  left: -220px;
+}
+.about-us3-flex--item .about-us-text-container2--frida {
+  position: absolute;
+  top: 100px;
+  right: -220px;
+}
+
 .about-us-text-container2 {
-  background-color: var(--main-bg-color);
-  padding: 1rem 2rem;
+  width: 25rem;
+  background-color: #fff;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  box-shadow: #412e2a63 0px 60px 40px -7px;
+  padding: 3rem;
 }
 .about-us-text-container2 h2 {
   font-size: 3.2rem;
   font-weight: 700;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   font-family: "Frunchy", serif;
   letter-spacing: 4px;
 }
@@ -177,16 +215,8 @@ p {
   font-family: "Bodoni Moda", serif;
   line-height: 2em;
 }
-.about-us-text-container2--isra h2,
-.about-us-text-container2--isra p {
-  text-align: end;
-}
-.about-us-text-container2--frida {
-}
-.about-us-img2 {
-  width: 100%;
-  /* height: 50%;
-  object-fit: cover; */
+.about-us-img3 {
+  width: 40rem;
 }
 
 /* About us 2 small */
@@ -204,22 +234,29 @@ p {
   position: relative;
   text-align: center;
 }
+.about-us-img2 {
+  width: 100%;
+  /* height: 50%;
+  object-fit: cover; */
+}
 .about-us-small--item h2 {
   font-size: 3.6rem;
   font-weight: 700;
   font-family: "Frunchy", serif;
 }
 .about-us-small--item p {
+  text-align: left;
   font-size: 2rem;
 }
-.about-us-small--item .about-us-small-text-container {
+/* .about-us-small--item  */
+.about-us-small-text-container {
   position: absolute;
   bottom: -9rem;
   right: 1rem;
   left: 1rem;
   background-color: #fff;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  padding: 1rem 2rem;
+  padding: 3rem 2rem;
 }
 
 /* Confirm assistance */
@@ -303,9 +340,10 @@ p {
 }
 .countdown--date {
   margin-top: 2rem;
-  font-size: 3.6rem;
-  font-weight: 800;
+  font-size: 3rem;
+  font-weight: 700;
   text-transform: uppercase;
+  font-family: "Bodoni", serif;
 
   /* font-family: "Cormorant Garamond", serif;
   font-family: "Rufina", serif;
@@ -587,6 +625,24 @@ p {
 .complete-gallery-image-container--img:hover {
   transform: scale(1.2);
 }
+.c-g-photo-1 {
+  object-position: 0% 10%;
+}
+.c-g-photo-2 {
+  object-position: 20% 0%;
+}
+.c-g-photo-3 {
+  object-position: 0% 83%;
+}
+.c-g-photo-4 {
+  object-position: 45% 0%;
+}
+.c-g-photo-6 {
+  object-position: 0% 95%;
+}
+.c-g-photo-8 {
+  object-position: 35% 0%;
+}
 
 /* Mesa de regalos */
 .mesa-de-regalos {
@@ -726,10 +782,18 @@ p {
   line-height: 2;
   font-size: 2.6rem;
 }
+.phrase-verse-number {
+  font-size: 1.6rem;
+  font-family: "Bodoni Moda", serif;
+  font-weight: 700;
+}
 .phrase-verse {
   margin-top: 2rem;
   font-size: 2.4rem;
   text-align: center;
+  font-family: "Bodoni Moda", serif;
+  text-transform: uppercase;
+  font-weight: 700;
 }
 
 /* Thanks */

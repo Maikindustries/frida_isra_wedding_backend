@@ -4,8 +4,24 @@ Instead, 1 rem = 1em = 16px*/
 /*****************************/
 /* BELOW 84*16 = 1344px (Smaller desktops) */
 /*****************************/
-
 @media (max-width: 84em) {
+}
+
+/*****************************/
+/* BELOW 81.25*16 = 1300px (Smaller desktops) */
+/*****************************/
+@media (max-width: 81.25em) {
+  .about-us-img3 {
+    width: 35rem;
+  }
+  .about-us3-flex--item .about-us-text-container2--isra {
+    top: 45px;
+    left: -210px;
+  }
+  .about-us3-flex--item .about-us-text-container2--frida {
+    top: 50px;
+    right: -210px;
+  }
 }
 
 /*****************************/
@@ -54,6 +70,32 @@ Instead, 1 rem = 1em = 16px*/
   /* .hero-text-container h1 {
     font-size: 7rem;
   } */
+  .about-us-img3 {
+    width: 30rem;
+  }
+  .about-us-text-container2 {
+    width: 20rem;
+    padding: 2rem;
+  }
+  .about-us3-flex--item .about-us-text-container2--isra {
+    top: 40px;
+    left: -150px;
+  }
+  .about-us3-flex--item .about-us-text-container2--frida {
+    top: 25px;
+    right: -150px;
+  }
+  .about-us-text-container2 h2 {
+    /* font-size: 3rem; */
+    font-weight: 700;
+    margin-bottom: 1rem;
+    font-family: "Frunchy", serif;
+    letter-spacing: 4px;
+  }
+  .about-us-text-container2 p {
+    font-size: 1.4rem;
+    line-height: 1.8em;
+  }
 }
 
 /*****************************/
@@ -87,6 +129,23 @@ Instead, 1 rem = 1em = 16px*/
   /* .hero-text-container h1 {
     font-size: 6.5rem;
   } */
+}
+
+/*****************************/
+/* BELOW 53.125*16 = 850px (Portrait Tablets) mike */
+/*****************************/
+@media (max-width: 53.125em) {
+  .about-us-img3 {
+    width: 28rem;
+  }
+  .about-us3-flex--item .about-us-text-container2--isra {
+    top: 23px;
+    left: -140px;
+  }
+  .about-us3-flex--item .about-us-text-container2--frida {
+    top: 12px;
+    right: -140px;
+  }
 }
 
 /*****************************/
@@ -155,6 +214,10 @@ Instead, 1 rem = 1em = 16px*/
   }
   .section-phrase {
     padding: 8rem 0 8rem 0;
+    width: 100%;
+  }
+  .section-phrase .container {
+    padding: 0 1rem;
   }
   .section {
     padding: 2.4rem 0 4.8rem 0;
@@ -247,9 +310,6 @@ Instead, 1 rem = 1em = 16px*/
     width: 30rem;
     height: 30rem;
   }
-  .phrase-text {
-    line-height: 1;
-  }
 }
 
 /*****************************/
@@ -268,6 +328,7 @@ Instead, 1 rem = 1em = 16px*/
     gap: 14rem;
   }
   .about-us-small--item .about-us-small-text-container {
+    padding: 2rem 2rem 3rem 2rem;
     bottom: -10rem;
   }
 
@@ -297,8 +358,6 @@ Instead, 1 rem = 1em = 16px*/
     padding: 2rem 2rem;
   }
   .phrase-text {
-    text-align: center;
-    line-height: 2;
     font-size: 2.4rem;
   }
   /* .phrase-quote-icon {
@@ -368,13 +427,13 @@ Instead, 1 rem = 1em = 16px*/
 
 @media (max-width: 25.875em) {
   .about-us-small-section {
-    padding: 9.6rem 0 19rem 0 !important;
+    padding: 9.6rem 0 22rem 0 !important;
   }
   .about-us-small-container {
     gap: 21rem;
   }
   .about-us-small--item .about-us-small-text-container {
-    bottom: -16rem;
+    bottom: -18rem;
   }
   .countdown-clock--item {
     width: 7rem;

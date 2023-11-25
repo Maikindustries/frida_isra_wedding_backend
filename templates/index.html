@@ -93,37 +93,47 @@
       <!-- About us 2 -->
       <section class="section about-us-section2" id="about-us-section2">
         <div class="container">
-          <div class="about-us-grid">
-            <div
-              class="about-us-text-container2 about-us-text-container2--isra"
-            >
-              <h2>Israel</h2>
-              <p>
-                Agradezco a Dios por la increíble bendición de conocerte y que
-                nos permita unir nuestras vidas en matrimonio. Mujer Virtuosa,
-                yo ya te hallé, eres el amor de mi vida. Gracias por ser mi
-                compañera perfecta. Me has hecho el hombre más feliz del mundo.
-              </p>
+          <div class="about-us3-flex">
+            <div class="about-us3-flex--item">
+              <img
+                src="../static/images/vertical/photo_13.jpg"
+                class="about-us-img3 about-us-img3--isra"
+              />
+              <div
+                class="about-us-text-container2 about-us-text-container2--isra"
+              >
+                <h2>Israel</h2>
+                <p>
+                  Agradezco a Dios por la increíble bendición de conocerte y que
+                  nos permita unir nuestras vidas en matrimonio. Mujer Virtuosa,
+                  yo ya te hallé, eres el amor de mi vida. Gracias por ser mi
+                  compañera perfecta. Me has hecho el hombre más feliz del
+                  mundo.
+                </p>
+              </div>
+            </div>
+            <div class="about-us3-flex--item">
+              <img
+                src="../static/images/vertical/photo_3_285.jpg"
+                class="about-us-img3 about-us-img3--frida"
+              />
+              <div
+                class="about-us-text-container2 about-us-text-container2--frida"
+              >
+                <h2>Frida</h2>
+                <p>
+                  No hay manera de describir la magia que hay entre nosotros.
+                  Agradezco en gran manera tu vida y que Dios te haya puesto en
+                  mi camino. Gracias por amarme tanto y por ser el hombre
+                  esforzado y valiente que eres. Eres mi complemento. Te amo.
+                </p>
+              </div>
             </div>
             <img
-              src="../static/images/vertical/photo_13.jpg"
-              class="about-us-img2 about-us-img2--isra"
+              class="about-us3-flex--ampersand"
+              src="../static/images/details/ampersand.png"
+              alt="ampersand"
             />
-            <img
-              src="../static/images/vertical/photo_3_285.jpg"
-              class="about-us-img2 about-us-img2--frida"
-            />
-            <div
-              class="about-us-text-container2 about-us-text-container2--frida"
-            >
-              <h2>Frida</h2>
-              <p>
-                No hay manera de describir la magia que hay entre nosotros.
-                Agradezco en gran manera tu vida y que Dios te haya puesto en mi
-                camino. Gracias por amarme tanto y por ser el hombre esforzado y
-                valiente que eres. Eres mi complemento. Te amo.
-              </p>
-            </div>
           </div>
         </div>
       </section>
@@ -174,31 +184,6 @@
         </div>
       </section>
       <script>
-        // function myFunction(x) {
-        //   let gallerySectionVertical = document.getElementById(
-        //     "gallery-section-vertical"
-        //   );
-        //   let gallerySectionHorizontal = document.getElementById(
-        //     "gallery-section-horizontal"
-        //   );
-        //   let completeGallerySection = document.getElementById(
-        //     "complete-gallery-section"
-        //   );
-        //   if (x.matches) {
-        //     // If media query matches
-        //     gallerySectionVertical.style.display = "none";
-        //     gallerySectionHorizontal.style.display = "none";
-        //     completeGallerySection.style.display = "";
-        //   } else {
-        //     gallerySectionVertical.style.display = "";
-        //     gallerySectionHorizontal.style.display = "";
-        //     completeGallerySection.style.display = "none";
-        //   }
-        // }
-        // var x = window.matchMedia("(max-width: 700px)");
-        // x.addListener(myFunction);
-        // myFunction(x);
-
         function myFunction2(x) {
           const aboutUsSmallSection = document.getElementById(
             "about-us-small-section"
@@ -703,28 +688,28 @@
               <div class="complete-gallery-image-container--item">
                 <img
                   src="../static/images/vertical/photo_5_536.jpg"
-                  class="complete-gallery-image-container--img"
+                  class="complete-gallery-image-container--img c-g-photo-1"
                   alt="photo"
                 />
               </div>
               <div class="complete-gallery-image-container--item">
                 <img
                   src="../static/images/horizontal/photo_5.jpg"
-                  class="complete-gallery-image-container--img"
+                  class="complete-gallery-image-container--img c-g-photo-2"
                   alt="photo"
                 />
               </div>
               <div class="complete-gallery-image-container--item">
                 <img
                   src="../static/images/vertical/photo_4_478.jpg"
-                  class="complete-gallery-image-container--img"
+                  class="complete-gallery-image-container--img c-g-photo-3"
                   alt="photo"
                 />
               </div>
               <div class="complete-gallery-image-container--item">
                 <img
                   src="../static/images/horizontal/photo_3_281.jpg"
-                  class="complete-gallery-image-container--img"
+                  class="complete-gallery-image-container--img c-g-photo-4"
                   alt="photo"
                 />
               </div>
@@ -738,7 +723,7 @@
               <div class="complete-gallery-image-container--item">
                 <img
                   src="../static/images/vertical/photo_20.jpg"
-                  class="complete-gallery-image-container--img"
+                  class="complete-gallery-image-container--img c-g-photo-6"
                   alt="photo"
                 />
               </div>
@@ -752,7 +737,7 @@
               <div class="complete-gallery-image-container--item">
                 <img
                   src="../static/images/horizontal/photo_8.jpg"
-                  class="complete-gallery-image-container--img"
+                  class="complete-gallery-image-container--img c-g-photo-8"
                   alt="photo"
                 />
               </div>
@@ -823,12 +808,16 @@
         <div class="container">
           <!-- <i class="fa-solid fa-quote-left phrase-quote-icon"></i> -->
           <p class="phrase-text">
-            Mejores son dos que uno; porque tienen mejor paga de su trabajo.
-            Porque si cayeren, el uno levantará a su compañero; pero ¡ay del
-            solo! que cuando cayere, no habrá segundo que lo levante. También si
-            dos durmieren juntos, se calentarán mutuamente; mas ¿cómo se
-            calentará uno solo? Y si alguno prevaleciere contra uno, dos le
-            resistirán; y cordón de tres dobleces no se rompe pronto.
+            <span class="phrase-verse-number"> 9</span> Mejores son dos que uno;
+            porque tienen mejor paga de su trabajo.
+            <span class="phrase-verse-number"> 10</span> Porque si cayeren, el
+            uno levantará a su compañero; pero ¡ay del solo! que cuando cayere,
+            no habrá segundo que lo levante.
+            <span class="phrase-verse-number"> 11</span> También si dos
+            durmieren juntos, se calentarán mutuamente; mas ¿cómo se calentará
+            uno solo? <span class="phrase-verse-number"> 12</span> Y si alguno
+            prevaleciere contra uno, dos le resistirán; y cordón de tres
+            dobleces no se rompe pronto.
           </p>
           <p class="phrase-verse">Eclésiastes 4:9-12</p>
           <!-- <h2 class="phrase-text">
