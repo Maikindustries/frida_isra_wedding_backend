@@ -14,6 +14,7 @@ from flask import (
 )
 # CORS
 from flask_cors import CORS, cross_origin
+import json
 
 ADMIN = "/admin"
 
@@ -242,6 +243,69 @@ def get_numbers():
     conn.close()
     print(data)
     return data
+
+# Insert guest - BACKEND # no borrar
+@app.route(f"{ADMIN}/insert_guest", methods=["GET", "POST"])
+def insert_guest():
+    # Read the File using Flask request
+    if request.method == "POST":
+        conn_factory = ConnectionFactory()
+        conn, cursor = conn_factory.get_connection()
+        print(request.data)
+        data = json.loads(request.data)
+
+
+        name = data["name"]
+        phone = data["phone"]
+        try:
+            if phone != "":
+                phone = int(phone)
+            else:
+                phone = -1
+
+        except ValueError as err:
+            print("Phone:", err)
+            phone = -1
+        
+        table = data["table"]
+        try:
+            if table != "":
+                table = int(table)
+            else:
+                table = -1
+
+        except ValueError as err:
+            print("Table:", err)
+            table = -1
+            
+        num_guests = data["numGuests"]
+        try:
+            if num_guests != "":
+                num_guests = int(num_guests)
+            else:
+                num_guests = -1
+
+        except ValueError as err:
+            print("Num guests:", err)
+            num_guests = -1
+
+        print([name, phone, table, num_guests])
+        try:
+            cursor.execute(
+                """
+                insert into invitados
+                (id_invitado, nombre, numero, mesa, boletos)
+                values(REPLACE(UUID(),'-',''), %s, %s, %s, %s)
+                """,
+                [name, phone, table, num_guests],
+            )
+            conn.commit()
+            conn.close()
+            print("mike")
+            return json.dumps({"Success": True})
+        except:
+            print("Fallo")
+        return json.dumps({"Success": False})
 
 # LOGOUT - App # no borrar
 @app.route(f"{ADMIN}/logout")
