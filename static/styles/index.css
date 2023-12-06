@@ -47,7 +47,7 @@ a:link,
 a:visited {
   display: inline-block;
   text-decoration: none;
-  color: rgb(238, 232, 232);
+  /* color: rgb(238, 232, 232); */
   font-weight: 500;
   font-size: 1.8rem;
   transition: all 0.3s;
@@ -88,14 +88,14 @@ p {
 }
 .hero-text-container h2 {
   letter-spacing: 7px;
-  font-size: 2rem;
-  margin-bottom: 2rem;
+  font-size: 2.4rem;
 }
 .hero-text-container h1 {
   font-size: 8.5rem;
   font-family: "Frunchy", serif;
-  letter-spacing: 5px;
+  letter-spacing: 4px;
   font-weight: 700;
+  margin-bottom: 0;
 }
 .hero-text-container p {
   width: 70%;
@@ -104,6 +104,24 @@ p {
   letter-spacing: 2.9px;
   text-align: center;
 }
+
+.hero-separation-line,
+.hero-separation-line--bottom {
+  width: 30rem;
+  width: 35rem;
+  filter: sepia(80%);
+}
+.hero-separation-line {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-separation-line--bottom {
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+  transform: rotate(180deg);
+}
+
 .carousel-container {
   height: 100vh;
   background-color: var(--dark-color);
@@ -595,6 +613,7 @@ p {
 .c-a-confirmation-container p,
 .c-a-rejection-container p {
   font-size: 2rem;
+  font-family: "Poppins", sans-serif;
 }
 
 /* Complete gallery */
@@ -682,19 +701,45 @@ p {
 .mesa-de-regalos-item--img {
   width: 30rem;
 }
+
+.mesa-de-regalos-item--table-text {
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-family: "Poppins", serif;
+}
+
 .mesa-de-regalos-item--text {
-  background-color: var(--main-bg-color);
+  background-color: var(--dark-color);
   border-radius: 17px;
   border: 1px solid var(--dark-color);
-  padding: 1rem 2rem;
-  font-size: 3rem;
+  padding: 2rem 4rem;
+  font-size: 2.4rem;
   transition: all 0.2s ease-in;
+  color: white;
+  font-family: "Cormorant Garamond", serif;
+
+  text-transform: uppercase;
 }
 .mesa-de-regalos-item--text:hover {
-  background-color: var(--dark-color);
+  opacity: 0.9;
   color: #fff;
 }
+
+.mesa-de-regalos-item--beneficiario {
+  font-size: 2.2rem;
+}
+
+.mesa-de-regalos-item--clabe {
+  font-size: 2.4rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.mesa-de-regalos-item--banorte {
+  font-size: 2rem;
+}
+
 .amazon {
+  grid-column: 2;
 }
 .amazon:hover,
 .amazon:active {
@@ -704,7 +749,9 @@ p {
 .liverpool:hover,
 .liverpool:active {
 }
-.banorte {
+.banorte .mesa-de-regalos-item--img-container {
+  gap: 2rem;
+  font-family: "Poppins", sans-serif;
 }
 .banorte:hover,
 .banorte:active {
@@ -714,7 +761,7 @@ p {
   margin-top: 1.2rem;
 }
 .palacio--img {
-  margin-top: -1rem;
+  margin-top: -2rem;
 }
 
 /* Codigo de vestimenta */
@@ -794,6 +841,7 @@ p {
   font-family: "Bodoni Moda", serif;
   text-transform: uppercase;
   font-weight: 700;
+  letter-spacing: 2px;
 }
 
 /* Thanks */

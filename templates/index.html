@@ -37,8 +37,16 @@
         <div class="hero-container">
           <div class="hero-text-container">
             <h2>Nuestra boda</h2>
+            <img
+              src="../static/images/details/linea_separadora_3.png"
+              class="hero-separation-line"
+            />
             <h1>Frida & Israel</h1>
             <!-- <div class="hero-text-description-container"> -->
+            <img
+              src="../static/images/details/linea_separadora_3.png"
+              class="hero-separation-line--bottom"
+            />
             <p>Eclésiastes 4:9-12</p>
             <!-- </div> -->
           </div>
@@ -336,10 +344,10 @@
           const urlParams = new URLSearchParams(queryString);
           const id = urlParams.get("id");
           console.log("id", id);
+          const confirmationSection = document.getElementById(
+            "section-confirm-assistance"
+          );
           if (id === null || id === undefined || id.length != 32) {
-            const confirmationSection = document.getElementById(
-              "section-confirm-assistance"
-            );
             confirmationSection.style.display = "none";
             return;
             // dont do fetch
@@ -351,7 +359,15 @@
             },
           })
             .then((response) => response.json())
+            .catch((error) => {
+              console.log(error);
+              console.log("fetch to database failed");
+            })
             .then((guest) => {
+              if (guest === undefined) {
+                confirmationSection.style.display = "none";
+                return;
+              }
               const guestName = document.querySelector("[c-a-guest-name]");
               const confirmationName =
                 document.getElementById("confirmationName");
@@ -571,92 +587,98 @@
             </p>
           </div>
           <div class="mesa-de-regalos--opciones">
-            <a
-              class="mesa-de-regalos-item liverpool"
-              href="https://mesaderegalos.liverpool.mx/LP/51294149/Israel_-Frida_Daniela"
-              target="_blank"
-            >
+            <div class="mesa-de-regalos-item liverpool">
               <div class="mesa-de-regalos-item--img-container">
                 <img
                   src="../static/images/liverpool_logo.png"
                   class="mesa-de-regalos-item--img"
                   alt="liverpool"
                 />
-                <button class="mesa-de-regalos-item--text">
+                <p class="mesa-de-regalos-item--table-text">51294149</p>
+                <a
+                  class="mesa-de-regalos-item--text"
+                  href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/51294149?_ga=2.149316534.1066961650.1701751758-1246484634.1698724865"
+                  target="_blank"
+                >
                   Ir a la tienda
-                </button>
+                </a>
               </div>
-            </a>
-            <a
-              class="mesa-de-regalos-item amazon"
-              href="https://www.amazon.com.mx/wedding/share/FriIsra21042024"
-              target="_blank"
-            >
+            </div>
+            <div class="mesa-de-regalos-item">
               <div class="mesa-de-regalos-item--img-container">
                 <img
                   src="../static/images/sears_logo.png"
                   class="mesa-de-regalos-item--img"
                   alt="amazon"
                 />
-                <button class="mesa-de-regalos-item--text">
+                <p class="mesa-de-regalos-item--table-text">106141</p>
+                <a
+                  class="mesa-de-regalos-item--text"
+                  href="https://www.sears.com.mx/Mesa-de-Regalos/106141/te-invito-a-mi-boda-frida-daniela-israel"
+                  target="_blank"
+                >
                   Ir a la tienda
-                </button>
+                </a>
               </div>
-            </a>
-            <a
-              class="mesa-de-regalos-item liverpool"
-              href="https://mesaderegalos.liverpool.mx/LP/51294149/Israel_-Frida_Daniela"
-              target="_blank"
-            >
+            </div>
+            <div class="mesa-de-regalos-item">
               <div class="mesa-de-regalos-item--img-container">
                 <img
                   src="../static/images/palacio_logo.png"
                   class="mesa-de-regalos-item--img palacio--img"
                   alt="liverpool"
                 />
-                <button class="mesa-de-regalos-item--text">
+                <p class="mesa-de-regalos-item--table-text">383770</p>
+                <a
+                  class="mesa-de-regalos-item--text"
+                  href="https://www.elpalaciodehierro.com/buscar?eventId=383770"
+                  target="_blank"
+                >
                   Ir a la tienda
-                </button>
+                </a>
               </div>
-            </a>
-            <a
-              class="mesa-de-regalos-item amazon"
-              href="https://www.amazon.com.mx/wedding/share/FriIsra21042024"
-              target="_blank"
-            >
+            </div>
+            <div class="mesa-de-regalos-item amazon">
               <div class="mesa-de-regalos-item--img-container">
                 <img
                   src="../static/images/amazon_logo.png"
                   class="mesa-de-regalos-item--img"
                   alt="amazon"
                 />
-                <button class="mesa-de-regalos-item--text">
-                  Ir a la tienda
-                </button>
-              </div>
-            </a>
-            <a class="mesa-de-regalos-item banorte">
-              <div class="mesa-de-regalos-item--img-container">
-                <img
-                  src="../static/images/banorte_logo.png"
-                  class="mesa-de-regalos-item--img banorte--img"
-                  alt="banorte"
-                />
-                <!-- <p>24323234468411</p> -->
-                <button
-                  onclick="copyCLABE()"
+                <a
                   class="mesa-de-regalos-item--text"
+                  href="https://www.amazon.com.mx/wedding/share/FriIsra21042024"
+                  target="_blank"
                 >
-                  Copiar cuenta CLABE
-                </button>
+                  Ir a la tienda
+                </a>
               </div>
-            </a>
+            </div>
           </div>
-          <div>
-            <p>
+          <div class="title-container">
+            <p class="subtitle--text">
               Estaremos muy agradecidos si deseas contribuir en hacer nuestra
               luna de miel inolvidable.
             </p>
+          </div>
+          <div class="mesa-de-regalos-item banorte">
+            <div class="mesa-de-regalos-item--img-container">
+              <img
+                src="../static/images/banorte_logo.png"
+                class="mesa-de-regalos-item--img banorte--img"
+                alt="banorte"
+              />
+              <p class="mesa-de-regalos-item--beneficiario">
+                FRIDA DANIELA PEREZ LOPEZ
+              </p>
+              <p class="mesa-de-regalos-item--clabe">0000-0000-00000-00000</p>
+              <button
+                onclick="copyCLABE()"
+                class="mesa-de-regalos-item--text mesa-de-regalos-item--banorte"
+              >
+                Copiar cuenta CLABE
+              </button>
+            </div>
           </div>
         </div>
         <script>

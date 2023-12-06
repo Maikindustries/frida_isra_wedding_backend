@@ -230,7 +230,7 @@ Instead, 1 rem = 1em = 16px*/
 
 @media (max-width: 44em) {
   .hero-text-container h1 {
-    letter-spacing: unset;
+    /* letter-spacing: unset; */
   }
   .about-us-section {
     /* position: relative; */
@@ -389,6 +389,9 @@ Instead, 1 rem = 1em = 16px*/
   .mesa-de-regalos--opciones {
     grid-template-columns: 1fr;
     margin-top: 2rem;
+  }
+  .amazon {
+    grid-column: 1;
   }
 }
 
