@@ -282,6 +282,9 @@ p {
 /* Confirm assistance */
 .section-confirm-assistance {
   background-color: var(--secondary-bg-color);
+  background-color: var(--medium-color);
+  background-color: var(--dark-color);
+  color: white;
 }
 
 .c-a-select-confirmation-container {
@@ -584,9 +587,10 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   text-transform: uppercase;
   background-color: var(--dark-color);
+  background-color: var(--main-bg-color);
   border-radius: 17px;
   text-align: center;
   letter-spacing: 2px;
@@ -595,11 +599,14 @@ p {
   text-decoration: none;
   border: none;
   color: white;
+  color: black;
   opacity: 0.9;
   font-family: "Poppins", sans-serif;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: bold;
 }
 .c-a-button button {
-  width: 30rem;
+  width: 35rem;
 }
 .c-a-button button:hover,
 .location-map-button button:hover {

@@ -71,7 +71,7 @@
               </div>
               <div class="carousel-item">
                 <img
-                  src="../static/images/horizontal/photo_4.webp"
+                  src="../static/images/horizontal/photo_4.jpg"
                   class="d-block w-100 img-fluid carousel-img"
                 />
               </div>
@@ -259,7 +259,7 @@
             </div>
             <div class="c-a-button">
               <button onclick="sendAssistance()">
-                <p>Confirmar</p>
+                <p id="c-a-send-confirmation">Confirmar asistencia</p>
               </button>
             </div>
           </div>
@@ -300,6 +300,18 @@
         const rejectionContainer =
           document.getElementById("rejectionContainer");
         const subtitle = document.getElementById("c-a-subtitle");
+
+        const confirmationButton = document.getElementById(
+          "c-a-send-confirmation"
+        );
+
+        checkbox.addEventListener("click", (event) => {
+          if (event.target.checked) {
+            confirmationButton.innerText = "Confirmar asistencia";
+          } else {
+            confirmationButton.innerText = "Cancelar asistencia";
+          }
+        });
 
         function sendAssistance() {
           console.log(checkbox.checked);
