@@ -347,3 +347,12 @@ select {
 .hide {
   display: none;
 }
+
+/*****************************/
+/* BELOW 44*16 = 704px (Smaller Tablets) */
+/*****************************/
+@media (max-width: 44em) {
+  .guest {
+    width: 100%;
+  }
+}
