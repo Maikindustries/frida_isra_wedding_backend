@@ -1,3 +1,10 @@
+const TESTING = false;
+
+let BASE_URL = "https://www.frida-isra-boda.com";
+if (TESTING) {
+  BASE_URL = "http://192.168.1.85:5000";
+}
+
 // Selectors
 // CONFIRMATION NUMBERS
 const confirmedNumber = document.querySelector(".confirmed-number");
@@ -42,7 +49,7 @@ filterByConfirmationSelect.addEventListener("click", filterGuests);
 
 // Functions
 function showNumbers() {
-  fetch("https://www.frida-isra-boda.com/admin/get_numbers")
+  fetch(`${BASE_URL}/admin/get_numbers`)
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
@@ -67,9 +74,9 @@ function postSaveGuest(e) {
     name: registerFormNameInput.value,
     phone: regiterFormPhoneInput.value,
     table: registerFormTableInput.value,
-    numGuests: registerFormNumGuestsInput.value,
+    // numGuests: registerFormNumGuestsInput.value,
   };
-  fetch("https://www.frida-isra-boda.com/admin/insert_guest", {
+  fetch(`${BASE_URL}/admin/insert_guest`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -95,7 +102,7 @@ function postSaveGuest(e) {
 }
 
 function showGuests() {
-  fetch("https://www.frida-isra-boda.com/admin/get_users")
+  fetch(`${BASE_URL}/admin/get_users`)
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
@@ -110,13 +117,16 @@ function showGuests() {
         );
         const guestCancelBtn = guestLi.querySelector(".guest-cancel-btn");
         const guestConfirmBtn = guestLi.querySelector(".guest-confirm-btn");
+        const guestSendWhatsappBtn = guestLi.querySelector(
+          ".guest-send-whatsapp-btn"
+        );
 
         guestNameP.innerHTML = guest.nombre;
         if (guest.mesa !== -1) {
           guestTableP.innerHTML = guest.mesa;
         }
         // Configure confirmation
-        const guestConfirmation = guest.confirmacion;
+        const guestConfirmation = guest.asistencia;
         let confirmationCss;
         if (guestConfirmation === "confirmada") {
           confirmationCss = "confirmed-guest";
@@ -145,6 +155,9 @@ function showGuests() {
         });
         guestConfirmBtn.addEventListener("click", () => {
           updateGuestInDatabase(guest.id_invitado, guestLi);
+        });
+        guestSendWhatsappBtn.addEventListener("click", () => {
+          sendWhatsapp(guest.id_invitado);
         });
 
         guestLi.classList.add(confirmationCss);
@@ -201,10 +214,10 @@ function deleteGuest(idInvitado, guestLi) {
     cancelButtonText: "<p style='font-size:1.6rem'>Cancelar</p>",
   }).then((result) => {
     if (result.isConfirmed) {
-      data = {
+      const data = {
         id_invitado: idInvitado,
       };
-      fetch("https://www.frida-isra-boda.com/admin/delete", {
+      fetch(`${BASE_URL}/admin/delete`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -241,7 +254,7 @@ function updateGuestInDatabase(idInvitado, guestLi) {
   const guestNameInput = guestLi.querySelector(".guest-name-input");
 
   //Logic
-  postData = {};
+  const postData = {};
 
   if (guestTableInput.value !== "") {
     console.log(guestTableInput.value);
@@ -258,7 +271,7 @@ function updateGuestInDatabase(idInvitado, guestLi) {
   }
 
   postData["idInvitado"] = idInvitado;
-  fetch("https://www.frida-isra-boda.com/admin/update2", {
+  fetch(`${BASE_URL}/admin/update2`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -296,6 +309,7 @@ function toggleShowHideUpdateGuest(guestLi) {
   );
   const guestCancelBtn = guestLi.querySelector(".guest-cancel-btn");
   const guestConfirmBtn = guestLi.querySelector(".guest-confirm-btn");
+  const sendWhatsappBtn = guestLi.querySelector(".guest-send-whatsapp-btn");
 
   // Logic
   guestTableP.classList.toggle("hide");
@@ -310,6 +324,8 @@ function toggleShowHideUpdateGuest(guestLi) {
   guestCancelBtn.classList.toggle("hide");
   guestConfirmBtn.classList.toggle("hide");
 
+  sendWhatsappBtn.classList.toggle("hide");
+
   const isShowingInputs = guestTableP.classList.contains("hide");
   if (isShowingInputs) {
     guestTableInput.placeholder = guestTableP.innerText;
@@ -320,6 +336,24 @@ function toggleShowHideUpdateGuest(guestLi) {
     guestTableInput.value = "";
     guestNameInput.value = "";
   }
+}
+
+function sendWhatsapp(idInvitado) {
+  const postData = { guestId: idInvitado };
+  fetch(`${BASE_URL}/admin/send_whatsapp`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(postData),
+  })
+    .then((res) => res.json())
+    .catch((err) => {
+      console.log(err);
+    })
+    .then((data) => {
+      console.log(data);
+    });
 }
 
 // RUNS

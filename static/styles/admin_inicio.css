@@ -270,7 +270,8 @@ select {
 .guest-delete-btn,
 .guest-show-update-menu-btn,
 .guest-cancel-btn,
-.guest-confirm-btn {
+.guest-confirm-btn,
+.guest-send-whatsapp-btn {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -279,6 +280,7 @@ select {
 
   background-color: transparent;
 
+  cursor: pointer;
   padding: 0.5rem 1rem;
 }
 
@@ -286,7 +288,8 @@ select {
 .guest-delete-btn i,
 .guest-show-update-menu-btn i,
 .guest-cancel-btn i,
-.guest-confirm-btn i {
+.guest-confirm-btn i,
+.guest-send-whatsapp-btn i {
   color: white;
   font-size: var(--normal-icon);
 }

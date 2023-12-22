@@ -290,6 +290,13 @@
         </div>
       </section>
       <script>
+        const TESTING = true;
+
+        let BASE_URL = "https://www.frida-isra-boda.com";
+        if (TESTING) {
+          BASE_URL = "http://192.168.1.85:5000";
+        }
+
         const checkbox = document.getElementById("c-a-select-checkbox");
         const selectConfirmationContainer = document.getElementById(
           "c-a-select-confirmation-container"
@@ -336,7 +343,7 @@
             confirmacion: confirmacion,
           };
 
-          fetch("https://www.frida-isra-boda.com/guest/updateConfirmation", {
+          fetch(`${BASE_URL}/guest/updateConfirmation`, {
             method: "POST",
             body: JSON.stringify(_datos),
             headers: { "Content-type": "application/json; charset=UTF-8" },
@@ -364,7 +371,7 @@
             return;
             // dont do fetch
           }
-          fetch(`https://www.frida-isra-boda.com/guest/${id}`, {
+          fetch(`${BASE_URL}/guest/${id}`, {
             method: "GET",
             headers: {
               Accept: "application/json",
@@ -389,12 +396,12 @@
               confirmationName.innerHTML = guest.nombre;
               rejectcionName.innerHTML = guest.nombre;
 
-              if (guest.confirmacion == "confirmada") {
+              if (guest.asistencia == "confirmada") {
                 subtitle.style.display = "none";
                 confirmationContainer.style.display = "";
                 rejectionContainer.style.display = "none";
                 selectConfirmationContainer.style.display = "none";
-              } else if (guest.confirmacion == "no vendra") {
+              } else if (guest.asistencia == "no vendra") {
                 subtitle.style.display = "none";
                 confirmationContainer.style.display = "none";
                 rejectionContainer.style.display = "";

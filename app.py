@@ -46,7 +46,7 @@ def post_update_confirmation():
     guest_id = response.get("id")
     confirmacion = response.get("confirmacion")
     cursor.execute(
-        "update invitados set asistencia=%s where id_invitado=%s",
+        "update invitados1 set asistencia = %s where id_invitado = %s",
         [confirmacion, guest_id]
     )
     conn.commit()
@@ -59,17 +59,16 @@ def get_info_by_id(guest_id):
     conn_factory = ConnectionFactory()
     conn, cursor = conn_factory.get_connection()
     cursor.execute(
-        "select * from invitados where id_invitado=%s", [guest_id]
+        "select * from invitados1 where id_invitado = %s",
+        [guest_id]
     )
     invitado = cursor.fetchone()
     invitado_dict = dict()
     keys = [
         "id_invitado",
         "nombre",
-        "boletos",
         "mesa",
-        "confirmacion",
-        "revisado",
+        "asistencia"
     ]
     for i, key in enumerate(keys):
         invitado_dict[key] = invitado[i]
@@ -78,32 +77,32 @@ def get_info_by_id(guest_id):
     return invitado_dict
 
 # GET_INFO - BACKEND
-@app.route("/get_info", methods=["GET","POST"])
-def get_info():
-    response = request.json
-    print(response)
-    if response.get("id_invitado", None):
-        id_invitado = response.get("id_invitado", None)
-        conn_factory = ConnectionFactory()
-        conn, cursor = conn_factory.get_connection()
-        cursor.execute(
-            "select * from invitados where id_invitado=%s", [id_invitado]
-        )
-        invitado = cursor.fetchone()
-        invitado_dict = dict()
-        keys = [
-            "id_invitado",
-            "nombre",
-            "boletos",
-            "mesa",
-            "confirmacion",
-            "revisado",
-        ]
-        for i, key in enumerate(keys):
-            invitado_dict[key] = invitado[i]
-        print(invitado_dict)
-        conn.close()
-    return invitado_dict
+# @app.route("/get_info", methods=["GET","POST"])
+# def get_info():
+#     response = request.json
+#     print(response)
+#     if response.get("id_invitado", None):
+#         id_invitado = response.get("id_invitado", None)
+#         conn_factory = ConnectionFactory()
+#         conn, cursor = conn_factory.get_connection()
+#         cursor.execute(
+#             "select * from invitados where id_invitado=%s", [id_invitado]
+#         )
+#         invitado = cursor.fetchone()
+#         invitado_dict = dict()
+#         keys = [
+#             "id_invitado",
+#             "nombre",
+#             "boletos",
+#             "mesa",
+#             "confirmacion",
+#             "revisado",
+#         ]
+#         for i, key in enumerate(keys):
+#             invitado_dict[key] = invitado[i]
+#         print(invitado_dict)
+#         conn.close()
+#     return invitado_dict
 
 # /ADMIN - App # no borrar
 @app.route(ADMIN)
@@ -154,11 +153,13 @@ def read_process_excel():
         invitados_list = []
         for _, row in invitados.iterrows():
             invitados_list.append(
-                [row["Nombre"], int(row["Boletos"]), int(row["Mesa"])]
+                [row["Nombre"], int(row["Mesa"]), int(row["Celular"])]
             )
         cursor.executemany(
-            """insert into invitados (id_invitado, nombre, mesa, boletos)
-                values(REPLACE(UUID(),'-',''), %s, %s, %s)""",
+            """
+            insert into invitados1 (nombre, celular, mesa)
+            values(%s, %s, %s)
+            """,
             invitados_list,
         )
         conn.commit()
@@ -171,7 +172,7 @@ def get_users():
     # MySql Database
     conn_factory = ConnectionFactory()
     conn, cursor = conn_factory.get_connection()
-    cursor.execute("select * from invitados")
+    cursor.execute("select * from invitados1")
     invitados = cursor.fetchall()
     conn.close()
     data = []
@@ -180,10 +181,8 @@ def get_users():
         keys = [
             "id_invitado",
             "nombre",
-            "boletos",
             "mesa",
-            "confirmacion",
-            "revisado",
+            "asistencia"
         ]
         for i, key in enumerate(keys):
             invitado_dict[key] = invitado[i]
@@ -197,16 +196,16 @@ def delete_user():
     conn_factory = ConnectionFactory()
     conn, cursor = conn_factory.get_connection()
     response = request.json
-    print(response.get("id_invitado", None))
-    if response.get("id_invitado", None):
-        cursor.execute(
-            "delete from invitados where id_invitado = %s",
-            [response["id_invitado"]],
-        )
-        conn.commit()
-        conn.close()
-        return {"status": "ok"}
-    return {"status": "fail"}
+    if response.get("id_invitado", None) == None:
+        return {"status": "fail"}
+
+    cursor.execute(
+        "delete from invitados1 where id_invitado = %s",
+        [response["id_invitado"]],
+    )
+    conn.commit()
+    conn.close()
+    return {"status": "ok"}
 
 # UPDATE - BACKEND # no borrar
 @app.route(f"{ADMIN}/update2", methods=["GET", "POST"])
@@ -216,11 +215,11 @@ def update_users2():
 
     sqls = []
     response = request.json
-    if response.get("tableNumber", None):
-        sqls.append(f"mesa={response['tableNumber']}")
     if response.get("guestName", None):
         sqls.append(f"nombre='{response['guestName']}'")
-    update_sql = "update invitados set "
+    if response.get("tableNumber", None):
+        sqls.append(f"mesa={response['tableNumber']}")
+    update_sql = "update invitados1 set "
     update_sql += ", ".join(sqls)
     update_sql += f" where id_invitado='{response['idInvitado']}'"
     print(update_sql)
@@ -252,110 +251,114 @@ def get_numbers():
     conn_factory = ConnectionFactory()
     conn, cursor = conn_factory.get_connection()
     asistencias = ["confirmada", "no confirmada", "no vendra", "no revisada"]
-    data = dict()
+    data = {"confirmada": 0, "no confirmada":0 , "no vendra": 0}
     for asistencia in asistencias:
         cursor.execute(
-            """
-            select count(*)
-            from invitados
-            where asistencia = %s
-            """,
+            "select count(*) from invitados1 where asistencia = %s",
             [asistencia],
         )
         res = cursor.fetchone()
-        if res == [(None,)]:
-            data[asistencia] = 0
-        else:
-            if asistencia == "no revisada":
-                data["no confirmada"] += res[0]
-            else:
-                data[asistencia] = res[0]
+        if asistencia == "no revisada":
+            data["no confirmada"] += res[0]
+        elif asistencia != "no revisada":
+            data[asistencia] = res[0]
     conn.close()
-    print(data)
     return data
 
 # Insert guest - BACKEND # no borrar
-@app.route(f"{ADMIN}/insert_guest", methods=["GET", "POST"])
+@app.route(f"{ADMIN}/insert_guest", methods=["POST"])
 def insert_guest():
-    # Read the File using Flask request
-    if request.method == "POST":
-        conn_factory = ConnectionFactory()
-        conn, cursor = conn_factory.get_connection()
-        print(request.data)
-        data = json.loads(request.data)
+    conn_factory = ConnectionFactory()
+    conn, cursor = conn_factory.get_connection()
+    data = request.json
 
-
-        name = data["name"]
-        phone = data["phone"]
-        try:
-            if phone != "":
-                phone = int(phone)
-            else:
-                phone = -1
-
-        except ValueError as err:
-            print("Phone:", err)
+    name = data["name"]
+    phone = data["phone"]
+    try:
+        if phone != "":
+            phone = int(phone)
+        else:
             phone = -1
-        
-        table = data["table"]
-        try:
-            if table != "":
-                table = int(table)
-            else:
-                table = -1
 
-        except ValueError as err:
-            print("Table:", err)
+    except ValueError as err:
+        print("Phone:", err)
+        phone = -1
+    
+    table = data["table"]
+    try:
+        if table != "":
+            table = int(table)
+        else:
             table = -1
-            
-        num_guests = data["numGuests"]
-        try:
-            if num_guests != "":
-                num_guests = int(num_guests)
-            else:
-                num_guests = -1
 
-        except ValueError as err:
-            print("Num guests:", err)
-            num_guests = -1
+    except ValueError as err:
+        print("Table:", err)
+        table = -1
+        
+    # num_guests = data["numGuests"]
+    # try:
+    #     if num_guests != "":
+    #         num_guests = int(num_guests)
+    #     else:
+    #         num_guests = -1
 
-        print([name, phone, table, num_guests])
-        try:
-            cursor.execute(
-                """
-                insert into invitados
-                (id_invitado, nombre, numero, mesa, boletos)
-                values(REPLACE(UUID(),'-',''), %s, %s, %s, %s)
-                """,
-                [name, phone, table, num_guests],
-            )
-            conn.commit()
-            conn.close()
-            print("mike")
-            return json.dumps({"Success": True})
-        except:
-            print("Fallo")
-        return json.dumps({"Success": False})
+    # except ValueError as err:
+    #     print("Num guests:", err)
+    #     num_guests = -1
 
-@app.route(f"{ADMIN}/send_whatsapp", methods=["POST", "GET"])
+    try:
+        cursor.execute(
+            """
+            insert into invitados1
+            (nombre, celular, mesa)
+            values( %s, %s, %s)
+            """,
+            [name, phone, table],
+        )
+        conn.commit()
+        conn.close()
+        return {"Success": True}
+    except Exception as err:
+        print(err)
+    return {"Success": False}
+
+@app.route(f"{ADMIN}/send_whatsapp", methods=["POST"])
 def send_whatsapp():
-    #TOKEN DE ACCESO DE FACEBOOK
-    token=config("TOKEN_WHATSAPP")
-    #IDENTIFICADOR DE NÚMERO DE TELÉFONO
-    idNumeroTelefono='202089672983580'
-    #TELEFONO QUE RECIBE (EL DE NOSOTROS QUE DIMOS DE ALTA)
-    telefonoEnvia='525529156877'
-    #MENSAJE A ENVIAR
-    textoMensaje="Hola novato saludos"
-    #URL DE LA IMAGEN A ENVIAR
-    urlImagen='https://i.imgur.com/r5lhxgn.png'
-    #INICIALIZAMOS ENVIO DE MENSAJES
-    mensajeWa=WhatsApp(token,idNumeroTelefono)
-    #ENVIAMOS UN MENSAJE DE TEXTO
-    mensajeWa.send_message(textoMensaje,telefonoEnvia)
-    #ENVIAMOS UNA IMAGEN
-    mensajeWa.send_image(image=urlImagen,recipient_id=telefonoEnvia,)
-    return "mensaje enviado exitosamente"
+    response = request.json
+    print(response)
+    conn_factory = ConnectionFactory()
+    conn, cursor = conn_factory.get_connection()
+    guest_id = response.get("guestId")
+
+    cursor.execute(
+        "select nombre, celular from invitados1 where id_invitado = %s", 
+        [guest_id]
+    )
+    res = cursor.fetchone()
+    if res is None:
+        # regresar False y en front mostrar banner de que fallo
+        return {"status": "fail"}
+    
+    name, phone_number = res
+    if name is None or phone_number is None:
+        # regresar False y en front mostrar banner de que fallo
+        return {"status": "fail"}
+
+    if len(phone_number) == 10:
+        phone_number = "52" + phone_number
+    print(phone_number)
+    conn.close()
+    
+    token = config("TOKEN_WHATSAPP")
+    id_phone_for_testing = '202089672983580'
+    invitation_url = "https://www.frida-isra-boda.com/?id="
+    message = f"Hola {name}, estás invitad@ a nuestra boda.\nEste es el link de la invitación:\n{invitation_url}{guest_id}"
+    img_url = "https://debodaconangela.com/wp-content/uploads/2017/06/donde-procede-tradicion-anillos-boda.jpg"
+    
+    whatsapp = WhatsApp(token, id_phone_for_testing)
+    whatsapp.send_message(message, phone_number)
+    whatsapp.send_image(image=img_url, recipient_id=phone_number,)
+    return {"status": "ok"}
 
 # LOGOUT - App # no borrar
 @app.route(f"{ADMIN}/logout")
