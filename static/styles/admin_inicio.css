@@ -1,250 +1,349 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
-
 * {
-  box-sizing: border-box;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
 html {
   font-size: 62.5%;
-  color: rgb(236, 230, 230);
-  font-family: "Roboto", sans-serif;
-  overflow-x: hidden;
-  background-color: #171717;
+  color: #efefef;
 }
+
 body {
-  font-family: "Roboto", sans-serif;
+  background-color: rgb(45, 45, 45);
+  font-family: "Poppins", sans-serif;
 }
-input {
-  display: block;
-  background-color: rgb(236, 230, 230);
-  border: none;
-}
-input:focus {
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   outline: none;
-}
-
-body,
-html {
-  height: 100%;
-}
-
-.hide {
-  display: none !important;
-}
-
-.main-container {
-  display: flex;
-  justify-content: center;
-}
-
-.menu-container {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  width: 40rem;
-  padding: 2rem;
-  padding-bottom: 8rem;
-  padding-top: 4rem;
-}
-
-.menu-header {
-  display: flex;
-  justify-content: space-between;
-}
-
-.logout-button {
   border: none;
-  background-color: inherit;
-  color: white;
-  font-size: 2.4rem;
-  padding: 1rem;
-  padding-top: 0.5rem;
-  margin-right: 0.5rem;
-  align-self: flex-start;
 }
 
-.logout-button:hover {
-  cursor: pointer;
+:root {
+  --big: 2.4rem;
+  --normal: 1.6rem;
+  --small: 1.4rem;
+  --normal-icon: 2rem;
 }
 
-.menu-title {
-  font-size: 3.6rem;
-  margin-bottom: 2rem;
-  text-transform: uppercase;
+.container {
+  /* I comment this to keep the container small for version 1 */
+  /* max-width: 120rem; */
+  max-width: 60rem;
+  padding: 2.4rem 2.4rem 3.6rem 2.4rem;
+  margin: 0 auto;
 }
 
-.menu-excel {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 8rem;
-}
-
-.subir-excel-text-container {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
-}
-
-input#select-excel {
-  display: none;
-}
-
-input#select-excel + label {
+.header {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 75%;
-  height: 100%;
-  font-weight: 500;
-  font-size: 2rem;
-  background-color: green;
-  padding: 2rem 4rem;
-  border-radius: 17px;
-}
-
-input#select-excel + label:hover {
-  cursor: pointer;
-}
-
-input#submit {
-  display: none;
-}
-
-input#submit + label {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 20%;
-  height: 100%;
-  font-weight: 500;
-  font-size: 2rem;
-  background-color: green;
-  opacity: 0.7;
-  padding: 3rem 4rem;
-  border-radius: 17px;
-}
-
-input#submit + label:hover {
-  cursor: pointer;
-}
-
-.btn-available {
-  opacity: 1 !important;
-  background-color: rgb(0, 177, 0) !important;
-  /* background-color: white !important; */
-}
-
-.excel-icon {
-  font-size: 2rem;
-}
-
-.menu-subtitle {
-  text-align: center;
-  font-size: 4rem;
-  font-weight: 500;
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-}
-
-.confirmed-num {
-  color: #4af71188;
-}
-.non-confirmed-num {
-  color: #f0841fb1;
-}
-.rejected-num {
-  color: #f82727aa;
-}
-
-.search-input-container {
-  padding-bottom: 1rem;
-}
-
-.search-input {
-  width: 100%;
-  padding: 2rem 3rem;
-  border-radius: 17px;
-  font-size: 1.8rem;
-}
-
-.invitation-content {
-  display: flex;
   flex-direction: column;
+}
+
+.title {
+  font-size: 4.2rem;
+}
+
+.event-name {
+  font-size: 2.4rem;
+}
+
+/* ASSISTANCE NUMBERS */
+.numbers {
+  display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
+  gap: 1rem;
 }
 
-.invitation-li {
+.confirmed-number,
+.unconfirmed-number,
+.rejected-number {
+  font-size: 3.6rem;
+}
+
+.confirmed-number {
+  color: green;
+}
+
+.unconfirmed-number {
+  color: orange;
+}
+.rejected-number {
+  color: red;
+}
+
+/* REGISTER GUEST */
+.register-form-container {
   display: flex;
+  justify-content: center;
   align-items: center;
-  width: 100%;
-  border-radius: 17px;
-  padding: 2rem;
-  background-color: #ffffff22;
-}
-
-.invitation-li-name,
-.invitation-li-name--input {
-  font-size: 1.8rem;
-  width: 40%;
-}
-
-.invitation-li-name--input {
-  display: none;
-  padding: 1rem 2rem;
-}
-
-.modify-invitation-container {
-  display: flex;
-  justify-content: center;
-  font-size: 2rem;
-  gap: 1.6rem;
-  width: 20%;
-}
-
-.confirm-update-button {
-  display: none;
-  background-color: purple;
-}
-.cancel-update-button {
-  display: none;
-  background-color: purple;
-}
-
-.invitation-data {
-  justify-self: center;
-  display: flex;
-  justify-content: center;
-  font-size: 2rem;
-  width: 40%;
   gap: 2rem;
 }
 
-.invitation-icon {
-  font-size: 2rem;
-  text-align: center;
-  margin-right: 0.5rem;
+.register-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  width: 40rem;
 }
 
-.invitation-data--input {
-  display: none;
-  width: 50%;
-  /* padding: 1rem 3rem; */
-  padding: 1rem 0.2rem;
-  font-size: 2rem;
+.register-form-title {
+  font-size: var(--big);
+
+  align-self: flex-start;
 }
 
-.gap-zero {
-  gap: 0 !important;
+.register-form-entries {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: left;
+  gap: 0.5rem;
+  width: 100%;
 }
 
-.invitation-confirmed {
+.register-form-entries label {
+  font-size: var(--normal);
+}
+
+.register-form-entries input {
+  font-size: var(--normal);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  border: none;
+
+  padding: 1.5rem;
+  color: white;
+  background-color: rgb(66, 66, 66);
+  border-radius: 11px;
+}
+
+.register-form-submit-btn,
+.register-form-cancel-btn {
+  color: white;
+  transition: all 0.5s ease;
+}
+
+.register-form-submit-btn {
+  background-color: green;
+}
+
+.register-form-cancel-btn {
+  background-color: transparent;
+}
+
+.register-form-cancel-btn:hover {
+  background-color: rgb(200, 0, 0);
+}
+
+.register-guest {
+  display: flex;
+  justify-content: center;
+}
+
+.register-guest-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background-color: green;
+  color: white;
+}
+
+.register-guest-icon {
+  font-size: var(--icon);
+}
+
+/* FILTER BY CONFIRMATION */
+.filter-by-confirmation {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.filter-by-confirmation-container {
+  justify-self: end;
+
+  width: 14rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.filter-by-confirmation-container::after {
+  content: "\25BC";
+  position: absolute;
+  background-color: green;
+  color: white;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.filter-by-confirmation-container:hover::after {
+  opacity: 0.9;
+}
+
+.filter-by-confirmation-select {
+  cursor: pointer;
+  padding: 1rem;
+  width: 100%;
+}
+
+/* GUEST LIST */
+.guests-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.guest {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 40rem;
+  border-radius: 11px;
+  padding: 1.5rem 1rem 1.5rem 2rem;
+}
+
+.guest--input {
+  flex-direction: column;
+}
+
+.confirmed-guest {
   background-color: #4af71188;
 }
-.invitation-rejected {
-  background-color: #f8272788;
+.unconfirmed-guest {
+  /* background-color: #f0841fb1; */
+  /* This shows that guest saw the invitation but didn't confirm or reject the invitations. This can have a negative impact to the couple */
+  background-color: #454545;
+}
+.rejected-guest {
+  background-color: #f82727aa;
+}
+
+.not-reviewed-guest {
+  background-color: rgb(201, 201, 26);
+  color: black;
+}
+
+.guest-info {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2rem;
+
+  width: 100%;
+}
+
+.guest-table-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.guest-name,
+.guest-table {
+  font-size: var(--normal);
+}
+
+.guest-buttons-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.guest-delete-btn,
+.guest-show-update-menu-btn,
+.guest-cancel-btn,
+.guest-confirm-btn {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  border: none;
+
+  background-color: transparent;
+
+  padding: 0.5rem 1rem;
+}
+
+.guest-confirmation-icon,
+.guest-delete-btn i,
+.guest-show-update-menu-btn i,
+.guest-cancel-btn i,
+.guest-confirm-btn i {
+  color: white;
+  font-size: var(--normal-icon);
+}
+
+.guest-edit-icon {
+  pointer-events: none;
+}
+
+.guest-delete-icon {
+  pointer-events: none;
+}
+
+.guest-table-icon {
+  font-size: var(--normal-icon);
+}
+
+.guest-table-input {
+  width: 4rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+.guest-name-input {
+  padding: 1rem;
+  /* font-size: 1.4rem; */
+}
+
+.guest-table-input::placeholder,
+.guest-name-input::placeholder {
+  color: rgb(152, 152, 152);
+}
+
+/* CONSTANTS */
+.margin-top-small {
+  margin-top: 2rem;
+}
+
+.button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  border: none;
+
+  border-radius: 11px;
+  padding: 2rem;
+  cursor: pointer;
+
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+.hide {
+  display: none;
 }

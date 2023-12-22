@@ -2,7 +2,16 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0 maximum-scale=1"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
     <script
       src="{{ url_for('static', filename='logic/admin_inicio.js') }}"
       defer
@@ -15,114 +24,128 @@
     <!-- Borrar -->
     <link rel="stylesheet" href="../static/styles/admin_inicio.css" />
     <!-- Borrar -->
-    <script
-      src="https://kit.fontawesome.com/bbd366d908.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
       rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-    <title>Inicio</title>
+    <title>Admin</title>
   </head>
   <body>
-    <main class="main-container">
-      <div class="menu-container">
-        <div class="menu-header">
-          <h1 class="menu-title">Invitados</h1>
-          <button
-            class="logout-button"
-            onclick="window.location = 'logout'"
-            type="submit"
-          >
-            <i class="fa-solid fa-right-from-bracket"></i>
+    <div class="container">
+      <header class="header">
+        <h1 class="title">Invitados</h1>
+        <h2 class="event-name">Boda Frida &amp; Isra🤵🏻 👰🏻‍♀️</h2>
+      </header>
+
+      <div class="margin-top-small numbers">
+        <h2 class="confirmed-number"></h2>
+        <h2 class="unconfirmed-number"></h2>
+        <h2 class="rejected-number"></h2>
+      </div>
+
+      <div class="margin-top-small register-guest">
+        <button class="button register-guest-btn">
+          <p>Registrar invitado</p>
+          <i class="fa-solid fa-plus register-guest-icon"></i>
+        </button>
+      </div>
+
+      <div class="register-form-container margin-top-small hide">
+        <form class="register-form">
+          <h2 class="register-form-title">Registrar invitado</h2>
+          <div class="register-form-entries">
+            <label for="guest_name">Nombre</label>
+            <input
+              class="register-form-name-input"
+              id="guest_name"
+              type="text"
+            />
+            <!-- required -->
+          </div>
+          <div class="register-form-entries">
+            <label for="guest_table">Teléfono</label>
+            <input
+              class="register-form-phone-input"
+              id="guest_table"
+              type="tel"
+              pattern="[0-9]+"
+            />
+            <!-- required -->
+          </div>
+          <div class="register-form-entries">
+            <label for="guest_table">Mesa (opcional)</label>
+            <input
+              class="register-form-table-input"
+              id="guest_table"
+              type="tel"
+            />
+          </div>
+          <div class="register-form-entries">
+            <label for="guest_tickets">Número de invitados (opcional)</label>
+            <input
+              class="register-form-num-guests-input"
+              id="guest_tickets"
+              type="tel"
+            />
+          </div>
+          <button class="button register-form-submit-btn" type="submit">
+            Confirmar
           </button>
-        </div>
-        <form
-          action="excel"
-          method="post"
-          enctype="multipart/form-data"
-          class="menu-excel"
-        >
-          <input
-            id="select-excel"
-            class="upload-excel-button"
-            type="file"
-            name="uploaded-file"
-            accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
-          />
-          <label for="select-excel"
-            ><div class="subir-excel-text-container" excelButton>
-              <p>Subir excel</p>
-              <i class="fa-solid fa-plus excel-icon"></i>
-            </div>
-            <span id="file-name"></span
-          ></label>
-          <input id="submit" type="submit" />
-          <label for="submit" enviarButton>
-            <p>Enviar</p>
-          </label>
+          <button class="button register-form-cancel-btn">Cancelar</button>
         </form>
-
-        <p class="menu-subtitle">
-          <span class="confirmed-num" confirmedNum>0</span>
-          <span class="non-confirmed-num" notConfirmedNum>0</span>
-          <span class="rejected-num" rejectedNum>0</span>
-        </p>
-        <div class="search-input-container">
-          <input
-            class="search-input"
-            type="text"
-            placeholder="Nombre"
-            data-search
-          />
-        </div>
-
-        <div class="invitation-content" invited-people-li-container></div>
       </div>
-    </main>
 
-    <template invited-people-template>
-      <div class="invitation-li">
-        <p class="invitation-li-name" data-name></p>
-        <input class="invitation-li-name--input" type="text" nameInput />
-        <div class="modify-invitation-container">
-          <button updateButton>
+      <div class="filter-by-confirmation">
+        <div class="filter-by-confirmation-container margin-top-small">
+          <select
+            class="filter-by-confirmation-select"
+            name="filter-guests"
+            onblur="filterGuests(this)"
+          >
+            <option value="all">Todos</option>
+            <option value="confirmed">Confirmado</option>
+            <option value="unconfirmed">No confirmado</option>
+            <option value="rejected">No vendra</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="margin-top-small guests">
+        <ul class="guests-list"></ul>
+      </div>
+    </div>
+
+    <template class="guest-template">
+      <li class="guest">
+        <div class="guest-info">
+          <div class="guest-table-container">
+            <i class="fa-solid fa-chair guest-table-icon"></i>
+            <p class="guest-table"></p>
+            <input class="guest-table-input hide" type="tel" pattern="[0-9]+" />
+            <input class="guest-name-input hide" type="text" />
+          </div>
+          <p class="guest-name"></p>
+        </div>
+        <div class="guest-buttons-container">
+          <button class="guest-delete-btn">
+            <i class="fa-solid fa-trash guest-delete-icon"></i>
+          </button>
+          <button class="guest-show-update-menu-btn">
             <i class="fa-solid fa-pen"></i>
           </button>
-          <button deleteButton onclick="verifyDelete();">
-            <i class="fa-solid fa-xmark"></i>
+          <button class="guest-cancel-btn hide">
+            <i class="fa-solid fa-x"></i>
           </button>
-          <button confirmUpdateButton class="confirm-update-button">
-            <i class="fa-solid fa-pen"></i>
-          </button>
-          <button cancelUpdateButton class="cancel-update-button">
-            <i class="fa-solid fa-xmark"></i>
+          <button class="guest-confirm-btn hide">
+            <i class="fa-solid fa-check"></i>
           </button>
         </div>
-        <p class="invitation-data" invitationData>
-          <span
-            ><i class="fa-solid fa-chair invitation-icon"></i
-            ><span data-table></span>
-            <input type="text" class="invitation-data--input" tableInput />
-          </span>
-
-          <span
-            ><i class="fa-solid fa-person invitation-icon"></i
-            ><span data-persons></span>
-            <input type="text" class="invitation-data--input" ticketsInput />
-          </span>
-        </p>
-      </div>
+      </li>
     </template>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous"
-    ></script>
+    <script src="./app.js"></script>
   </body>
 </html>

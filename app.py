@@ -207,7 +207,31 @@ def delete_user():
     return {"status": "fail"}
 
 # UPDATE - BACKEND # no borrar
-@app.route(f"{ADMIN}/update", methods=["GET", "POST"])
+@app.route(f"{ADMIN}/update2", methods=["GET", "POST"])
+def update_users2():
+    conn_factory = ConnectionFactory()
+    conn, cursor = conn_factory.get_connection()
+
+    sqls = []
+    response = request.json
+    if response.get("tableNumber", None):
+        sqls.append(f"mesa={response['tableNumber']}")
+    if response.get("guestName", None):
+        sqls.append(f"nombre='{response['guestName']}'")
+    update_sql = "update invitados set "
+    update_sql += ", ".join(sqls)
+    update_sql += f" where id_invitado='{response['idInvitado']}'"
+    print(update_sql)
+    try:
+        cursor.execute(update_sql)
+        conn.commit()
+        conn.close()
+        return {"status": "ok"}
+    except:
+        return {"status": "fail"}
+
+# UPDATE - BACKEND # no borrar
+@app.route(f"{ADMIN}/update", methods=["POST"])
 def update_users():
     conn_factory = ConnectionFactory()
     conn, cursor = conn_factory.get_connection()
@@ -221,7 +245,7 @@ def update_users():
     return {"status": "fail"}
 
 # GET_NUMBERS - BACKEND # no borrar
-@app.route(f"{ADMIN}/get_numbers", methods=["GET", "POST"])
+@app.route(f"{ADMIN}/get_numbers", methods=["GET"])
 def get_numbers():
     conn_factory = ConnectionFactory()
     conn, cursor = conn_factory.get_connection()
@@ -230,12 +254,13 @@ def get_numbers():
     for asistencia in asistencias:
         cursor.execute(
             """
-                select sum(boletos)
-                from invitados
-                where asistencia = %s""",
+            select count(*)
+            from invitados
+            where asistencia = %s
+            """,
             [asistencia],
         )
-        res = cursor.fetchall()
+        res = cursor.fetchone()
         if res == [(None,)]:
             data[asistencia] = 0
         else:
