@@ -268,7 +268,6 @@ function updateGuestInDatabase(idInvitado, guestLi) {
     .then((res) => res.json())
     .then((data) => {
       if (data["status"] === "ok") {
-        console.log("ok");
         if ("guestName" in postData) {
           guestNameP.innerText = postData["guestName"];
         }

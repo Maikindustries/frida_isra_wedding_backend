@@ -16,6 +16,8 @@ from flask import (
 from flask_cors import CORS, cross_origin
 import json
 
+from heyoo import WhatsApp
+
 ADMIN = "/admin"
 
 app = Flask(__name__)
@@ -334,6 +336,26 @@ def insert_guest():
         except:
             print("Fallo")
         return json.dumps({"Success": False})
+
+@app.route(f"{ADMIN}/send_whatsapp", methods=["POST", "GET"])
+def send_whatsapp():
+    #TOKEN DE ACCESO DE FACEBOOK
+    token='EAAWA8NpCZArYBO6ApsZB3uiMGkfnWBu1puZAnyM2Xnq4fwggGZC8bnaT7It1OtgZAunMsitZBkMCl3E3CMtC71demVnQfM7FeGn1GyZBW1gTpqrv642KvXK6MZCiieZArG54hLHNwHR4tDMA0uJDKQZCYKVv2Gbfk6OVy18X12PLTsZBO7dmCS1xTAkKHZBy70uOgPD068XU7E04SnE5KyHCww8ZD'
+    #IDENTIFICADOR DE NÚMERO DE TELÉFONO
+    idNumeroTelefono='202089672983580'
+    #TELEFONO QUE RECIBE (EL DE NOSOTROS QUE DIMOS DE ALTA)
+    telefonoEnvia='525529156877'
+    #MENSAJE A ENVIAR
+    textoMensaje="Hola novato saludos"
+    #URL DE LA IMAGEN A ENVIAR
+    urlImagen='https://i.imgur.com/r5lhxgn.png'
+    #INICIALIZAMOS ENVIO DE MENSAJES
+    mensajeWa=WhatsApp(token,idNumeroTelefono)
+    #ENVIAMOS UN MENSAJE DE TEXTO
+    mensajeWa.send_message(textoMensaje,telefonoEnvia)
+    #ENVIAMOS UNA IMAGEN
+    mensajeWa.send_image(image=urlImagen,recipient_id=telefonoEnvia,)
+    return "mensaje enviado exitosamente"
 
 # LOGOUT - App # no borrar
 @app.route(f"{ADMIN}/logout")
