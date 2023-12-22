@@ -249,7 +249,7 @@ def update_users():
 def get_numbers():
     conn_factory = ConnectionFactory()
     conn, cursor = conn_factory.get_connection()
-    asistencias = ["confirmada", "no confirmada", "no vendra"]
+    asistencias = ["confirmada", "no confirmada", "no vendra", "no revisada"]
     data = dict()
     for asistencia in asistencias:
         cursor.execute(
@@ -264,7 +264,10 @@ def get_numbers():
         if res == [(None,)]:
             data[asistencia] = 0
         else:
-            data[asistencia] = res[0]
+            if asistencia == "no revisada":
+                data["no confirmada"] += res[0]
+            else:
+                data[asistencia] = res[0]
     conn.close()
     print(data)
     return data
