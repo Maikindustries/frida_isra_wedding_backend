@@ -340,7 +340,7 @@ def insert_guest():
 @app.route(f"{ADMIN}/send_whatsapp", methods=["POST", "GET"])
 def send_whatsapp():
     #TOKEN DE ACCESO DE FACEBOOK
-    token='EAAWA8NpCZArYBOZCS1QbzjvGoXoJJf0DjiTBVKCpVaSaoDk0jDJG8ZBjSveX3yNbnfJ22Fnqz4TytYTXESZCoW09vKZBxYYXWztv0khrDnagTljTjmL9t9MfZCPig5jZB0dvINdZAjNhl57qjPMZCcrzisNLEhhFu3D4dP7bF6tUXm19QahXiH7966PFOJc0FN0p4lZBnuNMVRGLiROoaX95sZD'
+    token=config("TOKEN_WHATSAPP")
     #IDENTIFICADOR DE NÚMERO DE TELÉFONO
     idNumeroTelefono='202089672983580'
     #TELEFONO QUE RECIBE (EL DE NOSOTROS QUE DIMOS DE ALTA)
