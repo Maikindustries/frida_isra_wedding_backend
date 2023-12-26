@@ -1,4 +1,4 @@
-const TESTING = true;
+const TESTING = false;
 
 let BASE_URL = "https://www.frida-isra-boda.com";
 if (TESTING) {
