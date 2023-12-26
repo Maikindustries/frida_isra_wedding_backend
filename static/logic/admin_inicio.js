@@ -1,4 +1,4 @@
-const TESTING = false;
+const TESTING = true;
 
 let BASE_URL = "https://www.frida-isra-boda.com";
 if (TESTING) {
@@ -117,9 +117,6 @@ function showGuests() {
         );
         const guestCancelBtn = guestLi.querySelector(".guest-cancel-btn");
         const guestConfirmBtn = guestLi.querySelector(".guest-confirm-btn");
-        const guestSendWhatsappBtn = guestLi.querySelector(
-          ".guest-send-whatsapp-btn"
-        );
 
         guestNameP.innerHTML = guest.nombre;
         if (guest.mesa !== -1) {
@@ -155,9 +152,6 @@ function showGuests() {
         });
         guestConfirmBtn.addEventListener("click", () => {
           updateGuestInDatabase(guest.id_invitado, guestLi);
-        });
-        guestSendWhatsappBtn.addEventListener("click", () => {
-          sendWhatsapp(guest.id_invitado);
         });
 
         guestLi.classList.add(confirmationCss);
@@ -309,7 +303,6 @@ function toggleShowHideUpdateGuest(guestLi) {
   );
   const guestCancelBtn = guestLi.querySelector(".guest-cancel-btn");
   const guestConfirmBtn = guestLi.querySelector(".guest-confirm-btn");
-  const sendWhatsappBtn = guestLi.querySelector(".guest-send-whatsapp-btn");
 
   // Logic
   guestTableP.classList.toggle("hide");
@@ -324,8 +317,6 @@ function toggleShowHideUpdateGuest(guestLi) {
   guestCancelBtn.classList.toggle("hide");
   guestConfirmBtn.classList.toggle("hide");
 
-  sendWhatsappBtn.classList.toggle("hide");
-
   const isShowingInputs = guestTableP.classList.contains("hide");
   if (isShowingInputs) {
     guestTableInput.placeholder = guestTableP.innerText;
@@ -336,24 +327,6 @@ function toggleShowHideUpdateGuest(guestLi) {
     guestTableInput.value = "";
     guestNameInput.value = "";
   }
-}
-
-function sendWhatsapp(idInvitado) {
-  const postData = { guestId: idInvitado };
-  fetch(`${BASE_URL}/admin/send_whatsapp`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(postData),
-  })
-    .then((res) => res.json())
-    .catch((err) => {
-      console.log(err);
-    })
-    .then((data) => {
-      console.log(data);
-    });
 }
 
 // RUNS

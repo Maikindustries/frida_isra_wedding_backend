@@ -322,44 +322,6 @@ def insert_guest():
         print(err)
     return {"Success": False}
 
-@app.route(f"{ADMIN}/send_whatsapp", methods=["POST"])
-def send_whatsapp():
-    response = request.json
-    print(response)
-    conn_factory = ConnectionFactory()
-    conn, cursor = conn_factory.get_connection()
-    guest_id = response.get("guestId")
-
-    cursor.execute(
-        "select nombre, celular from invitados1 where id_invitado = %s", 
-        [guest_id]
-    )
-    res = cursor.fetchone()
-    if res is None:
-        # regresar False y en front mostrar banner de que fallo
-        return {"status": "fail"}
-    
-    name, phone_number = res
-    if name is None or phone_number is None:
-        # regresar False y en front mostrar banner de que fallo
-        return {"status": "fail"}
-
-    if len(phone_number) == 10:
-        phone_number = "52" + phone_number
-    print(phone_number)
-    conn.close()
-    
-    token = config("TOKEN_WHATSAPP")
-    id_phone_for_testing = '202089672983580'
-    invitation_url = "https://www.frida-isra-boda.com/?id="
-    message = f"Hola {name}, estás invitad@ a nuestra boda.\nEste es el link de la invitación:\n{invitation_url}{guest_id}"
-    img_url = "https://debodaconangela.com/wp-content/uploads/2017/06/donde-procede-tradicion-anillos-boda.jpg"
-    
-    whatsapp = WhatsApp(token, id_phone_for_testing)
-    whatsapp.send_message(message, phone_number)
-    whatsapp.send_image(image=img_url, recipient_id=phone_number,)
-    return {"status": "ok"}
-
 # LOGOUT - App # no borrar
 @app.route(f"{ADMIN}/logout")
 def admin_logout():
