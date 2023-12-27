@@ -72,34 +72,6 @@ def get_info_by_id(guest_id):
     conn.close()
     return invitado_dict
 
-# GET_INFO - BACKEND
-# @app.route("/get_info", methods=["GET","POST"])
-# def get_info():
-#     response = request.json
-#     print(response)
-#     if response.get("id_invitado", None):
-#         id_invitado = response.get("id_invitado", None)
-#         conn_factory = ConnectionFactory()
-#         conn, cursor = conn_factory.get_connection()
-#         cursor.execute(
-#             "select * from invitados where id_invitado=%s", [id_invitado]
-#         )
-#         invitado = cursor.fetchone()
-#         invitado_dict = dict()
-#         keys = [
-#             "id_invitado",
-#             "nombre",
-#             "boletos",
-#             "mesa",
-#             "confirmacion",
-#             "revisado",
-#         ]
-#         for i, key in enumerate(keys):
-#             invitado_dict[key] = invitado[i]
-#         print(invitado_dict)
-#         conn.close()
-#     return invitado_dict
-
 # /ADMIN - App # no borrar
 @app.route(ADMIN)
 def admin_index():
