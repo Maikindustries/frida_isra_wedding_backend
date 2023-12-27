@@ -16,8 +16,6 @@ from flask import (
 from flask_cors import CORS, cross_origin
 import json
 
-import pywhatkit
-
 ADMIN = "/admin"
 
 app = Flask(__name__)
@@ -33,14 +31,6 @@ app.static_folder = "static"
 @app.route("/")
 def index():
     return render_template("index.html")
-
-@app.route("/send_wha")
-def send_wha():
-    numero = "+525549107930"
-    msg = "Hola papa como estas?"
-    pywhatkit.sendwhatmsg_instantly(numero, msg, 10, False, 3)
-    return "omg"
-
 
 # GET_INFO_BY_ID - BACKEND # no borrar
 @app.route("/guest/updateConfirmation", methods=["POST"])
