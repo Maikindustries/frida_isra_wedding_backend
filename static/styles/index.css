@@ -84,6 +84,7 @@ p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 2rem;
 
   font-family: "Bodoni Moda", serif;
   font-weight: 700;
@@ -471,6 +472,7 @@ p {
   align-items: center;
   justify-content: center;
   padding: 4rem 1rem;
+  /* padding: 0 1rem; */
   background-color: var(--main-bg-color);
   overflow: hidden;
   gap: 0.5rem;
@@ -654,22 +656,25 @@ p {
   transform: scale(1.2);
 }
 .c-g-photo-1 {
-  object-position: 0% 10%;
+  object-position: 0% 5%;
 }
 .c-g-photo-2 {
-  object-position: 20% 0%;
+  object-position: 30% 0%;
 }
 .c-g-photo-3 {
-  object-position: 0% 83%;
+  object-position: 0% 75%;
 }
 .c-g-photo-4 {
+  object-position: 40% 0%;
+}
+.c-g-photo-5 {
   object-position: 45% 0%;
 }
 .c-g-photo-6 {
-  object-position: 0% 95%;
+  object-position: 0% 80%;
 }
 .c-g-photo-8 {
-  object-position: 35% 0%;
+  object-position: 45% 0%;
 }
 
 /* Mesa de regalos */
@@ -775,8 +780,8 @@ p {
 
 /* Codigo de vestimenta */
 .codigo-de-vestimenta {
-  background-color: var(--secondary-bg-color);
   background-color: var(--main-bg-color);
+  background-color: var(--secondary-bg-color);
 }
 .vestimenta-container {
   width: 100%;
@@ -823,8 +828,7 @@ p {
 /* Phrase */
 .section-phrase {
   padding: 16rem 0 16rem 0;
-  background-color: var(--medium-color);
-  background-color: var(--secondary-bg-color);
+  background-color: var(--main-bg-color);
   font-family: "Playfair Display", serif;
 }
 .phrase-quote-icon {
@@ -857,6 +861,7 @@ p {
 .thanks-section {
   padding: 9.6rem 0 9.6rem 0;
   background-color: var(--main-bg-color);
+  background-color: var(--secondary-bg-color);
 }
 .thanks-text-container {
   display: flex;

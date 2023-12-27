@@ -387,11 +387,21 @@ Instead, 1 rem = 1em = 16px*/
     height: 23rem;
   }
   .mesa-de-regalos--opciones {
+    gap: 0rem;
+  }
+  .mesa-de-regalos--opciones {
     grid-template-columns: 1fr;
     margin-top: 2rem;
+    gap: 2rem;
+  }
+  .mesa-de-regalos-item--img-container {
+    gap: 1rem;
   }
   .amazon {
     grid-column: 1;
+  }
+  .amazon .mesa-de-regalos-item--img-container {
+    gap: 2rem;
   }
 }
 
