@@ -22,9 +22,7 @@
     />
     <link rel="stylesheet" href="../static/styles/queries.css" />
     <!-- comentar el codigo de arriba -->
-    <script src="../static/logic/index.js"></script>
-    <!-- comentar el codigo de arriba -->
-    <script src="{{ url_for('static', filename='logic/index.js') }}"></script>
+
     <script
       src="https://kit.fontawesome.com/bbd366d908.js"
       crossorigin="anonymous"
@@ -37,18 +35,8 @@
         <div class="hero-container">
           <div class="hero-text-container">
             <h2>Nuestra boda</h2>
-            <!-- <img
-              src="../static/images/details/linea_separadora_3.png"
-              class="hero-separation-line"
-            /> -->
             <h1>Frida & Israel</h1>
-            <!-- <div class="hero-text-description-container"> -->
-            <!-- <img
-              src="../static/images/details/linea_separadora_3.png"
-              class="hero-separation-line--bottom"
-            /> -->
             <p>Eclésiastes 4:9-12</p>
-            <!-- </div> -->
           </div>
           <div
             id="carouselExampleFade"
@@ -76,24 +64,6 @@
                 />
               </div>
             </div>
-            <!-- <button
-            class="carousel-control-prev"
-            type="button"
-            data-bs-target="#carouselExampleFade"
-            data-bs-slide="prev"
-            >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button
-          class="carousel-control-next"
-          type="button"
-          data-bs-target="#carouselExampleFade"
-          data-bs-slide="next"
-          >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button> -->
           </div>
         </div>
       </section>
@@ -191,46 +161,6 @@
           </div>
         </div>
       </section>
-      <script>
-        function myFunction2(x) {
-          const aboutUsSmallSection = document.getElementById(
-            "about-us-small-section"
-          );
-          const aboutUsSection2 = document.getElementById("about-us-section2");
-          console.log(aboutUsSmallSection);
-          console.log(aboutUsSection2);
-
-          if (x.matches) {
-            // If media query matches
-            aboutUsSection2.style.display = "none";
-            aboutUsSmallSection.style.display = "";
-          } else {
-            aboutUsSection2.style.display = "";
-            aboutUsSmallSection.style.display = "none";
-          }
-        }
-        var x = window.matchMedia("(max-width: 800px)");
-        x.addListener(myFunction2);
-        myFunction2(x);
-      </script>
-      <!-- Sobre nosotros -->
-      <!-- <section class="section about-us-section">
-        <div class="container about-us-section-container">
-          <img
-            src="../static/images/vertical/photo_19.jpg"
-            class="about-us-img"
-          />
-          <div class="about-us-text-container">
-            <h2>¡Nos casamos!</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio,
-              similique. Accusamus delectus doloribus fugit qui vero est, aut
-              molestias excepturi, dolorem nam odit quia, quod corporis corrupti
-              omnis tempora consequuntur.
-            </p>
-          </div>
-        </div>
-      </section> -->
 
       <!-- Confirmar asistencia -->
       <section
@@ -240,183 +170,47 @@
         <div class="container">
           <div class="title-container">
             <h2 class="title--text">Confirmación</h2>
-            <h2 id="c-a-subtitle" class="subtitle--text">
-              <span c-a-guest-name>nombre</span>, nos ayudarías mucho que
-              confirmes tu asistencia
-            </h2>
           </div>
-          <div id="c-a-select-confirmation-container">
+
+          <div
+            id="c-a-select-confirmation-container"
+            class="c-a-select-confirmation-container"
+          >
+            <h3 id="c-a-subtitle" class="subtitle--text c-a-subtitle">
+              <span c-a-guest-name>nombre</span>, nos ayudarías mucho que
+              confirmes tu asistencia.
+            </h3>
             <div class="c-a-select-checkbox-container">
               <p>NO ASISTIRE</p>
               <input
                 id="c-a-select-checkbox"
                 type="checkbox"
                 checked
-                class="c-a-checkbox"
+                class="c-a-select-checkbox"
                 style="--s: 30px"
               />
               <p>ASISTIRÉ</p>
             </div>
-            <div class="c-a-button">
-              <button onclick="sendAssistance()">
+            <div class="button-container c-a-button-container">
+              <button class="button" onclick="saveAssistanceInDatabase()">
                 <p id="c-a-send-confirmation">Confirmar asistencia</p>
               </button>
             </div>
           </div>
-          <div
-            id="confirmationContainer"
-            class="c-a-confirmation-container"
-            style="display: none"
-          >
-            <p>
-              <span id="confirmationName"></span>, has confirmado tu asistencia
-            </p>
-            <div class="c-a-button">
-              <button onclick="changeAssistance()">Cambiar asistencia</button>
-            </div>
-          </div>
-          <div
-            id="rejectionContainer"
-            class="c-a-rejection-container"
-            style="display: none"
-          >
-            <p>
-              <span id="rejectcionName"></span>, has rechazado tu asistencia
-            </p>
-            <div class="c-a-button">
-              <button onclick="changeAssistance()">Cambiar decisión</button>
+
+          <div class="c-a-guest-response-container hide">
+            <h3
+              class="subtitle--text c-a-guest-response"
+              style="text-align: center"
+            ></h3>
+            <div class="button-container c-a-button-container">
+              <button class="button" onclick="showOrHideConfirmationMenu()">
+                Cambiar decisión
+              </button>
             </div>
           </div>
         </div>
       </section>
-      <script>
-        const TESTING = false;
-
-        let BASE_URL = "https://www.frida-isra-boda.com";
-        if (TESTING) {
-          BASE_URL = "http://192.168.1.85:5000";
-        }
-
-        const checkbox = document.getElementById("c-a-select-checkbox");
-        const selectConfirmationContainer = document.getElementById(
-          "c-a-select-confirmation-container"
-        );
-        const confirmationContainer = document.getElementById(
-          "confirmationContainer"
-        );
-        const rejectionContainer =
-          document.getElementById("rejectionContainer");
-        const subtitle = document.getElementById("c-a-subtitle");
-
-        const confirmationButton = document.getElementById(
-          "c-a-send-confirmation"
-        );
-
-        checkbox.addEventListener("click", (event) => {
-          if (event.target.checked) {
-            confirmationButton.innerText = "Confirmar asistencia";
-          } else {
-            confirmationButton.innerText = "Cancelar asistencia";
-          }
-        });
-
-        function sendAssistance() {
-          console.log(checkbox.checked);
-          selectConfirmationContainer.style.display = "none";
-          subtitle.style.display = "none";
-          let confirmacion = "";
-          if (checkbox.checked) {
-            confirmationContainer.style.display = "";
-            rejectionContainer.style.display = "none";
-            confirmacion = "confirmada";
-          } else {
-            confirmationContainer.style.display = "none";
-            rejectionContainer.style.display = "";
-            confirmacion = "no vendra";
-          }
-          const queryString = window.location.search;
-          const urlParams = new URLSearchParams(queryString);
-          const id = urlParams.get("id");
-          console.log(id);
-          let _datos = {
-            id: id,
-            confirmacion: confirmacion,
-          };
-
-          fetch(`${BASE_URL}/guest/updateConfirmation`, {
-            method: "POST",
-            body: JSON.stringify(_datos),
-            headers: { "Content-type": "application/json; charset=UTF-8" },
-          })
-            .then((response) => response.json())
-
-            .then((json) => console.log(json));
-        }
-        function changeAssistance() {
-          selectConfirmationContainer.style.display = "";
-          subtitle.style.display = "";
-          confirmationContainer.style.display = "none";
-          rejectionContainer.style.display = "none";
-        }
-        function getGuestInfo() {
-          const queryString = window.location.search;
-          const urlParams = new URLSearchParams(queryString);
-          const id = urlParams.get("id");
-          console.log("id", id);
-          const confirmationSection = document.getElementById(
-            "section-confirm-assistance"
-          );
-          if (id === null || id === undefined || id.length != 32) {
-            confirmationSection.style.display = "none";
-            return;
-            // dont do fetch
-          }
-          fetch(`${BASE_URL}/guest/${id}`, {
-            method: "GET",
-            headers: {
-              Accept: "application/json",
-            },
-          })
-            .then((response) => response.json())
-            .catch((error) => {
-              console.log(error);
-              console.log("fetch to database failed");
-            })
-            .then((guest) => {
-              if (guest === undefined) {
-                confirmationSection.style.display = "none";
-                return;
-              }
-              const guestName = document.querySelector("[c-a-guest-name]");
-              const confirmationName =
-                document.getElementById("confirmationName");
-              const rejectcionName = document.getElementById("rejectcionName");
-
-              guestName.innerHTML = guest.nombre;
-              confirmationName.innerHTML = guest.nombre;
-              rejectcionName.innerHTML = guest.nombre;
-
-              if (guest.asistencia == "confirmada") {
-                subtitle.style.display = "none";
-                confirmationContainer.style.display = "";
-                rejectionContainer.style.display = "none";
-                selectConfirmationContainer.style.display = "none";
-              } else if (guest.asistencia == "no vendra") {
-                subtitle.style.display = "none";
-                confirmationContainer.style.display = "none";
-                rejectionContainer.style.display = "";
-                selectConfirmationContainer.style.display = "none";
-              } else {
-                // "no revisada"
-                console.log("no revisada");
-                confirmationContainer.style.display = "none";
-                rejectionContainer.style.display = "none";
-                selectConfirmationContainer.style.display = "";
-              }
-            });
-        }
-        getGuestInfo();
-      </script>
 
       <!-- Contador -->
       <section class="section countdown-section">
@@ -459,49 +253,6 @@
           </div>
         </div>
       </section>
-
-      <!-- Contador con imagen -->
-      <!-- <section class="section countdown-image-section">
-        <div class="container">
-          <div class="title-container">
-            <h2 class="title--text">Te esperamos para celebrar nuestra boda</h2>
-          </div>
-          <div class="c-i-container">
-            <img
-              class="c-i-image"
-              src="../static/images/vertical/photo_19.jpg"
-            />
-            <h2 class="ci--date">21 de abril 2023</h2>
-
-            <div class="countdown-clock--container">
-              <div class="countdown-clock--item--border">
-                <div class="countdown-clock--item">
-                  <h2 id="days" class="countdown-clock--item--date">00</h2>
-                  <p>Días</p>
-                </div>
-              </div>
-              <div class="countdown-clock--item--border">
-                <div class="countdown-clock--item">
-                  <h2 id="hours" class="countdown-clock--item--date">00</h2>
-                  <p>Horas</p>
-                </div>
-              </div>
-              <div class="countdown-clock--item--border">
-                <div class="countdown-clock--item">
-                  <h2 id="minutes" class="countdown-clock--item--date">00</h2>
-                  <p>Minutos</p>
-                </div>
-              </div>
-              <div class="countdown-clock--item--border">
-                <div class="countdown-clock--item">
-                  <h2 id="seconds" class="countdown-clock--item--date">00</h2>
-                  <p>Segundos</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> -->
 
       <!-- Galeria lineal vertical -->
       <section
@@ -567,15 +318,14 @@
                   <i class="fa-solid fa-location-dot"></i>
                   <p class="location-info--name">Jardin Quinta Corregidor</p>
                 </div>
-                <!-- <div class="location-info-adress-container"> -->
                 <p class="location-info--address">
                   Diag. Reforma 3 B, Izcalli del Bosque,53278 Naucalpan de
                   Juárez, Méx.
                 </p>
-                <!-- </div> -->
               </div>
 
               <iframe
+                title="Mapa"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3761.496125115911!2d-99.25922472402088!3d19.477279639250945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d203752a161929%3A0x409f84a48380d802!2sJardin%20Quinta%20Corregidor!5e0!3m2!1ses!2smx!4v1696386896843!5m2!1ses!2smx"
                 height="350"
                 class="location-map-iframe"
@@ -584,11 +334,12 @@
                 referrerpolicy="no-referrer-when-downgrade"
               ></iframe>
             </div>
-            <div class="location-map-button">
+            <div class="button-container location-map-button-container">
               <button
-                onclick=`window.open("http://goo.gl/maps/WbekMxVqSfBBnx2j9","_blank")`
+                class="button location-map-button"
+                onclick='window.open("https://goo.gl/maps/WbekMxVqSfBBnx2j9","_blank")'
               >
-                <p>Abrir en mapa</p>
+                Abrir en mapa
               </button>
             </div>
           </div>
@@ -601,12 +352,13 @@
           <div class="title-container" style="padding-bottom: 0">
             <h2 class="title--text">Mesa de regalos</h2>
             <p class="subtitle--text">
-              ¡Gracias por creer en nosotros y por acompañarnos en esta ocasión tan especial!
+              ¡Gracias por creer en nosotros y por acompañarnos en esta ocasión
+              tan especial!
             </p>
             <p class="subtitle--text">
-
-              Para empezar nuestra nueva etapa y todos los proyectos con los que soñamos, les agradecemos enormemente qué sus 
-              obsequios puedan ser de la siguientes mesas de regalos.
+              Para empezar nuestra nueva etapa y todos los proyectos con los que
+              soñamos, les agradecemos enormemente qué sus obsequios puedan ser
+              de la siguientes mesas de regalos.
             </p>
           </div>
           <div class="mesa-de-regalos--opciones">
@@ -619,7 +371,7 @@
                 />
                 <p class="mesa-de-regalos-item--table-text">51294149</p>
                 <a
-                  class="mesa-de-regalos-item--text"
+                  class="button"
                   href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/51294149?_ga=2.149316534.1066961650.1701751758-1246484634.1698724865"
                   target="_blank"
                 >
@@ -636,7 +388,7 @@
                 />
                 <p class="mesa-de-regalos-item--table-text">106141</p>
                 <a
-                  class="mesa-de-regalos-item--text"
+                  class="button"
                   href="https://www.sears.com.mx/Mesa-de-Regalos/106141/te-invito-a-mi-boda-frida-daniela-israel"
                   target="_blank"
                 >
@@ -653,7 +405,7 @@
                 />
                 <p class="mesa-de-regalos-item--table-text">383770</p>
                 <a
-                  class="mesa-de-regalos-item--text"
+                  class="button"
                   href="https://www.elpalaciodehierro.com/buscar?eventId=383770"
                   target="_blank"
                 >
@@ -669,7 +421,7 @@
                   alt="amazon"
                 />
                 <a
-                  class="mesa-de-regalos-item--text"
+                  class="button"
                   href="https://www.amazon.com.mx/wedding/share/FriIsra21042024"
                   target="_blank"
                 >
@@ -697,32 +449,17 @@
               <p class="mesa-de-regalos-item--clabe">0000-0000-00000-00000</p>
               <button
                 onclick="copyCLABE()"
-                class="mesa-de-regalos-item--text mesa-de-regalos-item--banorte"
+                class="button mesa-de-regalos-item--banorte"
               >
                 Copiar cuenta CLABE
               </button>
             </div>
           </div>
         </div>
-        <script>
-          async function copyCLABE() {
-            try {
-              await navigator.clipboard.writeText("24323234468411");
-              console.log("Content copied to clipboard");
-              /* Resolved - text copied to clipboard successfully */
-            } catch (err) {
-              console.error("Failed to copy: ", err);
-              /* Rejected - text failed to copy to the clipboard */
-            }
-          }
-        </script>
       </section>
 
       <!-- Galeria completa -->
-      <section
-        id="complete-gallery-section"
-        class="section complete-gallery-section"
-      >
+      <section class="section complete-gallery-section">
         <div class="container">
           <div class="title-container">
             <h2 class="title--text">Nuestros momentos</h2>
@@ -851,7 +588,6 @@
       <!-- Frase -->
       <section class="section-phrase">
         <div class="container">
-          <!-- <i class="fa-solid fa-quote-left phrase-quote-icon"></i> -->
           <p class="phrase-text">
             <span class="phrase-verse-number"> 9</span> Mejores son dos que uno;
             porque tienen mejor paga de su trabajo.
@@ -865,75 +601,25 @@
             dobleces no se rompe pronto.
           </p>
           <p class="phrase-verse">Eclésiastes 4:9-12</p>
-          <!-- <h2 class="phrase-text">
-            El amor es lo más parecido a una guerra, y es la única guerra en que
-            es indiferente vencer o ser vencido, porque siempre se gana.
-          </h2> -->
         </div>
       </section>
       <section class="thanks-section">
         <div class="container">
           <div class="thanks-text-container">
             <h2>Frida & Israel</h2>
-            <!-- <img
-              src="../static/images/details/linea_separadora_1.png"
-              class="countdown-line"
-            /> -->
+
             <p>¡Gracias por ser parte de nuestro gran día!</p>
           </div>
         </div>
       </section>
-      <!-- Hashtag -->
-      <!-- <section class="section hashtag-section">
-        <div class="container">
-          <h2 class="hashtag-title">
-            En nuestra boda comparte tus fotos con nosotros, utiliza el hashtag
-          </h2>
-          <p class="hashtag-hashtag">#FRIDA_ISRA</p>
-        </div>
-      </section> -->
-
-      <!-- Thanks -->
-      <!-- <section class="section thanks-phrase">
-        <div class="container">
-          <div>
-            <h2>Frida & Israel</h2>
-            <p></p>
-          </div>
-        </div>
-      </section> -->
     </main>
-    <script>
-      function myFunction(x) {
-        let gallerySectionVertical = document.getElementById(
-          "gallery-section-vertical"
-        );
-        let gallerySectionHorizontal = document.getElementById(
-          "gallery-section-horizontal"
-        );
-        let completeGallerySection = document.getElementById(
-          "complete-gallery-section"
-        );
-        if (x.matches) {
-          // If media query matches
-          gallerySectionVertical.style.display = "none";
-          gallerySectionHorizontal.style.display = "none";
-          completeGallerySection.style.display = "";
-        } else {
-          gallerySectionVertical.style.display = "";
-          gallerySectionHorizontal.style.display = "";
-          completeGallerySection.style.display = "none";
-        }
-      }
-      var x = window.matchMedia("(max-width: 700px)");
-      x.addListener(myFunction);
-      myFunction(x);
-    </script>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+    <script src="../static/logic/index.js"></script>
+    <script src="{{ url_for('static', filename='logic/index.js') }}"></script>
   </body>
 </html>

@@ -1,3 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  color: #efefef;
+}
+
+body {
+  background-color: rgb(45, 45, 45);
+  font-family: "Roboto", sans-serif;
+  height: 100vh;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .form {
   background-image: linear-gradient(
     to top,

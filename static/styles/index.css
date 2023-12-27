@@ -1,11 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500&family=Cormorant+Garamond:wght@400;500;700&family=Playfair+Display:wght@400;500;800&family=Poppins:wght@400;500&family=Rufina:wght@400;700&display=swap");
 
 :root {
-  --main-bg-color: #eee4db;
-  --secondary-bg-color: #e5d0ca;
-  --light-color: #d8af9d;
-  --medium-color: #ce9c91;
-  --dark-color: #a7776b;
+  --bgc-main: #eee4db;
+  --bgc-secondary: #e5d0ca;
+  --bgc-light: #d8af9d;
+  --bgc-medium: #ce9c91;
+  --bgc-dark: #a7776b;
+  --fs-title: 4rem;
+  --fs-subtitle: 2.4rem;
+  --fs-paragraph: 1.6rem;
 }
 
 /* Fonts */
@@ -39,7 +42,7 @@ body {
   font-family: "Rufina", serif;
   font-family: "Cormorant Garamond", serif;
   /* font-family: "Frunchy", serif; */
-  background-color: var(--main-bg-color);
+  background-color: var(--bgc-main);
 }
 a {
   outline: none;
@@ -49,10 +52,7 @@ a:link,
 a:visited {
   display: inline-block;
   text-decoration: none;
-  /* color: rgb(238, 232, 232); */
-  font-weight: 500;
-  font-size: 1.8rem;
-  transition: all 0.3s;
+  color: white;
 }
 
 a:hover,
@@ -78,7 +78,7 @@ p {
   z-index: 999;
 
   text-align: center;
-  color: var(--main-bg-color);
+  color: var(--bgc-main);
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -127,7 +127,7 @@ p {
 
 .carousel-container {
   height: 100vh;
-  background-color: var(--dark-color);
+  background-color: var(--bgc-dark);
   overflow: hidden;
 }
 .carousel-img {
@@ -136,46 +136,9 @@ p {
   opacity: 0.4;
 }
 
-/* About us */
-.about-us-section {
-  background-color: var(--main-bg-color);
-  padding-top: 9.6rem !important;
-}
-.about-us-section-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5rem;
-}
-.about-us-img {
-  width: 35%;
-}
-.about-us-text-container {
-  width: 40%;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-direction: column;
-  gap: 3rem;
-}
-
-.about-us-text-container h2 {
-  font-size: 3rem;
-  font-weight: 700;
-}
-.about-us-text-container p {
-  font-size: 2rem;
-  line-height: 1.6;
-}
-/* .about-us-text-container img {
-  width: 100%;
-  height: 25rem;
-  object-fit: cover;
-} */
-
 /* About us 2 */
 .about-us-section2 {
-  background-color: var(--main-bg-color);
+  background-color: var(--bgc-main);
   padding-top: 9.6rem !important;
 }
 .about-us3-flex {
@@ -242,7 +205,7 @@ p {
 
 /* About us 2 small */
 .about-us-small-section {
-  background-color: var(--main-bg-color);
+  background-color: var(--bgc-main);
   /* padding-top: 9.6rem ; */
   padding: 9.6rem 0 12rem 0 !important;
 }
@@ -282,13 +245,20 @@ p {
 
 /* Confirm assistance */
 .section-confirm-assistance {
-  background-color: var(--secondary-bg-color);
-  background-color: var(--medium-color);
-  background-color: var(--dark-color);
+  background-color: var(--bgc-secondary);
+  background-color: var(--bgc-medium);
+  background-color: var(--bgc-dark);
   color: white;
 }
 
 .c-a-select-confirmation-container {
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  /* text-align: center; */
+}
+#c-a-subtitle {
+  text-align: center;
 }
 .c-a-select-checkbox-container {
   display: flex;
@@ -323,7 +293,7 @@ p {
   --_p: 100%;
   --_i: 1;
 }
-.c-a-checkbox {
+.c-a-select-checkbox {
   --s: 50px; /* adjust this to control the size*/
 
   height: calc(var(--s) + var(--s) / 5);
@@ -341,20 +311,14 @@ p {
   -moz-appearance: none;
   appearance: none;
 }
-.c-a-confirmation-container {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-size: 2rem;
-  text-align: center;
-}
-.c-a-rejection-container {
-  /* display: none; */
+.c-a-guest-response {
+  font-size: var(--fs-subtitle);
 }
 
 /* Countdown */
 .countdown-section {
-  background-color: var(--main-bg-color);
-  background-color: var(--secondary-bg-color);
+  background-color: var(--bgc-main);
+  background-color: var(--bgc-secondary);
 }
 .countdown-line {
   width: 20rem;
@@ -384,7 +348,7 @@ p {
 .countdown-clock--item--border {
   border: 1px solid #dcccb9;
   border: 1px solid #daa520;
-  border: 1px solid var(--dark-color);
+  border: 1px solid var(--bgc-dark);
   padding: 0.4rem;
   /* border-radius: 13px; */
 }
@@ -398,7 +362,7 @@ p {
   height: 9rem;
   border: 1px solid #dcccb9;
   border: 1px solid #daa520;
-  border: 1px solid var(--dark-color);
+  border: 1px solid var(--bgc-dark);
   /* border-radius: 13px; */
 }
 .countdown-clock--item--date {
@@ -409,63 +373,6 @@ p {
   font-size: 2rem;
 }
 
-/* Countdown image */
-.countdown-image-section {
-  background-color: var(--main-bg-color);
-}
-.countdown-image-section .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.c-i-container {
-  position: relative;
-}
-.c-i-image {
-  height: 70rem;
-  /* Pner media query de height en este */
-  /* width: 100%; */
-  object-fit: cover;
-  /* border-radius: 17px; */
-}
-.c-i--title {
-  position: absolute;
-  width: 100%;
-  text-align: center;
-  top: 18%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  background-color: #00000025;
-}
-.ci--date {
-  background-color: #00000025;
-  position: absolute;
-  width: 100%;
-  bottom: 20%;
-  color: white;
-  text-align: center;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  font-size: 3.6rem;
-  font-weight: 400;
-  text-transform: uppercase;
-  font-family: "Poppins", sans-serif;
-}
-
-.c-i-container .countdown-clock--container {
-  position: absolute;
-  width: 100%;
-  bottom: 0%;
-  color: white;
-  transform: translate(-50%, -50%);
-  /* text-align: center; */
-  left: 50%;
-  background-color: #00000025;
-}
-
 /* Linear gallery vertical*/
 .gallery-section {
   display: flex;
@@ -473,7 +380,7 @@ p {
   justify-content: center;
   padding: 4rem 1rem;
   /* padding: 0 1rem; */
-  background-color: var(--main-bg-color);
+  background-color: var(--bgc-main);
   overflow: hidden;
   gap: 0.5rem;
 }
@@ -512,8 +419,8 @@ p {
 
 /* Location */
 .location-section {
-  background-color: var(--secondary-bg-color);
-  background-color: var(--main-bg-color);
+  background-color: var(--bgc-secondary);
+  background-color: var(--bgc-main);
   /* font-family: "Playfair Display", serif;
   font-family: "Cormorant Garamond", serif;
   font-family: "Poppins", sans-serif; */
@@ -575,45 +482,21 @@ p {
   border-radius: 17px;
   width: 100%;
 }
-.c-a-button,
-.location-map-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.c-a-button-container {
   margin-top: 3rem;
 }
-.c-a-button button,
-.location-map-button button {
-  width: 60%;
-  width: 30rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.8rem;
-  text-transform: uppercase;
-  background-color: var(--dark-color);
-  background-color: var(--main-bg-color);
-  border-radius: 17px;
-  text-align: center;
-  letter-spacing: 2px;
-  padding: 2rem 4rem;
-  cursor: pointer;
-  text-decoration: none;
-  border: none;
-  color: white;
+.c-a-button-container .button {
   color: black;
-  opacity: 0.9;
-  font-family: "Poppins", sans-serif;
-  font-family: "Cormorant Garamond", serif;
-  font-weight: bold;
+  background-color: var(--bgc-main);
 }
-.c-a-button button {
-  width: 35rem;
+.location-map-button-container {
+  margin-top: 3rem;
 }
-.c-a-button button:hover,
-.location-map-button button:hover {
-  opacity: 1;
+.location-map-button {
+  /* background-color: var(--bgc-dark) !important;
+  color: white !important; */
 }
+
 .c-a-confirmation-container,
 .c-a-rejection-container {
   display: flex;
@@ -629,7 +512,7 @@ p {
 
 /* Complete gallery */
 .complete-gallery-section {
-  background-color: var(--main-bg-color);
+  background-color: var(--bgc-main);
 }
 .complete-gallery-image-container {
   width: 8rem;
@@ -679,7 +562,7 @@ p {
 
 /* Mesa de regalos */
 .mesa-de-regalos {
-  background-color: var(--secondary-bg-color);
+  background-color: var(--bgc-secondary);
 }
 .mesa-de-regalos--opciones {
   display: grid;
@@ -720,23 +603,6 @@ p {
   font-size: 2rem;
   text-transform: uppercase;
   font-family: "Poppins", serif;
-}
-
-.mesa-de-regalos-item--text {
-  background-color: var(--dark-color);
-  border-radius: 17px;
-  border: 1px solid var(--dark-color);
-  padding: 2rem 4rem;
-  font-size: 2.4rem;
-  transition: all 0.2s ease-in;
-  color: white;
-  font-family: "Cormorant Garamond", serif;
-
-  text-transform: uppercase;
-}
-.mesa-de-regalos-item--text:hover {
-  opacity: 0.9;
-  color: #fff;
 }
 
 .mesa-de-regalos-item--beneficiario {
@@ -780,8 +646,8 @@ p {
 
 /* Codigo de vestimenta */
 .codigo-de-vestimenta {
-  background-color: var(--main-bg-color);
-  background-color: var(--secondary-bg-color);
+  background-color: var(--bgc-main);
+  background-color: var(--bgc-secondary);
 }
 .vestimenta-container {
   width: 100%;
@@ -812,23 +678,10 @@ p {
   font-size: 2rem;
 }
 
-/* Hashtag */
-.hashtag-section {
-  background-color: var(--dark-color);
-  text-align: center;
-}
-.hashtag-title {
-  font-size: 3.2rem;
-}
-.hashtag-hashtag {
-  font-size: 4rem;
-  font-weight: bold;
-}
-
 /* Phrase */
 .section-phrase {
   padding: 16rem 0 16rem 0;
-  background-color: var(--main-bg-color);
+  background-color: var(--bgc-main);
   font-family: "Playfair Display", serif;
 }
 .phrase-quote-icon {
@@ -860,8 +713,8 @@ p {
 /* Thanks */
 .thanks-section {
   padding: 9.6rem 0 9.6rem 0;
-  background-color: var(--main-bg-color);
-  background-color: var(--secondary-bg-color);
+  background-color: var(--bgc-main);
+  background-color: var(--bgc-secondary);
 }
 .thanks-text-container {
   display: flex;
@@ -900,14 +753,14 @@ p {
   text-align: center;
 }
 .title--text {
-  font-size: 4rem;
+  font-size: var(--fs-title);
   text-transform: uppercase;
   font-family: "Rufina", serif;
   font-family: "Frunchy", serif;
   font-weight: 800;
 }
 .subtitle--text {
-  font-size: 2.4rem;
+  font-size: var(--fs-subtitle);
   /* font-family: "Cormorant Garamond", serif; */
   font-family: "Playfair Display", serif;
   font-family: "Poppins", sans-serif;
@@ -917,4 +770,41 @@ p {
   max-width: 120rem;
   padding: 0 3.2rem;
   margin: 0 auto;
+}
+.button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 30rem;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  background-color: var(--bgc-dark);
+  border-radius: 17px;
+  padding: 2rem 4rem;
+  cursor: pointer;
+  border: none;
+  opacity: 0.9;
+  transition: all 0.2s ease-in;
+
+  text-align: center;
+  letter-spacing: 2px;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  color: white;
+}
+
+.button:hover {
+  opacity: 1;
+}
+
+.hide {
+  display: none;
 }

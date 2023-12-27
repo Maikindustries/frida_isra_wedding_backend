@@ -369,10 +369,10 @@ Instead, 1 rem = 1em = 16px*/
 }
 
 /*****************************/
-/* BELOW 31.875*16 = 510px (Big Phones) */
+/* BELOW 32.55*16 = 520px (Big Phones) */
 /*****************************/
 
-@media (max-width: 31.875em) {
+@media (max-width: 32.5em) {
   .about-us-small-container {
     gap: 15rem;
   }
