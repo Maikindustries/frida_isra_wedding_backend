@@ -48,6 +48,9 @@ Instead, 1 rem = 1em = 16px*/
   .location-img {
     width: 50%;
   }
+  .location-map-iframe {
+    height: 350px;
+  }
   .mesa-de-regalos--opciones {
     margin-top: 4rem;
   }
@@ -59,7 +62,7 @@ Instead, 1 rem = 1em = 16px*/
     font-size: 5rem;
   }
   .section-phrase div {
-    width: 90%;
+    /* width: 90%; */
   }
 }
 
@@ -114,9 +117,6 @@ Instead, 1 rem = 1em = 16px*/
   .mesa-de-regalos-item--img {
     width: 25rem;
   }
-  .section-phrase div {
-    width: 85%;
-  }
 }
 
 /*****************************/
@@ -129,6 +129,9 @@ Instead, 1 rem = 1em = 16px*/
   /* .hero-text-container h1 {
     font-size: 6.5rem;
   } */
+  .location-map-iframe {
+    height: 310px;
+  }
 }
 
 /*****************************/
@@ -145,6 +148,9 @@ Instead, 1 rem = 1em = 16px*/
   .about-us3-flex--item .about-us-text-container2--frida {
     top: 12px;
     right: -140px;
+  }
+  .location-map-iframe {
+    height: 335px;
   }
 }
 
@@ -210,17 +216,23 @@ Instead, 1 rem = 1em = 16px*/
     gap: 1rem;
   }
   .location-map-iframe {
-    width: 80%;
+    /* width: 80%; */
   }
   .section-phrase {
-    padding: 8rem 0 8rem 0;
-    width: 100%;
+    /* padding: 8rem 0 8rem 0; */
+    /* width: 100%; */
   }
   .section-phrase .container {
-    padding: 0 1rem;
+    /* padding: 0 1rem; */
   }
   .section {
     padding: 2.4rem 0 4.8rem 0;
+  }
+  .about-us-small-section {
+    padding: 9.6rem 0 12rem 0;
+  }
+  .section-phrase div {
+    width: 80%;
   }
 }
 
@@ -251,7 +263,7 @@ Instead, 1 rem = 1em = 16px*/
   }
   .about-us-text-container {
     padding: 4rem;
-    width: 90%;
+    /* width: 90%; */
     background-color: aliceblue;
     gap: 2rem;
   }
@@ -265,7 +277,7 @@ Instead, 1 rem = 1em = 16px*/
     flex-direction: column;
     padding: 0;
     width: 100%;
-    gap: 4rem;
+    gap: 2rem;
   }
   .location-info-text {
     display: flex;
@@ -279,7 +291,8 @@ Instead, 1 rem = 1em = 16px*/
     text-align: center;
   }
   .location-map-iframe {
-    width: 80%;
+    /* width: 80%; */
+    height: 250px;
   }
   .mesa-de-regalos--opciones {
     /* display: grid; */
@@ -331,6 +344,9 @@ Instead, 1 rem = 1em = 16px*/
     padding: 2rem 2rem 3rem 2rem;
     bottom: -10rem;
   }
+  .about-us-small-section {
+    padding: 9.6rem 0 16rem 0;
+  }
 
   .countdown-clock--container {
     /* gap: 2rem; */
@@ -339,9 +355,7 @@ Instead, 1 rem = 1em = 16px*/
     width: 10rem;
     height: 10rem;
   }
-  .countdown-clock--item--date {
-    /* font-size: 4rem; */
-  }
+
   .countdown-clock--item p {
     /* font-size: 2rem; */
   }
@@ -351,14 +365,17 @@ Instead, 1 rem = 1em = 16px*/
     width: 100%;
     object-fit: cover;
   }
-  .location-map-iframe {
-    width: 100%;
+  .location-info-text {
+    width: 90%;
   }
+  /* .location-map-iframe {
+    width: 100%;
+  } */
   .mesa-de-regalos-item {
     padding: 2rem 2rem;
   }
   .phrase-text {
-    font-size: 2.4rem;
+    font-size: 1.9rem;
   }
   /* .phrase-quote-icon {
     margin-bottom: 2rem;
@@ -385,6 +402,9 @@ Instead, 1 rem = 1em = 16px*/
   .complete-gallery-image-container--item {
     width: 23rem;
     height: 23rem;
+  }
+  .location-info-text {
+    width: 100%;
   }
   .mesa-de-regalos--opciones {
     gap: 0rem;
@@ -420,12 +440,10 @@ Instead, 1 rem = 1em = 16px*/
     /* gap: 1rem; */
   }
   .countdown-clock--item {
-    width: 9rem;
-    height: 9rem;
+    width: 8.5rem;
+    height: 8.5rem;
   }
-  .countdown-clock--item--date {
-    /* font-size: 3rem; */
-  }
+
   .countdown-clock--item p {
     /* font-size: 1.8rem; */
   }
@@ -440,7 +458,8 @@ Instead, 1 rem = 1em = 16px*/
 
 @media (max-width: 25.875em) {
   .about-us-small-section {
-    padding: 9.6rem 0 22rem 0 !important;
+    /* padding: 9.6rem 0 22rem 0 !important; */
+    padding: 9.6rem 0 22rem 0;
   }
   .about-us-small-container {
     gap: 21rem;
@@ -449,8 +468,8 @@ Instead, 1 rem = 1em = 16px*/
     bottom: -18rem;
   }
   .countdown-clock--item {
-    width: 7rem;
-    height: 7rem;
+    /* width: 8rem;
+    height: 8rem; */
   }
   .location-map-button button {
     /* width: 100%; */
@@ -458,7 +477,7 @@ Instead, 1 rem = 1em = 16px*/
   .location-info--address {
   }
   .phrase-text {
-    font-size: 2.1rem;
+    font-size: 1.8rem;
   }
   .complete-gallery-image-container--item {
     width: 20rem;
@@ -472,14 +491,24 @@ Instead, 1 rem = 1em = 16px*/
 
 @media (max-width: 23.125em) {
   .countdown-clock--item {
-    width: 6.5rem;
-    height: 6.5rem;
+    width: 8rem;
+    height: 8rem;
   }
   .complete-gallery-image-container--item {
     width: 16rem;
     height: 16rem;
   }
   .phrase-text {
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
 }
+
+/* 
+--fs-title: 4rem;
+--fs-subtitle: 2.4rem;
+--fs-paragraph: 1.6rem;
+
+--ff-title: font-family: "Frunchy", sans-serif;
+--ff-default: font-family: "Poppins", sans-serif;
+--ff-elegant : font-family: "Playfair Display", serif;
+*/
