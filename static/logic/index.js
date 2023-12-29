@@ -20,6 +20,9 @@ const guestResponseContainer = document.querySelector(
 );
 const guestResponse = document.querySelector(".c-a-guest-response");
 const confirmationButton = document.getElementById("c-a-send-confirmation");
+// Mesa de regalos section
+const banorteButton = document.querySelector(".mesa-de-regalos-item--banorte");
+console.log(banorteButton);
 
 // Event Listeners
 // Confirmation section
@@ -184,18 +187,6 @@ function setCountdown() {
       document.getElementById("demo").innerHTML = "EXPIRED";
     }
   }, 1000);
-}
-
-async function copyCLABE() {
-  // Mesa de regalos section
-  try {
-    await navigator.clipboard.writeText("072180004582387988");
-    console.log("Content copied to clipboard");
-    /* Resolved - text copied to clipboard successfully */
-  } catch (err) {
-    console.error("Failed to copy: ", err);
-    /* Rejected - text failed to copy to the clipboard */
-  }
 }
 
 function showGallerSectionMediaMatch(x) {
