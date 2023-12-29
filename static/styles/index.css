@@ -644,7 +644,7 @@ p {
   font-family: "Poppins", sans-serif;
 }
 .banorte {
-  /* padding-top: 2rem; */
+  margin-top: 3rem;
 }
 .banorte:hover,
 .banorte:active {
