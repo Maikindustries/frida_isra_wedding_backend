@@ -55,7 +55,6 @@ Instead, 1 rem = 1em = 16px*/
     margin-top: 4rem;
   }
   .vestimenta-img {
-    width: 20rem;
     height: 30rem;
   }
   .phrase-quote-icon {
@@ -314,7 +313,7 @@ Instead, 1 rem = 1em = 16px*/
     margin-top: 0;
   }
   .vestimenta-container {
-    gap: 0;
+    gap: 12rem;
   }
   .vestimenta--item {
     padding: 0rem;
@@ -482,6 +481,10 @@ Instead, 1 rem = 1em = 16px*/
   .complete-gallery-image-container--item {
     width: 20rem;
     height: 20rem;
+  }
+  .vestimenta-container {
+    justify-content: space-around;
+    gap: 0;
   }
 }
 

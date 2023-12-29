@@ -90,7 +90,7 @@ p {
   gap: 2rem;
 
   font-family: "Bodoni Moda", serif;
-  font-weight: 700;
+  /* font-weight: 700; */
 }
 .hero-text-container h2 {
   letter-spacing: 7px;
@@ -179,7 +179,7 @@ p {
 }
 .about-us3-flex--item .about-us-text-container2--frida {
   position: absolute;
-  top: 100px;
+  top: 90px;
   right: -220px;
 }
 
@@ -198,11 +198,13 @@ p {
   letter-spacing: 4px;
 }
 .about-us-text-container2 p {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   /* font-family: "Bodoni Moda", serif; */
   font-family: var(--ff-default);
   font-family: var(--ff-default);
+  font-family: "Cormorant Garamond", serif;
   line-height: 2em;
+  font-weight: 700;
 }
 .about-us-img3 {
   width: 40rem;
@@ -237,6 +239,7 @@ p {
 .about-us-small--item p {
   text-align: left;
   font-size: 2rem;
+  font-family: "Cormorant Garamond";
 }
 /* .about-us-small--item  */
 .about-us-small-text-container {
@@ -337,7 +340,11 @@ p {
   font-size: 3rem;
   font-weight: 700;
   text-transform: uppercase;
-  font-family: "Bodoni", serif;
+  font-family: "Cormorant Garamond", serif;
+}
+.countdown--date span {
+  font-size: 4.8rem;
+  font-weight: 500;
 }
 .countdown-clock--container {
   display: flex;
@@ -458,18 +465,17 @@ p {
   border: 0.5px solid #bfbfbf;
 }
 .location-info--title {
-  font-size: 2.5rem;
+  font-size: 2.4rem;
   text-transform: uppercase;
   font-weight: 500;
+  font-family: " Cormorant Garamond", serif;
 }
-.location-info--title,
+/* .location-info--title, */
 .location-info--date,
 .location-info--time,
-.location-info--name {
-  /* text-transform: uppercase; */
-}
-.location-info--date {
-  /* margin-top: 1.6rem; */
+.location-info--name,
+.location-info--address {
+  font-size: 1.8rem;
 }
 .location-info-text-icon-container {
   display: flex;
@@ -480,9 +486,6 @@ p {
 .location-info-adress-container {
   display: flex;
   justify-content: center;
-}
-.location-info--address {
-  /* text-align: center; */
 }
 .location-map-iframe {
   border: 0;
@@ -640,12 +643,15 @@ p {
   gap: 2rem;
   font-family: "Poppins", sans-serif;
 }
+.banorte {
+  /* padding-top: 2rem; */
+}
 .banorte:hover,
 .banorte:active {
 }
 
 .banorte--img {
-  margin-top: 1.2rem;
+  /* margin-top: 1.2rem; */
 }
 .palacio--img {
   margin-top: -2rem;
@@ -661,7 +667,10 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 3rem;
+  gap: 16rem;
+}
+.vestimenta-subtitle {
+  /* font-size: ; */
 }
 .vestimenta--item {
   display: flex;
@@ -672,32 +681,35 @@ p {
   padding: 2rem;
 }
 .vestimenta-img {
-  width: 25rem;
   height: 35rem;
   object-fit: cover;
 }
-.vestimenta-img--title {
-  font-weight: bold;
-  font-size: 2.4rem;
+.vestimenta-img-gender {
+  font-size: 1.8rem;
+  font-weight: 400;
+  font-family: " Cormorant Garamond", serif;
 }
-.vestimenta-img--subtitle {
+.vestimenta-img-dress-code {
   margin-top: 1rem;
   font-size: 2rem;
+  color: var(--bgc-dark);
+  font-weight: 700;
+  font-family: " Cormorant Garamond", serif;
 }
 
 /* Phrase */
 .section-phrase {
-  font-family: "Playfair Display", serif;
+  /* font-family: "Playfair Display", serif; */
   position: relative;
   background-color: #a7776b;
-  background-color: #211815;
-  background-color: #43302b;
+  /* background-color: #43302b; */
 }
 .phrase-background-img {
   width: 100%;
   height: 60rem;
   object-fit: cover;
   opacity: 0.4;
+  transform: rotate(180deg);
 }
 .phrase-container {
   position: absolute;
@@ -705,12 +717,14 @@ p {
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
+  /* color: black; */
 }
 .phrase-text {
   text-align: center;
   line-height: 2;
   font-size: 2rem;
   letter-spacing: 2px;
+  font-family: " Cormorant Garamond", serif;
 }
 .phrase-verse-number {
   font-size: 1.6rem;
@@ -721,7 +735,8 @@ p {
   margin-top: 2rem;
   font-size: 2rem;
   text-align: center;
-  font-family: "Bodoni Moda", serif;
+  /* font-family: "Bodoni Moda", serif; */
+  font-family: " Cormorant Garamond", serif;
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 2px;
@@ -778,7 +793,7 @@ p {
 }
 .subtitle--text {
   font-size: var(--fs-subtitle);
-  font-family: "Poppins", sans-serif;
+  font-family: "Cormorant Garamond", sans-serif;
   font-weight: 400;
 }
 .container {

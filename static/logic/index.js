@@ -189,7 +189,7 @@ function setCountdown() {
 async function copyCLABE() {
   // Mesa de regalos section
   try {
-    await navigator.clipboard.writeText("24323234468411");
+    await navigator.clipboard.writeText("072180004582387988");
     console.log("Content copied to clipboard");
     /* Resolved - text copied to clipboard successfully */
   } catch (err) {
