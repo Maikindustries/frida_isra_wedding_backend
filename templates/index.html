@@ -21,6 +21,11 @@
       href="{{ url_for('static', filename='styles/queries.css') }}"
     />
     <link rel="stylesheet" href="../static/styles/queries.css" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles/lightbox.css') }}"
+    />
+    <link rel="stylesheet" href="../static/styles/lightbox.css" />
     <!-- comentar el codigo de arriba -->
 
     <script
@@ -154,7 +159,7 @@
                   No hay manera de describir la magia que hay entre nosotros.
                   Agradezco en gran manera tu vida y que Dios te haya puesto en
                   mi camino. Gracias por amarme tanto y por ser el hombre
-                  esforzado y valiente que eres. Eres mi complemento. Te amo.
+                  esforzado y valiente que eres. Eres mi complemento.
                 </p>
               </div>
             </div>
@@ -310,6 +315,16 @@
           <div class="location-info">
             <div class="location-info-container">
               <div class="location-info-text">
+                <img
+                  src="../static/images/flowers/flower_top.svg"
+                  alt="flowers top"
+                  class="location-info-flowers-top"
+                />
+                <img
+                  src="../static/images/flowers/flower_bottom.svg"
+                  alt="flowers bottom"
+                  class="location-info-flowers-bottom"
+                />
                 <p class="location-info--title">Ceremonia y Fiesta</p>
                 <p class="location-info--date">Domingo 21 de Abril</p>
                 <div class="location-info-text-icon-container">
@@ -434,8 +449,9 @@
           </div>
           <div class="title-container">
             <p class="subtitle--text">
-              Estaremos muy agradecidos si deseas contribuir en hacer nuestra
-              luna de miel inolvidable.
+              Estaremos muy agradecidos si nos ayudas a llenar nuestra casa de
+              amor, historias y muebles. Aceptaremos tu regalo en la cuenta o si
+              gustas puedes darnos tu regalo en efectivo.
             </p>
           </div>
           <div class="mesa-de-regalos-item banorte">
@@ -473,63 +489,220 @@
           </div>
           <div style="display: flex; justify-content: center">
             <div class="complete-gallery-image-container">
-              <div class="complete-gallery-image-container--item">
+              <a
+                class="complete-gallery-image-container--item"
+                href="../static/images/vertical/photo_5_536.webp"
+                data-lightbox="models"
+              >
+                <!-- <a
+                > -->
                 <img
                   src="../static/images/vertical/photo_5_536.webp"
                   class="complete-gallery-image-container--img c-g-photo-1"
                   alt="photo"
                 />
-              </div>
-              <div class="complete-gallery-image-container--item">
+                <!-- </a> -->
+              </a>
+              <a
+                class="complete-gallery-image-container--item"
+                href="../static/images/horizontal/photo_5.webp"
+                data-lightbox="models"
+              >
+                <!-- <a
+                > -->
                 <img
                   src="../static/images/horizontal/photo_5.webp"
                   class="complete-gallery-image-container--img c-g-photo-2"
                   alt="photo"
                 />
-              </div>
-              <div class="complete-gallery-image-container--item">
+                <!-- </a> -->
+              </a>
+              <a
+                class="complete-gallery-image-container--item"
+                href="../static/images/vertical/photo_4_478.jpg"
+                data-lightbox="models"
+              >
+                <!-- <a
+                > -->
                 <img
                   src="../static/images/vertical/photo_4_478.jpg"
                   class="complete-gallery-image-container--img c-g-photo-3"
                   alt="photo"
                 />
-              </div>
-              <div class="complete-gallery-image-container--item">
+                <!-- </a> -->
+              </a>
+              <a
+                class="complete-gallery-image-container--item"
+                href="../static/images/horizontal/photo_3_281.webp"
+                data-lightbox="models"
+              >
+                <!-- <a
+                > -->
                 <img
                   src="../static/images/horizontal/photo_3_281.webp"
                   class="complete-gallery-image-container--img c-g-photo-4"
                   alt="photo"
                 />
-              </div>
-              <div class="complete-gallery-image-container--item">
+                <!-- </a> -->
+              </a>
+              <a
+                class="complete-gallery-image-container--item"
+                href="../static/images/vertical/photo_3_402.webp"
+                data-lightbox="models"
+              >
+                <!-- <a
+                > -->
                 <img
                   src="../static/images/vertical/photo_3_402.webp"
                   class="complete-gallery-image-container--img c-g-photo-5"
                   alt="photo"
                 />
-              </div>
-              <div class="complete-gallery-image-container--item">
+                <!-- </a> -->
+              </a>
+              <a
+                class="complete-gallery-image-container--item"
+                href="../static/images/vertical/photo_20.webp"
+                data-lightbox="models"
+              >
+                <!-- <a
+                > -->
                 <img
                   src="../static/images/vertical/photo_20.webp"
                   class="complete-gallery-image-container--img c-g-photo-6"
                   alt="photo"
                 />
-              </div>
-              <div class="complete-gallery-image-container--item">
+                <!-- </a> -->
+              </a>
+              <a
+                class="complete-gallery-image-container--item"
+                href="../static/images/horizontal/photo_9.jpg"
+                data-lightbox="models"
+              >
+                <!-- <a
+                > -->
                 <img
                   src="../static/images/horizontal/photo_9.jpg"
                   class="complete-gallery-image-container--img"
                   alt="photo"
                 />
-              </div>
-              <div class="complete-gallery-image-container--item">
+                <!-- </a> -->
+              </a>
+              <a
+                class="complete-gallery-image-container--item"
+                href="../static/images/horizontal/photo_8.webp"
+                data-lightbox="models"
+              >
+                <!-- <a
+                > -->
                 <img
                   src="../static/images/horizontal/photo_8.webp"
                   class="complete-gallery-image-container--img c-g-photo-8"
                   alt="photo"
                 />
+                <!-- </a> -->
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Galeria completa caroussel -->
+      <section class="complete-gallery-carousel-section">
+        <div class="title-container">
+          <h2 class="title--text">Nuestros momentos</h2>
+          <h2 class="subtitle--text">
+            ¡Gracias por creer en nosotros y por acompañarnos en esta ocasión
+            tan especial!
+          </h2>
+        </div>
+        <div class="complete-gallery-carousel-container">
+          <div
+            id="carouselExampleControls"
+            class="carousel slide"
+            data-bs-ride="carousel"
+          >
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img
+                  src="../static/images/vertical/photo_5_536.webp"
+                  class="d-block w-100 complete-gallery-carousel-img"
+                  alt="..."
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="../static/images/horizontal/photo_5.webp"
+                  class="d-block w-100 complete-gallery-carousel-img"
+                  alt="..."
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="../static/images/vertical/photo_4_478.jpg"
+                  class="d-block w-100 complete-gallery-carousel-img"
+                  alt="..."
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="../static/images/horizontal/photo_3_281.webp"
+                  class="d-block w-100 complete-gallery-carousel-img"
+                  alt="..."
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="../static/images/vertical/photo_3_402.webp"
+                  class="d-block w-100 complete-gallery-carousel-img"
+                  alt="..."
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="../static/images/vertical/photo_20.webp"
+                  class="d-block w-100 complete-gallery-carousel-img"
+                  alt="..."
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="../static/images/horizontal/photo_9.jpg"
+                  class="d-block w-100 complete-gallery-carousel-img"
+                  alt="..."
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="../static/images/horizontal/photo_8.webp"
+                  class="d-block w-100 complete-gallery-carousel-img"
+                  alt="..."
+                />
               </div>
             </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselExampleControls"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#carouselExampleControls"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
           </div>
         </div>
       </section>
@@ -635,5 +808,7 @@
     ></script>
     <script src="../static/logic/index.js"></script>
     <script src="{{ url_for('static', filename='logic/index.js') }}"></script>
+    <script src="../static/logic/lightbox-plus-jquery.js"></script>
+    <script src="{{ url_for('static', filename='logic/lightbox-plus-jquery.js') }}"></script>
   </body>
 </html>

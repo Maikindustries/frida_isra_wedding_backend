@@ -285,12 +285,13 @@ Instead, 1 rem = 1em = 16px*/
     flex-direction: column;
     gap: 1.5rem;
     width: 80%;
+    padding: 4rem 3rem;
   }
   .location-info--address {
     text-align: center;
   }
   .location-map-iframe {
-    /* width: 80%; */
+    width: 80%;
     height: 250px;
   }
   .mesa-de-regalos--opciones {
@@ -364,7 +365,10 @@ Instead, 1 rem = 1em = 16px*/
     object-fit: cover;
   }
   .location-info-text {
-    width: 90%;
+    width: 100%;
+  }
+  .location-map-iframe {
+    width: 100%;
   }
   /* .location-map-iframe {
     width: 100%;

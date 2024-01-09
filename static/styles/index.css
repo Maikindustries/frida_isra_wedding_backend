@@ -201,7 +201,6 @@ p {
   font-size: 1.8rem;
   /* font-family: "Bodoni Moda", serif; */
   font-family: var(--ff-default);
-  font-family: var(--ff-default);
   font-family: "Cormorant Garamond", serif;
   line-height: 2em;
   font-weight: 700;
@@ -238,6 +237,7 @@ p {
 }
 .about-us-small--item p {
   text-align: left;
+  text-align: center;
   font-size: 2rem;
   font-family: "Cormorant Garamond";
 }
@@ -461,8 +461,26 @@ p {
 
   width: 80%;
   background-color: white;
-  padding: 4rem 3rem;
+  padding: 4rem 0rem 4rem 6rem;
   border: 0.5px solid #bfbfbf;
+
+  position: relative;
+  overflow: hidden;
+}
+.location-info-flowers-top,
+.location-info-flowers-bottom {
+  position: absolute;
+}
+.location-info-flowers-top {
+  width: 18rem;
+  top: 0;
+  right: 0px;
+}
+.location-info-flowers-bottom {
+  width: 9rem;
+  bottom: -10px;
+  left: -17px;
+  transform: rotate(8deg);
 }
 .location-info--title {
   font-size: 2.4rem;
@@ -545,9 +563,9 @@ p {
   object-fit: cover;
   transition: all 1s ease-in-out;
 }
-.complete-gallery-image-container--img:hover {
+/* .complete-gallery-image-container--img:hover {
   transform: scale(1.2);
-}
+} */
 .c-g-photo-1 {
   object-position: 0% 5%;
 }
@@ -767,6 +785,18 @@ p {
   font-size: 2.4rem;
   padding: 0 5rem;
   font-family: "Poppins", sans-serif;
+}
+
+/* Gallery Carousel */
+.complete-gallery-carousel-section {
+  width: 100%;
+}
+.complete-gallery-carousel-container {
+  padding: 0 2rem;
+}
+.complete-gallery-carousel-img {
+  height: 70vh;
+  object-fit: cover;
 }
 
 /* Component Style */
