@@ -148,6 +148,12 @@ Instead, 1 rem = 1em = 16px*/
     top: 12px;
     right: -140px;
   }
+  .location-info-flowers-top {
+    width: 16rem;
+  }
+  .location-info-flowers-bottom {
+    width: 10rem;
+  }
   .location-map-iframe {
     height: 335px;
   }
@@ -214,6 +220,12 @@ Instead, 1 rem = 1em = 16px*/
     padding: 2rem;
     gap: 1rem;
   }
+  .location-info-flowers-top {
+    width: 13rem;
+  }
+  .location-info-flowers-bottom {
+    /* width: 8rem; */
+  }
   .location-map-iframe {
     /* width: 80%; */
   }
@@ -277,6 +289,12 @@ Instead, 1 rem = 1em = 16px*/
     padding: 0;
     width: 100%;
     gap: 2rem;
+  }
+  .location-info-flowers-top {
+    width: 18rem;
+  }
+  .location-info-flowers-bottom {
+    width: 10rem;
   }
   .location-info-text {
     display: flex;
@@ -408,6 +426,12 @@ Instead, 1 rem = 1em = 16px*/
   .location-info-text {
     width: 100%;
   }
+  .location-info-flowers-top {
+    width: 16rem;
+  }
+  .location-info-flowers-bottom {
+    /* width: 10rem; */
+  }
   .mesa-de-regalos--opciones {
     gap: 0rem;
   }
@@ -499,6 +523,12 @@ Instead, 1 rem = 1em = 16px*/
   .countdown-clock--item {
     width: 8rem;
     height: 8rem;
+  }
+  .location-info-flowers-top {
+    width: 13rem;
+  }
+  .location-info-flowers-bottom {
+    width: 9rem;
   }
   .complete-gallery-image-container--item {
     width: 16rem;
