@@ -51,9 +51,6 @@ Instead, 1 rem = 1em = 16px*/
   .location-map-iframe {
     height: 350px;
   }
-  .mesa-de-regalos--opciones {
-    margin-top: 4rem;
-  }
   .vestimenta-img {
     height: 30rem;
   }
@@ -236,6 +233,16 @@ Instead, 1 rem = 1em = 16px*/
   .section-phrase .container {
     /* padding: 0 1rem; */
   }
+  .mesa-de-regalos--opciones {
+    /* display: grid; */
+    grid-template-columns: 1fr 1fr;
+    /* justify-content: center */
+    /* row-gap: 0rem; */
+    margin-top: 2rem;
+  }
+  .banorte {
+    margin-top: 2rem;
+  }
   .section {
     padding: 2.4rem 0 4.8rem 0;
   }
@@ -311,13 +318,6 @@ Instead, 1 rem = 1em = 16px*/
   .location-map-iframe {
     width: 80%;
     height: 250px;
-  }
-  .mesa-de-regalos--opciones {
-    /* display: grid; */
-    grid-template-columns: 1fr 1fr;
-    justify-content: center;
-    /* row-gap: 0rem; */
-    margin-top: 2rem;
   }
   .mesa-de-regalos-item {
     /* padding: 0 2rem; */

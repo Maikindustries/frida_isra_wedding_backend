@@ -196,18 +196,18 @@ function showGallerSectionMediaMatch(x) {
   let gallerySectionHorizontal = document.getElementById(
     "gallery-section-horizontal"
   );
-  let completeGallerySection = document.querySelector(
-    ".complete-gallery-section"
+  let completeGalleryCarouselSection = document.querySelector(
+    ".complete-gallery-carousel-section"
   );
   if (x.matches) {
     // If media query matches
     gallerySectionVertical.style.display = "none";
     gallerySectionHorizontal.style.display = "none";
-    completeGallerySection.style.display = "";
+    completeGalleryCarouselSection.style.display = "";
   } else {
     gallerySectionVertical.style.display = "";
     gallerySectionHorizontal.style.display = "";
-    completeGallerySection.style.display = "none";
+    completeGalleryCarouselSection.style.display = "none";
   }
 }
 

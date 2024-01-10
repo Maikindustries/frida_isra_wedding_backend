@@ -548,7 +548,7 @@ p {
   justify-content: space-around;
   align-items: center;
   gap: 2rem;
-  margin-top: 8rem;
+  margin-top: 4rem;
   grid-template-columns: repeat(3, 1fr);
 }
 .mesa-de-regalos-item {
@@ -613,7 +613,8 @@ p {
   font-family: "Poppins", sans-serif;
 }
 .banorte {
-  margin-top: 3rem;
+  margin-top: 4rem;
+  /* padding: 0 2rem; */
 }
 .banorte:hover,
 .banorte:active {
@@ -743,7 +744,7 @@ p {
   width: 100%;
 }
 .complete-gallery-carousel-container {
-  padding: 0 2rem;
+  padding: 0 3rem;
 }
 .complete-gallery-carousel-img {
   height: 70vh;
