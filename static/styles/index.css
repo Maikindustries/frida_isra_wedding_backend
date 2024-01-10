@@ -594,7 +594,9 @@ p {
 }
 
 .mesa-de-regalos-item--banorte {
-  font-size: 2rem;
+  /* font-size: 2rem; */
+  padding: 2rem 2rem !important;
+  width: 32rem !important;
 }
 
 .amazon {
