@@ -476,6 +476,9 @@ Instead, 1 rem = 1em = 16px*/
   .location-map-button button {
     /* width: 80%; */
   }
+  .thanks-text-container p {
+    font-size: 2rem;
+  }
 }
 
 /*****************************/
@@ -512,6 +515,9 @@ Instead, 1 rem = 1em = 16px*/
   .vestimenta-container {
     justify-content: space-around;
     gap: 0;
+  }
+  .thanks-text-container p {
+    font-size: 1.8rem;
   }
 }
 

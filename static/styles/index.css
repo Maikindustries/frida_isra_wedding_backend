@@ -268,6 +268,7 @@ p {
 }
 #c-a-subtitle {
   text-align: center;
+  font-size: 2.6rem !important;
 }
 .c-a-select-checkbox-container {
   display: flex;
@@ -716,9 +717,14 @@ p {
 
 /* Thanks */
 .thanks-section {
-  padding: 9.6rem 0 9.6rem 0;
+  padding: 0 0 9.6rem 0;
   background-color: var(--bgc-main);
   background-color: var(--bgc-secondary);
+}
+.thanks-top-svg {
+  background-color: #a7776b;
+  background-color: #b78d7f;
+  height: 2rem;
 }
 .thanks-text-container {
   display: flex;
@@ -726,6 +732,8 @@ p {
   align-items: center;
   justify-content: center;
   gap: 1rem;
+
+  margin-top: 5rem;
 }
 .thanks-text-container h2 {
   font-family: "Frunchy", serif;
@@ -737,8 +745,8 @@ p {
 .thanks-text-container p {
   text-align: center;
   font-size: 2.4rem;
-  padding: 0 5rem;
   font-family: "Poppins", sans-serif;
+  color: var(--bgc-dark);
 }
 
 /* Gallery Carousel */
