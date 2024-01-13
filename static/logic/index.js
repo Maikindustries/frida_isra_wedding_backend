@@ -65,7 +65,7 @@ y.addListener(showGallerSectionMediaMatch);
 
 // Thanks section
 var z = window.matchMedia("(max-width: 700px)");
-z.addListener(showThanksTriangle);
+z.addListener(showThanksTriangleMatch);
 
 // Functions
 
@@ -246,15 +246,15 @@ function showGallerSectionMediaMatch(x) {
   }
 }
 
-function showThanksTriangle(x) {
+function showThanksTriangleMatch(x) {
   const thanksSvgBig = document.getElementById("thanks-svg-bg");
   const thanksSvgSmall = document.getElementById("thanks-svg-sm");
   if (x.matches) {
-    thanksSvgBig.style.style.display = "";
-    thanksSvgSmall.style.style.display = "none";
+    thanksSvgBig.style.display = "";
+    thanksSvgSmall.style.display = "none";
   } else {
-    thanksSvgBig.style.style.display = "none";
-    thanksSvgSmall.style.style.display = "";
+    thanksSvgBig.style.display = "none";
+    thanksSvgSmall.style.display = "";
   }
 }
 
@@ -302,4 +302,4 @@ showGallerSectionMediaMatch(y);
 
 // Thanks section
 // This mediaMatch needs to be called at the beginning obligatory
-showThanksTriangle(z);
+showThanksTriangleMatch(z);
