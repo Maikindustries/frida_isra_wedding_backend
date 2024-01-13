@@ -20,9 +20,30 @@ const guestResponseContainer = document.querySelector(
 );
 const guestResponse = document.querySelector(".c-a-guest-response");
 const confirmationButton = document.getElementById("c-a-send-confirmation");
-// Mesa de regalos section
-const banorteButton = document.querySelector(".mesa-de-regalos-item--banorte");
-console.log(banorteButton);
+
+// Selectors for animations
+const aboutUsSection2ImgIsra = document.getElementById(
+  "about-us-section2-img-isra"
+);
+const aboutUsSection2ImgFrida = document.getElementById(
+  "about-us-section2-img-frida"
+);
+const aboutUsTextContainer2Isra = document.querySelector(
+  ".about-us-text-container2--isra"
+);
+const aboutUsTextContainer2Frida = document.querySelector(
+  ".about-us-text-container2--frida"
+);
+const countDownDate = document.querySelector(".countdown--date");
+const locationInfoText = document.querySelector(".location-info-text");
+const dressCodeMenImg = document.getElementById("dress-code-men-img");
+const dressCodeWomenImg = document.getElementById("dress-code-women-img");
+const aboutUsSmallContainerIsra = document.querySelector(
+  ".about-us-small-text-container--isra"
+);
+const aboutUsSmallContainerFrida = document.querySelector(
+  ".about-us-small-text-container--frida"
+);
 
 // Event Listeners
 // Confirmation section
@@ -39,16 +60,18 @@ var x = window.matchMedia("(max-width: 800px)");
 x.addListener(showAboutUsSectionMediaMatch);
 
 // Gallery section
+var y = window.matchMedia("(max-width: 700px)");
+y.addListener(showGallerSectionMediaMatch);
+
+// Thanks section
 var z = window.matchMedia("(max-width: 700px)");
-z.addListener(showGallerSectionMediaMatch);
+z.addListener(showThanksTriangle);
 
 // Functions
 
 function showAboutUsSectionMediaMatch(x) {
   const aboutUsSmallSection = document.querySelector(".about-us-small-section");
   const aboutUsSection2 = document.querySelector(".about-us-section2");
-  console.log(aboutUsSmallSection);
-  console.log(aboutUsSection2);
 
   if (x.matches) {
     // If media query matches
@@ -189,17 +212,17 @@ function setCountdown() {
   }, 1000);
 }
 
-async function copyCLABE() {
-  // Mesa de regalos section
-  try {
-    await navigator.clipboard.writeText("24323234468411");
-    console.log("Content copied to clipboard");
-    /* Resolved - text copied to clipboard successfully */
-  } catch (err) {
-    console.error("Failed to copy: ", err);
-    /* Rejected - text failed to copy to the clipboard */
-  }
-}
+// async function copyCLABE() {
+//   // Mesa de regalos section
+//   try {
+//     await navigator.clipboard.writeText("24323234468411");
+//     console.log("Content copied to clipboard");
+//     /* Resolved - text copied to clipboard successfully */
+//   } catch (err) {
+//     console.error("Failed to copy: ", err);
+//     /* Rejected - text failed to copy to the clipboard */
+//   }
+// }
 
 function showGallerSectionMediaMatch(x) {
   let gallerySectionVertical = document.getElementById(
@@ -223,6 +246,44 @@ function showGallerSectionMediaMatch(x) {
   }
 }
 
+function showThanksTriangle(x) {
+  const thanksSvgBig = document.getElementById("thanks-svg-bg");
+  const thanksSvgSmall = document.getElementById("thanks-svg-sm");
+  if (x.matches) {
+    thanksSvgBig.style.style.display = "";
+    thanksSvgSmall.style.style.display = "none";
+  } else {
+    thanksSvgBig.style.style.display = "none";
+    thanksSvgSmall.style.style.display = "";
+  }
+}
+
+function loadImage(entries, observer) {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("animated-visible");
+    }
+  });
+}
+
+// Observers for animations
+const observer = new IntersectionObserver(loadImage, {
+  root: null,
+  rootMargin: "0px 0px 0px 0px",
+  threshold: 0.5,
+});
+
+observer.observe(aboutUsSection2ImgIsra);
+observer.observe(aboutUsSection2ImgFrida);
+observer.observe(aboutUsTextContainer2Isra);
+observer.observe(aboutUsTextContainer2Frida);
+observer.observe(countDownDate);
+observer.observe(locationInfoText);
+observer.observe(dressCodeMenImg);
+observer.observe(dressCodeWomenImg);
+observer.observe(aboutUsSmallContainerIsra);
+observer.observe(aboutUsSmallContainerFrida);
+
 // Calls
 
 // About us section
@@ -237,4 +298,8 @@ setCountdown();
 
 // Gallery section
 // This mediaMatch needs to be called at the beginning obligatory
-showGallerSectionMediaMatch(z);
+showGallerSectionMediaMatch(y);
+
+// Thanks section
+// This mediaMatch needs to be called at the beginning obligatory
+showThanksTriangle(z);

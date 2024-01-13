@@ -79,11 +79,12 @@
           <div class="about-us3-flex">
             <div class="about-us3-flex--item">
               <img
+                id="about-us-section2-img-isra"
                 src="../static/images/vertical/photo_13.webp"
-                class="about-us-img3 about-us-img3--isra"
+                class="about-us-img3 about-us-img3--isra animated animated--left"
               />
               <div
-                class="about-us-text-container2 about-us-text-container2--isra"
+                class="about-us-text-container2 about-us-text-container2--isra animated"
               >
                 <h2>Israel</h2>
                 <p>
@@ -97,11 +98,12 @@
             </div>
             <div class="about-us3-flex--item">
               <img
+                id="about-us-section2-img-frida"
                 src="../static/images/vertical/photo_3_285.webp"
-                class="about-us-img3 about-us-img3--frida"
+                class="about-us-img3 about-us-img3--frida animated animated--right"
               />
               <div
-                class="about-us-text-container2 about-us-text-container2--frida"
+                class="about-us-text-container2 about-us-text-container2--frida animated"
               >
                 <h2>Frida</h2>
                 <p>
@@ -134,7 +136,7 @@
                 class="about-us-img2 about-us-img2--isra"
               />
               <div
-                class="about-us-small-text-container about-us-small-text-container--isra"
+                class="about-us-small-text-container about-us-small-text-container--isra animated"
               >
                 <h2>Israel</h2>
                 <p>
@@ -152,7 +154,7 @@
                 class="about-us-img2 about-us-img2--frida"
               />
               <div
-                class="about-us-small-text-container about-us-small-text-container--frida"
+                class="about-us-small-text-container about-us-small-text-container--frida animated"
               >
                 <h2>Frida</h2>
                 <p>
@@ -228,7 +230,7 @@
               src="../static/images/details/linea_separadora_1.png"
               class="countdown-line"
             />
-            <h2 class="countdown--date">
+            <h2 class="countdown--date animated">
               <span>21</span> de abril del <span>2023</span>
             </h2>
           </div>
@@ -314,7 +316,7 @@
           </div>
           <div class="location-info">
             <div class="location-info-container">
-              <div class="location-info-text">
+              <div class="location-info-text animated animated--left">
                 <img
                   src="../static/images/flowers/flower_top.svg"
                   alt="flowers top"
@@ -461,10 +463,7 @@
               </p>
               <p class="mesa-de-regalos-item--clabe">CLABE INTERBANCARIA</p>
               <!-- <p class="mesa-de-regalos-item--clabe">0721-8000-45823-87988</p> -->
-              <button
-                onclick="copyCLABE()"
-                class="button mesa-de-regalos-item--banorte"
-              >
+              <button class="button mesa-de-regalos-item--banorte">
                 <!-- Copiar cuenta CLABE -->
                 0721-8000-45823-87988
               </button>
@@ -665,8 +664,9 @@
           <div class="vestimenta-container">
             <div class="vestimenta--item">
               <img
+                id="dress-code-men-img"
                 src="../static/images/dress_code_men.png"
-                class="vestimenta-img"
+                class="vestimenta-img animated animated--left"
                 alt="codigo hombre"
               />
               <p class="vestimenta-img-dress-code">Traje</p>
@@ -674,8 +674,9 @@
             </div>
             <div class="vestimenta--item">
               <img
+                id="dress-code-women-img"
                 src="../static/images/dress_code_women.png"
-                class="vestimenta-img"
+                class="vestimenta-img animated animated--right"
                 alt="codigo mujer"
               />
               <p class="vestimenta-img-dress-code">Vestido largo</p>
@@ -710,22 +711,6 @@
       </section>
       <!-- Thanks section -->
       <section class="thanks-section">
-        <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 300">
-      <path
-        fill="#a7776b"
-        fill-opacity="1"
-        d="M0,160L720,288L1440,160L1440,0L720,0L0,0Z"
-      ></path>
-    </svg> -->
-        <div class="thanks-top-svg"></div>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100">
-          <!-- fill="#a7776b" -->
-          <path
-            fill="#b78d7f"
-            fill-opacity="1"
-            d="M0,32L720,96L1440,32L1440,0L720,0L0,0Z"
-          ></path>
-        </svg>
         <div class="container">
           <div class="thanks-text-container">
             <h2>Frida & Israel</h2>
@@ -733,6 +718,31 @@
             <p>¡Gracias por ser parte de nuestro gran día!</p>
           </div>
         </div>
+      </svg>
+      <!-- fill="#a7776b" -->
+      <svg
+        id="thanks-svg-sm"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1440 100"
+        class="thanks-svg"
+      >
+        <path
+          fill="#b78d7f"
+          fill-opacity="1"
+          d="M0,32L720,96L1440,32L1440,0L720,0L0,0Z"
+        ></path>
+      </svg>
+        <svg
+          id="thanks-svg-bg"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 300"
+          class="thanks-svg "
+        >
+          <path
+            fill="#a7776b"
+            fill-opacity="1"
+            d="M0,160L720,288L1440,160L1440,0L720,0L0,0Z"
+          ></path>
       </section>
     </main>
 
