@@ -63,10 +63,6 @@ x.addListener(showAboutUsSectionMediaMatch);
 var y = window.matchMedia("(max-width: 700px)");
 y.addListener(showGallerSectionMediaMatch);
 
-// Thanks section
-var z = window.matchMedia("(max-width: 700px)");
-z.addListener(showThanksTriangleMatch);
-
 // Functions
 
 function showAboutUsSectionMediaMatch(x) {
@@ -299,7 +295,3 @@ setCountdown();
 // Gallery section
 // This mediaMatch needs to be called at the beginning obligatory
 showGallerSectionMediaMatch(y);
-
-// Thanks section
-// This mediaMatch needs to be called at the beginning obligatory
-showThanksTriangleMatch(z);
