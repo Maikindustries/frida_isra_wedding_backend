@@ -285,6 +285,17 @@ Instead, 1 rem = 1em = 16px*/
     background-color: aliceblue;
     gap: 2rem;
   }
+  .about-us-img2 {
+    height: 65rem;
+    object-fit: cover;
+  }
+  .about-us-img2--isra {
+    object-position: 0% 25%;
+  }
+  .about-us-img2--frida {
+    object-position: 0% 20%;
+  }
+
   .countdown-clock--container {
     /* gap: 3rem; */
   }
@@ -362,9 +373,17 @@ Instead, 1 rem = 1em = 16px*/
     bottom: -10rem;
   }
   .about-us-small-section {
-    padding: 9.6rem 0 16rem 0;
+    padding: 4.8rem 0 16rem 0;
   }
-
+  .about-us-img2 {
+    height: 60rem;
+  }
+  .about-us-img2--isra {
+    object-position: 0% 30%;
+  }
+  .about-us-img2--frida {
+    object-position: 0% 20%;
+  }
   .countdown-clock--container {
     /* gap: 2rem; */
   }
@@ -410,6 +429,9 @@ Instead, 1 rem = 1em = 16px*/
 /*****************************/
 
 @media (max-width: 32.5em) {
+  .about-us-small-section {
+    padding-top: 4.8rem;
+  }
   .about-us-small-container {
     gap: 15rem;
   }
@@ -488,13 +510,22 @@ Instead, 1 rem = 1em = 16px*/
 @media (max-width: 25.875em) {
   .about-us-small-section {
     /* padding: 9.6rem 0 22rem 0 !important; */
-    padding: 9.6rem 0 22rem 0;
+    padding: 4.8rem 0 22rem 0;
   }
   .about-us-small-container {
     gap: 21rem;
   }
   .about-us-small--item .about-us-small-text-container {
     bottom: -18rem;
+  }
+  .about-us-img2 {
+    height: 50rem;
+  }
+  .about-us-img2--isra {
+    object-position: 0% 40%;
+  }
+  .about-us-img2--frida {
+    object-position: 0% 30%;
   }
   .countdown-clock--item {
     /* width: 8rem;

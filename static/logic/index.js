@@ -38,10 +38,12 @@ const countDownDate = document.querySelector(".countdown--date");
 const locationInfoText = document.querySelector(".location-info-text");
 const dressCodeMenImg = document.getElementById("dress-code-men-img");
 const dressCodeWomenImg = document.getElementById("dress-code-women-img");
-const aboutUsSmallContainerIsra = document.querySelector(
+const aboutUsImg2Isra = document.querySelector(".about-us-img2--isra");
+const aboutUsImg2Frida = document.querySelector(".about-us-img2--frida");
+const aboutUsSmallTextContainerIsra = document.querySelector(
   ".about-us-small-text-container--isra"
 );
-const aboutUsSmallContainerFrida = document.querySelector(
+const aboutUsSmallTextContainerFrida = document.querySelector(
   ".about-us-small-text-container--frida"
 );
 
@@ -266,7 +268,7 @@ function loadImage(entries, observer) {
 const observer = new IntersectionObserver(loadImage, {
   root: null,
   rootMargin: "0px 0px 0px 0px",
-  threshold: 0.5,
+  threshold: 0.4,
 });
 
 observer.observe(aboutUsSection2ImgIsra);
@@ -277,8 +279,10 @@ observer.observe(countDownDate);
 observer.observe(locationInfoText);
 observer.observe(dressCodeMenImg);
 observer.observe(dressCodeWomenImg);
-observer.observe(aboutUsSmallContainerIsra);
-observer.observe(aboutUsSmallContainerFrida);
+observer.observe(aboutUsSmallTextContainerIsra);
+observer.observe(aboutUsSmallTextContainerFrida);
+observer.observe(aboutUsImg2Isra);
+observer.observe(aboutUsImg2Frida);
 
 // Calls
 
