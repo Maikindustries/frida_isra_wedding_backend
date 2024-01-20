@@ -271,18 +271,23 @@ const observer = new IntersectionObserver(loadImage, {
   threshold: 0.4,
 });
 
-observer.observe(aboutUsSection2ImgIsra);
-observer.observe(aboutUsSection2ImgFrida);
-observer.observe(aboutUsTextContainer2Isra);
-observer.observe(aboutUsTextContainer2Frida);
-observer.observe(countDownDate);
-observer.observe(locationInfoText);
-observer.observe(dressCodeMenImg);
-observer.observe(dressCodeWomenImg);
-observer.observe(aboutUsSmallTextContainerIsra);
-observer.observe(aboutUsSmallTextContainerFrida);
-observer.observe(aboutUsImg2Isra);
-observer.observe(aboutUsImg2Frida);
+const observedItems = [
+  aboutUsSection2ImgIsra,
+  aboutUsSection2ImgFrida,
+  aboutUsTextContainer2Isra,
+  aboutUsTextContainer2Frida,
+  countDownDate,
+  locationInfoText,
+  dressCodeMenImg,
+  dressCodeWomenImg,
+  aboutUsSmallTextContainerIsra,
+  aboutUsSmallTextContainerFrida,
+  aboutUsImg2Isra,
+  aboutUsImg2Frida,
+];
+observedItems.forEach((observedItem) => {
+  observer.observe(observedItem);
+});
 
 // Calls
 

@@ -1,8 +1,5 @@
 from decouple import config  # read env vars
 from MySqlConnection import ConnectionFactory
-import requests
-from uuid import uuid4
-# from html.parser import HTMLParser
 from flask import (
     Flask,
     session,
@@ -13,8 +10,7 @@ from flask import (
     g,
 )
 # CORS
-from flask_cors import CORS, cross_origin
-import json
+from flask_cors import CORS
 
 ADMIN = "/admin"
 
@@ -138,7 +134,7 @@ def get_users():
     # MySql Database
     conn_factory = ConnectionFactory()
     conn, cursor = conn_factory.get_connection()
-    cursor.execute("select * from invitados1")
+    cursor.execute("select * from invitados1 order by nombre")
     invitados = cursor.fetchall()
     conn.close()
     data = []
