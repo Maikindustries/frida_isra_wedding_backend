@@ -755,11 +755,17 @@ p {
 
 /* Company section */
 .company-section {
-  padding: 0rem 0 3.6rem 0;
+  padding: 2.4rem 0 3.6rem 0;
+}
+.company-text-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 .company-name {
   font-family: "Libre Baskerville", sans-serif;
-  font-size: 3.2rem;
+  font-size: 2.4rem;
   text-transform: uppercase;
 }
 .company-name i {
@@ -767,7 +773,7 @@ p {
   font-size: 4rem;
 }
 .company-whats-text {
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 
 /* Gallery Carousel */
