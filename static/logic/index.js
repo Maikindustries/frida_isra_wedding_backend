@@ -178,7 +178,7 @@ function getGuestInfo() {
 
 function setCountdown() {
   // Set the date we're counting down to
-  const countDownDate = new Date("Apr 21, 2024 15:00:00").getTime();
+  const countDownDate = new Date("Apr 21, 2024 12:30:00").getTime();
 
   // Update the count down every 1 second
   let interval = setInterval(function () {

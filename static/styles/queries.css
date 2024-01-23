@@ -422,6 +422,9 @@ Instead, 1 rem = 1em = 16px*/
   .countdown-section .title--text {
     font-size: 3rem;
   }
+  .thanks-text-container {
+    margin-bottom: 5rem;
+  }
 }
 
 /*****************************/
@@ -501,6 +504,12 @@ Instead, 1 rem = 1em = 16px*/
   .thanks-text-container p {
     font-size: 2rem;
   }
+  .company-name {
+    font-size: 2.4rem;
+  }
+  .company-name i {
+    font-size: 3rem;
+  }
 }
 
 /*****************************/
@@ -549,6 +558,12 @@ Instead, 1 rem = 1em = 16px*/
   }
   .thanks-text-container p {
     font-size: 1.8rem;
+  }
+  .company-name {
+    font-size: 2.2rem;
+  }
+  .company-name i {
+    font-size: 2.8rem;
   }
 }
 
