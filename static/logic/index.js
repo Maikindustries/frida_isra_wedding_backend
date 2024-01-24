@@ -35,7 +35,10 @@ const aboutUsTextContainer2Frida = document.querySelector(
   ".about-us-text-container2--frida"
 );
 const countDownDate = document.querySelector(".countdown--date");
-const locationInfoText = document.querySelector(".location-info-text");
+const locationItemCeremony = document.getElementById("location-item-ceremony");
+const locationItemReception = document.getElementById(
+  "location-item-reception"
+);
 const dressCodeMenImg = document.getElementById("dress-code-men-img");
 const dressCodeWomenImg = document.getElementById("dress-code-women-img");
 const aboutUsImg2Isra = document.querySelector(".about-us-img2--isra");
@@ -58,7 +61,7 @@ checkbox.addEventListener("click", (event) => {
 });
 
 // About us section
-var x = window.matchMedia("(max-width: 800px)");
+var x = window.matchMedia("(max-width: 704px)");
 x.addListener(showAboutUsSectionMediaMatch);
 
 // Gallery section
@@ -210,18 +213,6 @@ function setCountdown() {
   }, 1000);
 }
 
-// async function copyCLABE() {
-//   // Mesa de regalos section
-//   try {
-//     await navigator.clipboard.writeText("24323234468411");
-//     console.log("Content copied to clipboard");
-//     /* Resolved - text copied to clipboard successfully */
-//   } catch (err) {
-//     console.error("Failed to copy: ", err);
-//     /* Rejected - text failed to copy to the clipboard */
-//   }
-// }
-
 function showGallerSectionMediaMatch(x) {
   let gallerySectionVertical = document.getElementById(
     "gallery-section-vertical"
@@ -277,7 +268,8 @@ const observedItems = [
   aboutUsTextContainer2Isra,
   aboutUsTextContainer2Frida,
   countDownDate,
-  locationInfoText,
+  locationItemCeremony,
+  locationItemReception,
   dressCodeMenImg,
   dressCodeWomenImg,
   aboutUsSmallTextContainerIsra,
