@@ -325,6 +325,12 @@ p {
 .c-a-guest-response {
   font-size: var(--fs-subtitle);
 }
+.c-a-button-container .button {
+  margin-top: 2rem;
+  width: 33rem;
+  background-color: var(--bgc-main);
+  color: black;
+}
 
 /* Countdown */
 .countdown-section {
