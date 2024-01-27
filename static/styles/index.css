@@ -64,15 +64,17 @@ p {
 }
 .hero-music-button {
   position: absolute;
-  bottom: -65px;
-  right: 100px;
+  bottom: 30px;
+  right: 50%;
+  transform: translateX(50%);
   z-index: 100;
   width: 6rem;
   height: 6rem;
   border-radius: 50%;
   font-size: 2rem;
   color: #a7776b;
-  border: 2px solid #a7776b;
+  background-color: #eee4db;
+  border: none;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -208,7 +210,6 @@ p {
 }
 .about-us-text-container2 p {
   font-size: 1.8rem;
-  /* font-family: "Bodoni Moda", serif; */
   font-family: var(--ff-default);
   font-family: "Cormorant Garamond", serif;
   line-height: 2em;
@@ -221,8 +222,6 @@ p {
 /* About us 2 small */
 .about-us-small-section {
   background-color: var(--bgc-main);
-  /* padding-top: 9.6rem ; */
-  /* padding: 9.6rem 0 12rem 0 !important; */
   padding: 9.6rem 0 12rem 0;
 }
 .about-us-small-container {
@@ -236,8 +235,6 @@ p {
 }
 .about-us-img2 {
   width: 100%;
-  /* height: 55rem;
-  object-fit: cover; */
 }
 .about-us-small--item h2 {
   font-size: 3.6rem;
@@ -263,17 +260,8 @@ p {
 
 /* Confirm assistance */
 .section-confirm-assistance {
-  background-color: var(--bgc-secondary);
-  background-color: var(--bgc-medium);
   background-color: var(--bgc-dark);
   color: white;
-}
-
-.c-a-select-confirmation-container {
-  /* display: flex; */
-  /* align-items: center; */
-  /* justify-content: center; */
-  /* text-align: center; */
 }
 #c-a-subtitle {
   text-align: center;
@@ -342,7 +330,6 @@ p {
 
 /* Countdown */
 .countdown-section {
-  background-color: var(--bgc-main);
   background-color: var(--bgc-secondary);
 }
 .countdown-line {
@@ -367,14 +354,10 @@ p {
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  /* margin-top: 1rem; */
 }
 .countdown-clock--item--border {
-  border: 1px solid #dcccb9;
-  border: 1px solid #daa520;
   border: 1px solid var(--bgc-dark);
   padding: 0.4rem;
-  /* border-radius: 13px; */
 }
 .countdown-clock--item {
   display: flex;
@@ -384,10 +367,7 @@ p {
 
   width: 9rem;
   height: 9rem;
-  border: 1px solid #dcccb9;
-  border: 1px solid #daa520;
   border: 1px solid var(--bgc-dark);
-  /* border-radius: 13px; */
   font-family: "Cormorant Garamond", ser if;
 }
 .countdown-clock--item h2 {
@@ -404,7 +384,6 @@ p {
   align-items: center;
   justify-content: center;
   padding: 4rem 1rem;
-  /* padding: 0 1rem; */
   background-color: var(--bgc-main);
   overflow: hidden;
   gap: 0.5rem;
@@ -412,7 +391,6 @@ p {
 .gallery-image-container--item {
   align-self: center;
   justify-self: center;
-  /* padding: 1rem; */
   overflow: hidden;
   width: 15%;
   width: 16.666%;
@@ -429,7 +407,6 @@ p {
 
 /* Linear gallery horizontal */
 .gallery-img--horizontal-conatiner--item {
-  /* padding: 1rem; */
   width: 25%;
   overflow: hidden;
   height: auto;
@@ -505,7 +482,6 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background-color: white; */
   flex-direction: column;
   margin-top: 2.4rem;
 }
@@ -553,32 +529,26 @@ p {
   letter-spacing: 1px;
   text-transform: uppercase;
 }
-
 .mesa-de-regalos-item--img {
   width: 30rem;
 }
-
 .mesa-de-regalos-item--table-text {
   font-size: 2rem;
   text-transform: uppercase;
   font-family: "Poppins", serif;
 }
-
 .mesa-de-regalos-item--beneficiario {
   font-size: 2.2rem;
 }
-
 .mesa-de-regalos-item--clabe {
   font-size: 2.4rem;
   font-family: "Poppins", sans-serif;
 }
 
 .mesa-de-regalos-item--banorte {
-  /* font-size: 2rem; */
   padding: 2rem 2rem !important;
   width: 32rem !important;
 }
-
 .amazon {
   grid-column: 2;
 }
@@ -710,19 +680,20 @@ p {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  text-align: center;
 }
 .company-text-container p {
-  font-size: 1.8rem;
+  font-size: 2rem;
 }
 .company-name {
   font-family: "Libre Baskerville", sans-serif;
-  font-size: 2rem;
+  font-size: 2.4rem;
   text-transform: uppercase;
   margin-top: 0.8rem;
 }
 .company-name i {
   color: rgb(255, 170, 0);
-  font-size: 2.4rem;
+  font-size: 3rem;
 }
 .company-whats-text {
   margin-top: 3rem;

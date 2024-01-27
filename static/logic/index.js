@@ -72,8 +72,11 @@ x.addListener(showAboutUsSectionMediaMatch);
 var y = window.matchMedia("(max-width: 700px)");
 y.addListener(showGallerSectionMediaMatch);
 
-// Functions
+// State variables
+let isPlaying = false;
+const song = new Audio("../static/audio/Lucky.mp3");
 
+// Functions
 function showAboutUsSectionMediaMatch(x) {
   const aboutUsSmallSection = document.querySelector(".about-us-small-section");
   const aboutUsSection2 = document.querySelector(".about-us-section2");
@@ -259,8 +262,6 @@ function loadImage(entries, observer) {
   });
 }
 
-let isPlaying = false;
-const song = new Audio("../static/audio/Lucky.mp3");
 function playSong() {
   if (isPlaying) {
     song.pause();
@@ -274,7 +275,6 @@ function playSong() {
     pauseButton.style.display = "";
   }
 }
-// playSong();
 
 // Observers for animations
 const observer = new IntersectionObserver(loadImage, {
