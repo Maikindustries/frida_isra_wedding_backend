@@ -189,6 +189,10 @@ Instead, 1 rem = 1em = 16px*/
 /* BELOW 44*16 = 704px (Smaller Tablets) */
 /*****************************/
 @media (max-width: 44em) {
+  .hero-music-button {
+    bottom: -60px;
+    right: 50px;
+  }
   .about-us-section-container {
     flex-direction: column;
     gap: 0;
@@ -254,7 +258,7 @@ Instead, 1 rem = 1em = 16px*/
     bottom: -10rem;
   }
   .about-us-small-section {
-    padding: 4.8rem 0 16rem 0;
+    padding: 9.6rem 0 16rem 0;
   }
   .about-us-img2 {
     height: 60rem;
@@ -284,11 +288,17 @@ Instead, 1 rem = 1em = 16px*/
 }
 
 /*****************************/
-/* BELOW 32.55*16 = 520px (Big Phones) */
+/* BELOW 32.5*16 = 520px (Big Phones) */
 /*****************************/
 @media (max-width: 32.5em) {
+  .hero-music-button {
+    bottom: -45px;
+    right: 30px;
+    width: 5rem;
+    height: 5rem;
+  }
   .about-us-small-section {
-    padding-top: 4.8rem;
+    padding-top: 6.4rem;
   }
   .about-us-small-container {
     gap: 15rem;
@@ -323,6 +333,15 @@ Instead, 1 rem = 1em = 16px*/
 /* BELOW 30*16 = 480px (Phones) */
 /*****************************/
 @media (max-width: 30em) {
+  .hero-music-button {
+    bottom: -40px;
+    width: 4rem;
+    height: 4rem;
+    font-size: 1.8rem;
+  }
+  .about-us-small-section {
+    padding-top: 6rem;
+  }
   .about-us-small-container {
     gap: 18rem;
   }
@@ -355,8 +374,11 @@ Instead, 1 rem = 1em = 16px*/
 /* BELOW 25.875*16 = 414px (Phones) */
 /*****************************/
 @media (max-width: 25.875em) {
+  .hero-music-button {
+    bottom: -37px;
+  }
   .about-us-small-section {
-    padding: 4.8rem 0 22rem 0;
+    padding: 5.2rem 0 22rem 0;
   }
   .about-us-small-container {
     gap: 21rem;

@@ -41,11 +41,6 @@ body {
   overflow-x: hidden;
 }
 body {
-  /* font-family: "Playfair Display", serif; */
-  /* font-family: "Poppins", sans-serif; */
-  /* font-family: "Rufina", serif; */
-  /* font-family: "Cormorant Garamond", serif; */
-  /* font-family: "Frunchy", serif; */
   background-color: var(--bgc-main);
 }
 a {
@@ -58,11 +53,6 @@ a:visited {
   text-decoration: none;
   color: white;
 }
-
-a:hover,
-a:active {
-  /* color: #cf711f; */
-}
 p {
   margin: 0;
 }
@@ -70,6 +60,25 @@ p {
 /* Hero */
 .hero-section {
   width: 100%;
+  position: relative;
+}
+.hero-music-button {
+  position: absolute;
+  bottom: -65px;
+  right: 100px;
+  z-index: 100;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  font-size: 2rem;
+  color: #a7776b;
+  border: 2px solid #a7776b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#play-button {
+  margin-left: 2px;
 }
 .hero-container {
   position: relative;
@@ -91,7 +100,6 @@ p {
   gap: 2rem;
 
   font-family: "Bodoni Moda", serif;
-  /* font-weight: 700; */
 }
 .hero-text-container h2 {
   letter-spacing: 7px;
@@ -502,8 +510,6 @@ p {
   margin-top: 2.4rem;
 }
 .location-map-iframe2 {
-  /* box-shadow: #412e2a63 0px 60px 40px -7px;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
   border: 0;
   border-radius: 17px;
   width: 500px;
@@ -512,119 +518,6 @@ p {
 .location-button-container {
   margin-top: 3rem;
 }
-
-/* Location section */
-.location-section {
-  /* background-color: var(--bgc-secondary);
-  background-color: var(--bgc-main); */
-  /* font-family: "Playfair Display", serif;
-  font-family: "Cormorant Garamond", serif;
-  font-family: "Poppins", sans-serif; */
-}
-/* .location-info {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  font-family: "Poppins", sans-serif;
-} */
-/* .location-info-container { */
-/* width: 90%; */
-/* padding: 3rem;
-  padding-top: 0; */
-/* display: flex;
-  align-items: center;
-  justify-content: center;
-  text-transform: uppercase;
-  gap: 2rem;
-  font-size: 2rem;
-} */
-/* .location-info-text {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  flex-direction: column;
-  gap: 3rem;
-
-  width: 80%;
-  background-color: white;
-  padding: 4rem 0rem 4rem 6rem;
-  border: 0.5px solid #bfbfbf;
-
-  position: relative;
-  overflow: hidden;
-}
-.location-info-flowers-top,
-.location-info-flowers-bottom {
-  position: absolute;
-}
-.location-info-flowers-top {
-  width: 18rem;
-  top: 0;
-  right: 0px;
-}
-.location-info-flowers-bottom {
-  width: 9rem;
-  bottom: -10px;
-  left: -17px;
-  transform: rotate(8deg);
-}
-.location-info--title {
-  font-size: 2.4rem;
-  text-transform: uppercase;
-  font-weight: 500;
-  font-family: " Cormorant Garamond", serif;
-} */
-/* .location-info--title, */
-/* .location-info--date,
-.location-info--time,
-.location-info--name,
-.location-info--address {
-  font-size: 1.8rem;
-}
-.location-info-text-icon-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-}
-.location-info-adress-container {
-  display: flex;
-  justify-content: center;
-}
-.location-map-iframe {
-  border: 0;
-  border-radius: 17px;
-  width: 100%;
-  height: 390px;
-}
-.c-a-button-container {
-  margin-top: 3rem;
-}
-.c-a-button-container .button {
-  color: black;
-  background-color: var(--bgc-main);
-}
-.location-map-button-container {
-  margin-top: 3rem;
-} */
-.location-map-button {
-  /* background-color: var(--bgc-dark) !important;
-  color: white !important; */
-}
-
-/* .c-a-confirmation-container,
-.c-a-rejection-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.c-a-confirmation-container p,
-.c-a-rejection-container p {
-  font-size: 2rem;
-  font-family: "Poppins", sans-serif;
-} */
 
 /* Mesa de regalos */
 .mesa-de-regalos {
@@ -689,28 +582,12 @@ p {
 .amazon {
   grid-column: 2;
 }
-.amazon:hover,
-.amazon:active {
-}
-.liverpool {
-}
-.liverpool:hover,
-.liverpool:active {
-}
 .banorte .mesa-de-regalos-item--img-container {
   gap: 2rem;
   font-family: "Poppins", sans-serif;
 }
 .banorte {
   margin-top: 4rem;
-  /* padding: 0 2rem; */
-}
-.banorte:hover,
-.banorte:active {
-}
-
-.banorte--img {
-  /* margin-top: 1.2rem; */
 }
 .palacio--img {
   margin-top: -2rem;
@@ -727,9 +604,6 @@ p {
   align-items: center;
   justify-content: center;
   gap: 16rem;
-}
-.vestimenta-subtitle {
-  /* font-size: ; */
 }
 .vestimenta--item {
   display: flex;
@@ -758,10 +632,8 @@ p {
 
 /* Phrase */
 .section-phrase {
-  /* font-family: "Playfair Display", serif; */
   position: relative;
   background-color: #a7776b;
-  /* background-color: #43302b; */
 }
 .phrase-background-img {
   width: 100%;
@@ -793,7 +665,6 @@ p {
   margin-top: 2rem;
   font-size: 2rem;
   text-align: center;
-  /* font-family: "Bodoni Moda", serif; */
   font-family: " Cormorant Garamond", serif;
   text-transform: uppercase;
   font-weight: 700;
@@ -804,8 +675,6 @@ p {
 .thanks-section {
   padding: 7.2rem 0 0rem 0;
   background-color: var(--bgc-secondary);
-  /* background-color: white; */
-  /* background-color: var(--bgc-main); */
 }
 .thanks-text-container {
   display: flex;

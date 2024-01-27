@@ -9,6 +9,10 @@ if (TESTING) {
 let guestNameText = "";
 
 // Selectors
+// PLay music buttons
+const playButton = document.getElementById("play-button");
+const pauseButton = document.getElementById("pause-button");
+
 // Confirmation section
 const checkbox = document.querySelector(".c-a-select-checkbox");
 const selectConfirmationContainer = document.querySelector(
@@ -254,6 +258,23 @@ function loadImage(entries, observer) {
     }
   });
 }
+
+let isPlaying = false;
+const song = new Audio("../static/audio/Lucky.mp3");
+function playSong() {
+  if (isPlaying) {
+    song.pause();
+    isPlaying = false;
+    playButton.style.display = "";
+    pauseButton.style.display = "none";
+  } else {
+    song.play();
+    isPlaying = true;
+    playButton.style.display = "none";
+    pauseButton.style.display = "";
+  }
+}
+// playSong();
 
 // Observers for animations
 const observer = new IntersectionObserver(loadImage, {
