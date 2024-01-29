@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0 maximum-scale=1"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="{{ url_for('static', filename='logic/admin_inicio_safe.js') }}"
+      defer
+    ></script>
+    <script src="../static/logic/admin_inicio_safe.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles/admin.css') }}"
+    />
+    <!-- Borrar -->
+    <link rel="stylesheet" href="../static/styles/admin.css" />
+    <!-- Borrar -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>Admin</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1 class="title">Invitados</h1>
+        <h2 class="event-name">Boda Frida &amp; Isra🤵🏻 👰🏻‍♀️</h2>
+      </header>
+
+      <div class="margin-top-small numbers">
+        <h2 class="confirmed-number"></h2>
+        <h2 class="unconfirmed-number"></h2>
+        <h2 class="rejected-number"></h2>
+      </div>
+
+      <!-- <div class="margin-top-small register-guest">
+        <button class="button register-guest-btn">
+          <p>Registrar invitado</p>
+          <i class="fa-solid fa-plus register-guest-icon"></i>
+        </button>
+      </div> -->
+
+      <!-- <div class="register-form-container margin-top-small hide">
+        <form class="register-form">
+          <h2 class="register-form-title">Registrar invitado</h2>
+          <div class="register-form-entries">
+            <label for="guest_name">Nombre</label>
+            <input
+              class="register-form-name-input"
+              id="guest_name"
+              type="text"
+            />
+          </div>
+          <div class="register-form-entries">
+            <label for="guest_table">Teléfono</label>
+            <input
+              class="register-form-phone-input"
+              id="guest_table"
+              type="tel"
+              pattern="[0-9]+"
+            />
+          </div>
+          <div class="register-form-entries">
+            <label for="guest_table">Mesa (opcional)</label>
+            <input
+              class="register-form-table-input"
+              id="guest_table"
+              type="tel"
+            />
+          </div>
+          <button class="button register-form-submit-btn" type="submit">
+            Confirmar
+          </button>
+          <button class="button register-form-cancel-btn">Cancelar</button>
+        </form>
+      </div> -->
+
+      <div class="filter-by-confirmation">
+        <div class="filter-by-confirmation-container margin-top-small">
+          <select
+            class="filter-by-confirmation-select"
+            name="filter-guests"
+            onblur="filterGuests(this)"
+          >
+            <option value="all">Todos</option>
+            <option value="confirmed">Confirmado</option>
+            <option value="unconfirmed">No confirmado</option>
+            <option value="rejected">No vendra</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="margin-top-small guests">
+        <ul class="guests-list"></ul>
+      </div>
+    </div>
+
+    <template class="guest-template">
+      <li class="guest">
+        <div class="guest-info">
+          <div class="guest-table-container">
+            <i class="fa-solid fa-chair guest-table-icon"></i>
+            <p class="guest-table"></p>
+            <input class="guest-table-input hide" type="tel" pattern="[0-9]+" />
+            <input class="guest-name-input hide" type="text" />
+          </div>
+          <p class="guest-name"></p>
+        </div>
+      </li>
+    </template>
+  </body>
+</html>

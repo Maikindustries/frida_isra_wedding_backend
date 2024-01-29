@@ -69,6 +69,11 @@ def get_info_by_id(guest_id):
     return invitado_dict
 
 # /ADMIN - App # no borrar
+@app.route("/verinvitados")
+def admin_without_password():
+    return render_template("admin_inicio_safe.html")
+
+# /ADMIN - App # no borrar
 @app.route(ADMIN)
 def admin_index():
     if g.email:
